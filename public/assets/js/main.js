@@ -1,0 +1,1 @@
+"use strict";function mylongname(){console.log(1)}console.log("File 1 added"),console.log("File 2 added");

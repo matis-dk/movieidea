@@ -1,0 +1,32 @@
+/* ==================== RESET ==================== */
+
+html, head, body, li, ul, figure, p {
+    @extend %resetPaddingMargin;
+    box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+li {
+	cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    @extend %resetPaddingMargin;
+    cursor: default;
+}
+
+* {
+    user-select: none;
+}
