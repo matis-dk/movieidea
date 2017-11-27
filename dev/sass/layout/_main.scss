@@ -3,17 +3,15 @@
 
 #main {
     display: grid;
-
-    border: 1px solid red;
 }
 
     .main-settings {
         display: none;
+        background-color: $c-w-5;
     }
 
     .main-settings[data-active="true"] {
             display: grid;
-            border: 1px solid blue;
     }
 
     #main-home {

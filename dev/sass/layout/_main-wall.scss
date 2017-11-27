@@ -2,36 +2,117 @@
 
 #main-wall {
 
-    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto 1fr;
 
-    background-color: $c-g-2;
-    padding: 80px 20% 0px;
+    height: calc(100vh - 150px);
+    overflow-y: auto;
 
+    padding: 80px 20%;
 }
 
+    // MAIN WALL SEARCH
+
     #main-wall-search {
-        border: 1px solid red;
         display: grid;
-
         grid-template-columns: 1fr auto auto auto;
+        margin-bottom: 20px;
+        align-items: center;
     }
 
-    #mws-results {
-        @include robotoBold;
+        #mws-results {
+            @include mwsResults;
+
+            > span {
+                font-weight: 700;
+            }
+        }
+
+        .mws-results-class {
+            @include mwsResultsClass;
+            margin: 0px 10px;
+            background-color: $c-theme3;
+            padding: 8px 15px;
+            border-radius: 3px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+
+            > span {
+                @include mwsResultsSpan;
+                margin-left: 10px;
+            }
+        }
+
+    // MAIN WALL ITEMS
+
+    .main-wall-group {
+        margin: 15px 0px;
+        background-color: white;
+        padding: 20px 40px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.3);
     }
 
-    .mws-results {
-        @include robotoLight;
-        border-bottom: 3px solid $c-theme3;
-        margin: 0px 20px;
+    .mws-h3-header {
+        border-bottom: 1px solid $c-theme4;
+        padding-bottom: 10px;
+        @include mwsH3Header;
 
         > span {
-            @include robotoBold;
-            font-size: 14px;
-            margin-left: 10px;
-            font-weight: 700;
-            color: $c-orange;
+            margin-right: 10px;
+            color: $c-theme3;
         }
     }
+
+    .mws-item {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "h3Item pItem"
+            "h5Item pItem";
+
+        border-bottom: 1px solid $c-theme4;
+        padding: 15px 10px;
+        cursor: pointer;
+        transition: 0.5s;
+
+        > * {
+            transition: 0.2s;
+            cursor: pointer;
+        }
+    }
+
+    .mws-item:last-child {
+        border: none;
+    }
+
+    .mws-item:hover {
+        border-bottom-color: $c-g-4;
+
+        & > .mws-h3-item {
+            padding-left: 10px;
+        }
+
+        & > .mws-h5-item {
+            padding-left: 15px;
+        }
+    }
+
+        .mws-h3-item {
+            grid-area: h3Item;
+            @include mwsH3Item;
+        }
+
+        .mws-h5-item {
+            grid-area: h5Item;
+            @include mwsH5Item
+
+            > span {
+                padding-left: 2px;
+                padding-right: 10px;
+            }
+        }
+
+        .mws-p-item {
+            grid-area: pItem;
+            @include mwsPItem
+        }

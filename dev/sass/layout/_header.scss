@@ -15,7 +15,7 @@
 
     align-items: center;
 
-    border-bottom: 2px solid $c-theme3;
+    border-bottom: 2px solid $c-theme1;
 
 }
 
@@ -32,7 +32,7 @@
 
         align-items: center;
 
-        background-color: $c-theme3;
+        background-color: $c-theme1;
         padding: 10px 70px 10px 10px;
 
         color: white;
@@ -74,7 +74,7 @@
     #header-search {
         grid-area: headerSearch;
 
-        border-left: 3px solid $c-theme3;
+        border-left: 2px solid $c-theme1;
     }
 
         #header-logo-image {

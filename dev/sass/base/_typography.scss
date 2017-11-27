@@ -32,7 +32,7 @@
 @mixin headerNav {
     font-family: "MyriadProRegular";
     font-size: 16px;
-    color: $c-w-5;
+    color: $c-theme1;
     text-transform: uppercase;
 }
 
@@ -54,3 +54,52 @@
     font-family: "RobotoBold";
     font-size: 20px;
 }
+
+// MAIN - WALL
+
+@mixin mwsResults {
+    font-family: "RobotoLight";
+    font-size: 18px;
+    font-weight: 100;
+}
+
+@mixin mwsResultsClass {
+    font-family: "RobotoLight";
+    font-size: 14px;
+    font-weight: 400;
+    color: $c-w-5;
+}
+
+    @mixin mwsResultsSpan {
+        font-family: "RobotoBold";
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 700;
+        color: $c-w-5;
+    }
+
+
+@mixin mwsH3Header {
+    font-family: "MyriadProRegular";
+    font-size: 22px;
+    color: $c-theme2;
+}
+
+    @mixin mwsH3Item {
+        font-family: "RobotoLight";
+        font-size: 16px;
+        color: $c-theme2;
+    }
+
+    @mixin mwsH5Item {
+        font-family: "RobotoLight";
+        font-size: 12px;
+        color: $c-b-5;
+        font-weight: 100;
+    }
+
+    @mixin mwsPItem {
+        font-family: "RobotoLight";
+        font-size: 12px;
+        color: $c-b-4;
+    }
