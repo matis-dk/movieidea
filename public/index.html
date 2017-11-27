@@ -11,10 +11,101 @@
 
   <body>
 
-      <header>
-          <h1>My Boilerplate</h1>
-      </header>
-      <h3>Let's Do It!</h3>
+        <div id="site-container">
+            <header id="header">
+                <div id="header-container">
+                    <div id="header-logo">
+                        <img id="header-logo-image" src="assets/img/header-logo.svg" alt="MovieIdea image logo">
+                        <p id="header-logo-title">MovieIdea</p>
+                    </div>
+                    <nav id="header-navigation">
+                        <ul id="header-navigation-ul">
+                            <li class="header-navigation-elements">genre</li>
+                            <li class="header-navigation-elements">popular</li>
+                            <li class="header-navigation-elements">discover</li>
+                            <li class="header-navigation-elements">actors</li>
+                            <li class="header-navigation-elements">about</li>
+                        </ul>
+                    </nav>
+                    <div id="header-search">
+                        <img id="header-logo-image" src="assets/img/header-search.svg" alt="MovieIdea image search">
+                    </div>
+                </div>
+            </header>
+            <main id="main">
+
+                <section class="main-settings" id="main-home" data-active="false">
+
+                    <div id="main-home-search">
+                        <input id="mhs-input" type="text" placeholder="Search in our database"  spellcheck="false">
+                        <a id="mhs-search" class="mhs-icons-container" href="#"><span class="fa fa-search mhs-icons"></span></a>
+                        <a id="mhs-shuffle" class="mhs-icons-container" href="#"><span class="fa fa-random mhs-icons"></span></a>
+                    </div>
+
+                </section>
+
+                <section class="main-settings" id="main-wall" data-active="true">
+                    <div id="main-wall-search">
+                        <h4 id="mws-results">Search results for 'Sylvester Stallone'</h3>
+                        <h5 class="mws-results">Movies<span id="mws-results-movies">12</span></h5>
+                        <h5 class="mws-results">Persons<span id="mws-results-persons">32</span></h5>
+                        <h5 class="mws-results">TV<span id="mws-results-tv">7</span></h5>
+                    </div>
+                    <div id="main-wall-movie">
+                        <h3 class="mws-h3">Movie</h3>
+                    </div>
+                    <div id="main-wall-persons">
+                        <h3 class="mws-h3">Persons</h3>
+                    </div>
+                    <div id="main-wall-tv">
+                        <h3 class="mws-h3">TV</h3>
+                    </div>
+                </section>
+                <section class="main-settings" id="main-hits" data-active="false">
+
+                </section>
+                <section class="main-settings" id="main-genre" data-active="false">
+
+                </section>
+                <section class="main-settings" id="main-explore" data-active="false">
+
+                </section>
+                <section class="main-settings" id="main-about" data-active="false">
+
+                </section>
+            </main>
+
+            <footer id="footer">
+                <div id="footer-personel-footprint">
+                    <a href="https://github.com/matis-dk/Gallerysite">
+                        <svg version="1.1" id="footer-github" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        	 viewBox="0 0 50 50" width="50" height="50" xml:space="preserve">
+                             <path d="M28.8,34.4c4.8-0.6,9.9-2.3,9.9-10.5c0-2.3-0.8-4.3-2.2-5.7c0.2-0.6,0.9-2.7-0.3-5.6c0,0-1.7-0.6-5.8,2.2
+                        	c-1.7-0.5-3.6-0.8-5.4-0.8c-1.8,0-3.7,0.3-5.4,0.8c-4.1-2.7-5.9-2.2-5.9-2.2c-1.2,3-0.5,5.1-0.3,5.6c-1.3,1.5-2.2,3.4-2.2,5.7
+                        	c0,8.2,5.1,10,9.9,10.5c-0.6,0.5-1.2,1.5-1.4,2.9c-1.2,0.5-4.4,1.5-6.3-1.8c0,0-1.1-2-3.3-2.2c0,0-2.1,0-0.2,1.3
+                        	c0,0,1.4,0.7,2.4,3.1c0,0,1.3,4.1,7.3,2.8v3.7c0,0.6-0.4,1.2-1.5,1C9.7,42.5,3.6,34.4,3.6,25C3.6,13.1,13.2,3.5,25,3.5
+                        	c11.8,0,21.4,9.6,21.4,21.4c0,9.5-6.1,17.5-14.6,20.4c-1.1,0.2-1.5-0.4-1.5-1v-5.9C30.3,36.3,29.6,35,28.8,34.4L28.8,34.4z M49.5,25
+                        	c0-13.5-11-24.5-24.5-24.5C11.5,0.5,0.5,11.5,0.5,25c0,13.5,11,24.5,24.5,24.5C38.5,49.5,49.5,38.5,49.5,25z"/>
+                        </svg></a>
+                    <a href="https://www.themoviedb.org/">
+                        <svg id="footer-tmdb" height="50" width="50" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.34 222.81"><path class="cls-1" d="M226.85 208.25c14.6 0 24.48-9.88 24.48-24.48V24.49c0-14.6-9.88-24.48-24.48-24.48H24.48C9.88.01 0 9.89 0 24.49v198.33l12.56-14.56V24.49a11.94 11.94 0 0 1 11.92-11.92h202.37a11.94 11.94 0 0 1 11.92 11.92v159.28a11.94 11.94 0 0 1-11.92 11.92H43.11l-12.56 12.56-.08-.1"/><path d="M61.38       77.29h6.94V49.52h8.64v-6.89H52.74v6.89h8.64v27.77zM99.53 77.29h6.94V42.58h-6.94v13.88H89.14V42.58H82.2v34.71h6.94V63.4h10.39v13.89zM132.25 70.34h-13.02V63.4h11.12v-6.94h-11.12v-6.94h12.43v-6.94h-19.38v34.71h19.97v-6.95zM68.66 101.35L54.97 86.11h-2.23v35.24h7.04v-19.37l8.88 9.32 8.88-9.32-.04 19.37h7.03V86.11h-2.18l-13.69 15.24z"/><path class="cls-1" d="M108.04 86.07c-23.88 0-23.88 35.77 0 35.77s23.88-35.77 0-35.77zm0 28.59c-13.88 0-13.88-21.45 0-21.45s13.88 21.45 0   21.45zM165.37 86.65h6.94v34.7h-6.94zM185.07 114.41v-6.94h11.12v-6.94h-11.12v-6.94h12.43v-6.94h-19.37v34.7h19.96v-6.94h-13.02zM63.08 130.72H52.74v34.7h10.34c23.1 0 23.1-34.7 0-34.7zm0 27.76h-3.4v-20.82h3.4c13.49 0 13.49 20.82 0 20.82z"/><path class="cls-1" d="M106.29 148.04c2.18-1.5 3.11-4.22 3.2-6.84.15-6.12-3.69-10.53-9.85-10.53H85.9v34.75h13.74a10.32 10.32 0 0 0 10.24-10.44 8.43 8.43 0 0 0-3.59-6.94zm-13.4-10.44h6.17a3.51 3.51 0 0 1 0 7h-6.17v-7zm6.17   20.87h-6.17v-6.94h6.17a3.41 3.41 0 0 1 3.49 3.45 3.45 3.45 0 0 1-3.49 3.5zM144.01 105.38l-9.14-18.73h-8.01l16.37 35.43h1.56l16.36-35.43h-8.01l-9.13 18.73z"/>
+                        </svg></a>
+                </div>
+                <div id="footer-keyboard">
+                    <div id="footer-key-38" class="fa fa-arrow-up footer-keys" aria-hidden="true"></div>
+                    <div id="footer-key-37" class="fa fa-arrow-left footer-keys" aria-hidden="true"></div>
+                    <div id="footer-key-40" class="fa fa-arrow-down footer-keys" aria-hidden="true"></div>
+                    <div id="footer-key-39" class="fa fa-arrow-right footer-keys" aria-hidden="true"></div>
+                </div>
+            </footer>
+
+        </div>
+
+        <script type="text/javascript">
+
+
+        </script>
+
 
 
       <script src="assets/js/main.js"></script>

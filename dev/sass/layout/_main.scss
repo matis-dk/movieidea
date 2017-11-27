@@ -1,0 +1,47 @@
+/* ==================== MAIN ==================== */
+
+
+#main {
+    display: grid;
+
+    border: 1px solid red;
+}
+
+    .main-settings {
+        display: none;
+    }
+
+    .main-settings[data-active="true"] {
+            display: grid;
+            border: 1px solid blue;
+    }
+
+    #main-home {
+        width: 100%;
+        max-width: 1400px;
+
+        margin: 0px auto;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+
+// ==================== MAIN CONTENT  ==================== \\
+
+
+    // ==================== MAIN WALL  ==================== \\
+
+    #main-hits {
+        background-color: brown;
+    }
+    #main-genre {
+        background-color: purple;
+    }
+    #main-explore {
+        background-color: orange;
+    }
+
+    #main-about {
+        background-color: green;
+    }

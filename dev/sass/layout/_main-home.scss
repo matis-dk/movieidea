@@ -1,0 +1,42 @@
+// ==================== MAIN HOME  ==================== \\
+#main-home {
+    background-color: $c-g-2;
+}
+
+    #main-home-search {
+        display: grid;
+        grid-template-columns: 570px auto auto;
+        grid-template-rows: 1fr;
+
+    }
+
+        #mhs-input {
+            display: block;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid $c-g-5;
+            color: $c-orange;
+
+            @include mainInput;
+        }
+
+        #mhs-input::placeholder {
+            color: $c-g-3;
+        }
+
+            .mhs-icons-container {
+                display: grid;
+                align-self: center;
+            }
+
+            .mhs-icons {
+                color: white;
+                font-size: 50px !important;
+                margin-left: 15px;
+                transition: 0.3s;
+            }
+
+            .mhs-icons:hover {
+                color: $c-orange;
+
+            }

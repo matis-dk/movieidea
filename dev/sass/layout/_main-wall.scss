@@ -1,0 +1,37 @@
+// ==================== MAIN WALL  ==================== \\
+
+#main-wall {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto 1fr;
+
+    background-color: $c-g-2;
+    padding: 80px 20% 0px;
+
+}
+
+    #main-wall-search {
+        border: 1px solid red;
+        display: grid;
+
+        grid-template-columns: 1fr auto auto auto;
+    }
+
+    #mws-results {
+        @include robotoBold;
+    }
+
+    .mws-results {
+        @include robotoLight;
+        border-bottom: 3px solid $c-theme3;
+        margin: 0px 20px;
+
+        > span {
+            @include robotoBold;
+            font-size: 14px;
+            margin-left: 10px;
+            font-weight: 700;
+            color: $c-orange;
+        }
+    }

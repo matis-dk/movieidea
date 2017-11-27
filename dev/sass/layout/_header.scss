@@ -1,1 +1,82 @@
 /* ==================== HEADER ==================== */
+
+
+#header-container {
+
+    max-width: 1400px;
+    width: 100%;
+    height: 150px;
+
+    margin: 0px auto;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "headerLogo . headerNav headerSearch";
+
+    align-items: center;
+
+    border-bottom: 2px solid $c-theme3;
+
+}
+
+
+// ==================== HEADER CONTENT  ==================== \\
+
+    // ==================== HEADER LOGO  ==================== \\
+
+    #header-logo {
+        grid-area: headerLogo;
+
+        display: grid;
+        grid-template-columns: auto auto;
+
+        align-items: center;
+
+        background-color: $c-theme3;
+        padding: 10px 70px 10px 10px;
+
+        color: white;
+    }
+
+        #header-logo-image {
+            width: 60px;
+        }
+
+        #header-logo-title {
+            @include headerLogoTitle;
+        }
+
+    // ==================== HEADER NAVIGATION  ==================== \\
+
+    #header-navigation {
+        grid-area: headerNav;
+    }
+
+        #header-navigation-ul {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+
+            margin-right: 20px;
+        }
+
+            .header-navigation-elements {
+                height: 150px;
+                display: grid;
+                align-items: center;
+
+                @include headerNav;
+                padding: 0px 20px;
+            }
+
+
+    // ==================== HEADER SEARCH  ==================== \\
+
+    #header-search {
+        grid-area: headerSearch;
+
+        border-left: 3px solid $c-theme3;
+    }
+
+        #header-logo-image {
+            padding: 10px 15px;
+        }

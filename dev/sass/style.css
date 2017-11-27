@@ -4,12 +4,21 @@
    \\--------------------------------------------------//
 */
 /* ==================== COLORS ==================== */
-/* ==================== TYPOGRAPHY ==================== */
-/* ==================== RESET ==================== */
-html, head, body, li, ul, figure, p {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+/* ==================== TYPEGRAPHY FONTLOAD ==================== */
+@font-face {
+  font-family: 'MyriadProRegular';
+  src: url("../fonts/Myriad-Pro-Regular.ttf") format("truetype"); }
 
+@font-face {
+  font-family: 'RobotoLight';
+  src: url("../fonts/Roboto-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'RobotoBold';
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype"); }
+
+/* ==================== Mixins'S ==================== */
+/* ==================== RESET ==================== */
 ol, ul {
   list-style: none; }
 
@@ -29,38 +38,239 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
 
 /* ==================== MEDIA ==================== */
 html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   padding: 0px;
   margin: 0px; }
 
-body {
-  font-family: sans-serif;
-  font-weight: normal;
-  color: #3a3a3a;
-  height: 100vh; }
-
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #dcdcdc;
-  height: 100px;
-  border-bottom: 3px solid #1abc9c; }
-
-h1 {
-  -ms-flex-item-align: center;
-      align-self: center;
-  margin-left: 25px;
-  font-size: 46px;
-  text-transform: uppercase;
-  color: #1abc9c; }
-
-h3 {
-  margin-top: 20px;
-  margin-left: 25px; }
+#site-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  background-color: #bdbdbd; }
 
 /* ==================== HEADER ==================== */
+#header-container {
+  max-width: 1400px;
+  width: 100%;
+  height: 150px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-areas: "headerLogo . headerNav headerSearch";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid #0a1829; }
+
+#header-logo {
+  grid-area: headerLogo;
+  display: grid;
+  grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0a1829;
+  padding: 10px 70px 10px 10px;
+  color: white; }
+
+#header-logo-image {
+  width: 60px; }
+
+#header-logo-title {
+  font-family: "MyriadProRegular";
+  font-size: 20px;
+  color: #f2f2f2; }
+
+#header-navigation {
+  grid-area: headerNav; }
+
+#header-navigation-ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  margin-right: 20px; }
+
+.header-navigation-elements {
+  height: 150px;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "MyriadProRegular";
+  font-size: 16px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  padding: 0px 20px; }
+
+#header-search {
+  grid-area: headerSearch;
+  border-left: 3px solid #0a1829; }
+
+#header-logo-image {
+  padding: 10px 15px; }
+
 /* ==================== FOOTER ==================== */
+#footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "personel . keyboard";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 160px;
+  width: 100vw;
+  padding: 0px 60px;
+  position: absolute;
+  bottom: 0px; }
+
+#footer-personel-footprint {
+  grid-area: personel; }
+
+#footer-github, #footer-tmdb {
+  fill: #0a1829;
+  margin: 0px 10px; }
+
+#footer-keyboard {
+  grid-area: keyboard;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". key38 ." "key37 key40 key39"; }
+
+#footer-key-38 {
+  grid-area: key38; }
+
+#footer-key-37 {
+  grid-area: key37; }
+
+#footer-key-40 {
+  grid-area: key40; }
+
+#footer-key-39 {
+  grid-area: key39; }
+
+.footer-keys {
+  color: #ecf0f1;
+  font-size: 10px !important;
+  font-weight: 100;
+  border: 1px solid #33606b;
+  padding: 14px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0.1em 0 0.05em #33606b;
+          box-shadow: 0 0.1em 0 0.05em #33606b;
+  margin: 0px 2px 6px;
+  background-color: #0a1829;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+
+/* ==================== MAIN ==================== */
+#main {
+  display: grid;
+  border: 1px solid red; }
+
+.main-settings {
+  display: none; }
+
+.main-settings[data-active="true"] {
+  display: grid;
+  border: 1px solid blue; }
+
+#main-home {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0px auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+#main-hits {
+  background-color: brown; }
+
+#main-genre {
+  background-color: purple; }
+
+#main-explore {
+  background-color: orange; }
+
+#main-about {
+  background-color: green; }
+
+#main-home {
+  background-color: #dcdcdc; }
+
+#main-home-search {
+  display: grid;
+  grid-template-columns: 570px auto auto;
+  grid-template-rows: 1fr; }
+
+#mhs-input {
+  display: block;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #8a8a8a;
+  color: #f39c12;
+  font-family: "RobotoLight";
+  font-size: 56px; }
+
+#mhs-input::-webkit-input-placeholder {
+  color: #bdbdbd; }
+
+#mhs-input:-ms-input-placeholder {
+  color: #bdbdbd; }
+
+#mhs-input::-ms-input-placeholder {
+  color: #bdbdbd; }
+
+#mhs-input::placeholder {
+  color: #bdbdbd; }
+
+.mhs-icons-container {
+  display: grid;
+  align-self: center; }
+
+.mhs-icons {
+  color: white;
+  font-size: 50px !important;
+  margin-left: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.mhs-icons:hover {
+  color: #f39c12; }
+
+#main-wall {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto 1fr;
+  background-color: #dcdcdc;
+  padding: 80px 20% 0px; }
+
+#main-wall-search {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto; }
+
+#mws-results {
+  font-family: "RobotoBold";
+  font-size: 20px; }
+
+.mws-results {
+  font-family: "RobotoLight";
+  font-size: 14px;
+  border-bottom: 3px solid #0a1829;
+  margin: 0px 20px; }
+  .mws-results > span {
+    font-family: "RobotoBold";
+    font-size: 20px;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 700;
+    color: #f39c12; }

@@ -1,14 +1,56 @@
-/* ==================== TYPOGRAPHY ==================== */
+/* ==================== TYPEGRAPHY FONTLOAD ==================== */
 
 
 
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('../fonts/Myriad-Pro-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype')
+}
 
 
-// FONT SIZES
-$font-size-small	       :12px;
-$font-size-regular         :16px;
-$font-size-large	       :24px;
-$font-size-x-large         :32px;
-$font-size-xx-large	       :48px;
-$font-size-xxx-large	   :64px;
-$font-size-xxxx-large	   :96px;
+/* ==================== Mixins'S ==================== */
+
+
+// HEADER
+
+@mixin headerLogoTitle {
+    font-family: "MyriadProRegular";
+    font-size: 20px;
+    color: $c-w-5;
+}
+
+@mixin headerNav {
+    font-family: "MyriadProRegular";
+    font-size: 16px;
+    color: $c-w-5;
+    text-transform: uppercase;
+}
+
+
+// MAIN - HOME
+
+@mixin mainInput {
+    font-family: "RobotoLight";
+    font-size: 56px;
+}
+
+
+@mixin robotoLight {
+    font-family: "RobotoLight";
+    font-size: 14px;
+}
+
+@mixin robotoBold {
+    font-family: "RobotoBold";
+    font-size: 20px;
+}

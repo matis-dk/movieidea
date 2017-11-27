@@ -16,6 +16,8 @@
 @import 'components/button';
 @import 'components/input';
 @import 'components/media';
+@import 'components/slider';
+
 
 // =================== HELPERS FOLDER =================== \\
 @import 'helpers/placeholders';
@@ -29,7 +31,9 @@
 // =================== LAYOUT FOLDER =================== \\
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/section-main';
+@import 'layout/main';
+@import 'layout/main-home';
+@import 'layout/main-wall';
 
 
 
