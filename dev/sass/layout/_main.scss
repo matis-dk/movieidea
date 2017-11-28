@@ -3,15 +3,16 @@
 
 #main {
     display: grid;
+    background-color: $c-w-5;
+
 }
 
     .main-settings {
         display: none;
-        background-color: $c-w-5;
     }
 
     .main-settings[data-active="true"] {
-            display: grid;
+        display: grid;
     }
 
     #main-home {
@@ -19,10 +20,39 @@
         max-width: 1400px;
 
         margin: 0px auto;
+        padding: 0px 50px;
 
         justify-content: center;
         align-items: center;
     }
+
+    #main-wall {
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto 1fr;
+
+        overflow-y: auto;
+        background-color: $c-w-5;
+
+        padding: 40px 20%;
+    }
+
+    #main-actors {
+        grid-template-columns: 1fr 1.75fr 1.75fr;
+        grid-template-rows: 350px 1fr;
+        grid-template-areas:
+            "profile    description filmography"
+            "knownfor   knownfor     filmography";
+            grid-gap: 30px;
+
+        width: 100%;
+        max-width: 1400px;
+        margin: 0px auto;
+
+        padding: 50px;
+    }
+
+
 
 
 // ==================== MAIN CONTENT  ==================== \\
@@ -30,9 +60,10 @@
 
     // ==================== MAIN WALL  ==================== \\
 
-    #main-hits {
+    #main-gallery {
         background-color: brown;
     }
+
     #main-genre {
         background-color: purple;
     }

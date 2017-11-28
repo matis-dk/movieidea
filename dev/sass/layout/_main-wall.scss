@@ -1,15 +1,5 @@
 // ==================== MAIN WALL  ==================== \\
 
-#main-wall {
-
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto 1fr;
-
-    height: calc(100vh - 150px);
-    overflow-y: auto;
-
-    padding: 80px 20%;
-}
 
     // MAIN WALL SEARCH
 
@@ -28,7 +18,7 @@
             }
         }
 
-        .mws-results-class {
+        .spanTag {
             @include mwsResultsClass;
             margin: 0px 10px;
             background-color: $c-theme3;
@@ -46,7 +36,7 @@
 
     .main-wall-group {
         margin: 15px 0px;
-        background-color: white;
+        background-color: $c-w-2;
         padding: 20px 40px;
         box-shadow: 0 3px 15px rgba(0,0,0,0.3);
     }

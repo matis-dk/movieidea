@@ -5,12 +5,14 @@ function fetchTMDb (con) {
 
     /*
     let con = {
-        task: null,
+        task: "multisearch",
         movieID: null,
         pageNr: 1,
         genreID: null,
-        query: null
+        query: "sylvester"
     }
+
+    fetchTMDb(con)
     */
 
     const APIkey        = "c6aea5536b7de40d0294eb356df3c3df";
@@ -31,8 +33,27 @@ function fetchTMDb (con) {
             .then(response => {return response.json()})
             .catch(error   => console.log("TMDb data request failed => genre"))
     }
-}
 
+    if (con.task == "actor") {
+        console.log("called")
+        const genreURL = `https://api.themoviedb.org/3/person/${con.personID}?api_key=${APIkey}&language=en-US`;
+        return fetch(genreURL)
+            .then(handleErrors)
+            .then(response => {return response.json()})
+            .then(response => console.log(response))
+            .catch(error   => console.log("TMDb data request failed => genre"))
+    }
+
+    if (con.task == "actorcredits") {
+        console.log("called")
+        const genreURL = `https://api.themoviedb.org/3/person/${con.personID}/movie_credits?api_key=${APIkey}&language=en-US`;
+        return fetch(genreURL)
+            .then(handleErrors)
+            .then(response => {return response.json()})
+            .then(response => console.log(response))
+            .catch(error   => console.log("TMDb data request failed => genre"))
+    }
+}
 
 /*
 function loadMovies (task, genreID = false) {

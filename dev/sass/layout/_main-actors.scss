@@ -1,0 +1,119 @@
+// ==================== MAIN ACTORS  ==================== \\
+
+
+    // MAIN ACTORS SEARCH
+
+    #main-actors {
+        > * {
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            padding: 20px;
+            padding-bottom: 30px;
+
+            background-color: $c-w-2;
+        }
+    }
+
+        #main-actors-backdrop {
+            grid-area: backdrop;
+            overflow: hidden;
+
+        }
+
+
+
+        #main-actors-profile {
+            padding: 0px;
+            grid-area: profile;
+            display: grid;
+
+            background-image: url('https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ3ODE2NTMxMV5BMl5BanBnXkFtZTgwOTIzOTQzMjE@._V1_UY317_CR21,0,214,317_AL_.jpg');
+            background-size: cover;
+        }
+
+        #main-actors-profile::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#0a1829, 0.2);
+            background-image: linear-gradient(0deg, rgba(#0a1829, 0.98) 20%, rgba(#33606b, 0.5) 90%);
+
+            position: relative;
+        }
+
+            #map-name {
+                color: white;
+                position: absolute;
+                z-index: 2;
+
+                transform: translateY(305px) translateX(20px);
+                @include mapName;
+            }
+
+
+        #main-actors-description {
+            grid-area: description;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto 1fr;
+        }
+
+            .mad-biography {
+                border-bottom: 1px solid $c-theme4;
+                padding-bottom: 10px;
+                @include mwsH3Header;
+
+                > span {
+                    padding-right: 10px;
+                }
+            }
+
+            #mad-biography {
+                margin: 20px 0px;
+                font-size: 14px;
+                @include mwsPItem;
+            }
+
+            .mad-personel {
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                grid-template-rows: auto;
+            }
+
+                .mad-personel-text, .mad-personel-content {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+                    align-items: center;
+                    > span {
+                        margin: 5px 0px;
+                    }
+                }
+
+                .mad-personel-text > span {
+                    @include mapPersonel;
+
+                    > span {
+                        width: 25px;
+                    }
+                }
+
+                .mad-personel-content > span {
+                    @include mapPersonelContent;
+                }
+
+
+
+            #mad-stats {
+                margin-top: 20px;
+            }
+
+
+        #main-actors-filmography {
+            grid-area: filmography;
+        }
+
+        #main-actors-knownfor {
+            grid-area: knownfor;
+        }
