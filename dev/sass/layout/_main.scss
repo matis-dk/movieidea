@@ -8,11 +8,11 @@
 }
 
     .main-settings {
-        display: none;
+        display: none !important;
     }
 
     .main-settings[data-active="true"] {
-        display: grid;
+        display: grid !important;
     }
 
     #main-home {
@@ -42,7 +42,7 @@
         grid-template-rows: 350px 1fr;
         grid-template-areas:
             "profile    description filmography"
-            "knownfor   knownfor     filmography";
+            "trademark   trademark     filmography";
             grid-gap: 30px;
 
         width: 100%;
@@ -52,6 +52,23 @@
         padding: 50px;
     }
 
+    #main-genre {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+
+    #main-gallery {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0px auto;
+
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
 
 
 
@@ -60,13 +77,6 @@
 
     // ==================== MAIN WALL  ==================== \\
 
-    #main-gallery {
-        background-color: brown;
-    }
-
-    #main-genre {
-        background-color: purple;
-    }
     #main-explore {
         background-color: orange;
     }

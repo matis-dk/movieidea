@@ -109,7 +109,7 @@
 
     @mixin mapName {
         font-family: "RobotoBold";
-        font-size: 24px;
+        font-size: 20px;
         color: $c-w-5;
     }
 
@@ -124,3 +124,97 @@
         font-size: 12px;
         color: $c-b-4;
     }
+
+    @mixin madContent {
+        font-family: "RobotoBold";
+        font-size: 14px;
+        color: $c-theme2;
+    }
+
+    @mixin matItem {
+        font-family: "RobotoBold";
+        font-size: 14px;
+        color: $c-theme2;
+    }
+
+
+
+// MAIN - GENRE
+
+    @mixin mgdGenre {
+        font-family: "MyriadProRegular";
+        font-size: 22px;
+        color: $c-theme2;
+    }
+
+    @mixin mgdText {
+
+    }
+
+
+    @mixin mainGenre {
+        font-family: "MyriadProRegular";
+        font-size: 14px;
+        color: $c-theme2;
+        text-transform: capitalize;
+    }
+
+
+// MAIN - GALLERY
+
+    @mixin mgMovieTitle {
+        font-family: "RobotoBold";
+        font-size: 14px;
+        color: $c-theme2;
+        font-weight: 400;
+    }
+
+    @mixin mgMovieYear {
+        font-family: "RobotoLight";
+        font-size: 14px;
+        color: $c-b-5;
+        font-weight: 400;
+    }
+
+
+
+
+
+/* Icon glyph*/
+    @font-face {
+        font-family: 'iconsprite';
+        src: url('../fonts/iconsprite/iconsprite.eot');
+        src: url('../fonts/iconsprite/iconsprite.eot?#iefix') format('embedded-opentype'),
+             url('../fonts/iconsprite/iconsprite.woff') format('woff'),
+             url('../fonts/iconsprite/iconsprite.ttf') format('truetype'),
+             url('../fonts/iconsprite/iconsprite.svg#iconsprite') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    [class*='icon-']:before{
+        display: inline-block;
+       font-family: 'iconsprite';
+       font-style: normal;
+       font-weight: normal;
+       line-height: 1;
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale
+    }
+    .icon-genre-horror:before{content:'\0041';}
+    .icon-genre-musical:before{content:'\0042';}
+    .icon-genre-mystery:before{content:'\0043';}
+    .icon-genre-romance:before{content:'\0044';}
+    .icon-genre-scifi:before{content:'\0045';}
+    .icon-genre-thriller:before{content:'\0046';}
+    .icon-genre-war:before{content:'\0047';}
+    .icon-genre-western:before{content:'\0048';}
+    .icon-genre-action:before{content:'\0049';}
+    .icon-genre-adventure:before{content:'\004a';}
+    .icon-genre-animation:before{content:'\004b';}
+    .icon-genre-comedy:before{content:'\004c';}
+    .icon-genre-crime:before{content:'\004d';}
+    .icon-genre-documentary:before{content:'\004e';}
+    .icon-genre-drama:before{content:'\004f';}
+    .icon-genre-family:before{content:'\0050';}
+    .icon-genre-fantasy:before{content:'\0051';}
+    .icon-genre-history:before{content:'\0052';}

@@ -18,6 +18,77 @@
   src: url("../fonts/Roboto-Bold.ttf") format("truetype"); }
 
 /* ==================== Mixins'S ==================== */
+/* Icon glyph*/
+@font-face {
+  font-family: 'iconsprite';
+  src: url("../fonts/iconsprite/iconsprite.eot");
+  src: url("../fonts/iconsprite/iconsprite.eot?#iefix") format("embedded-opentype"), url("../fonts/iconsprite/iconsprite.woff") format("woff"), url("../fonts/iconsprite/iconsprite.ttf") format("truetype"), url("../fonts/iconsprite/iconsprite.svg#iconsprite") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class*='icon-']:before {
+  display: inline-block;
+  font-family: 'iconsprite';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-genre-horror:before {
+  content: '\0041'; }
+
+.icon-genre-musical:before {
+  content: '\0042'; }
+
+.icon-genre-mystery:before {
+  content: '\0043'; }
+
+.icon-genre-romance:before {
+  content: '\0044'; }
+
+.icon-genre-scifi:before {
+  content: '\0045'; }
+
+.icon-genre-thriller:before {
+  content: '\0046'; }
+
+.icon-genre-war:before {
+  content: '\0047'; }
+
+.icon-genre-western:before {
+  content: '\0048'; }
+
+.icon-genre-action:before {
+  content: '\0049'; }
+
+.icon-genre-adventure:before {
+  content: '\004a'; }
+
+.icon-genre-animation:before {
+  content: '\004b'; }
+
+.icon-genre-comedy:before {
+  content: '\004c'; }
+
+.icon-genre-crime:before {
+  content: '\004d'; }
+
+.icon-genre-documentary:before {
+  content: '\004e'; }
+
+.icon-genre-drama:before {
+  content: '\004f'; }
+
+.icon-genre-family:before {
+  content: '\0050'; }
+
+.icon-genre-fantasy:before {
+  content: '\0051'; }
+
+.icon-genre-history:before {
+  content: '\0052'; }
+
 /* ==================== RESET ==================== */
 ol, ul {
   list-style: none; }
@@ -67,7 +138,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 2px solid #0A1829;
   position: relative;
   z-index: 2; }
 
@@ -177,10 +247,10 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   background-color: #f2f2f2; }
 
 .main-settings {
-  display: none; }
+  display: none !important; }
 
 .main-settings[data-active="true"] {
-  display: grid; }
+  display: grid !important; }
 
 #main-home {
   width: 100%;
@@ -204,18 +274,26 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #main-actors {
   grid-template-columns: 1fr 1.75fr 1.75fr;
   grid-template-rows: 350px 1fr;
-  grid-template-areas: "profile    description filmography" "knownfor   knownfor     filmography";
+  grid-template-areas: "profile    description filmography" "trademark   trademark     filmography";
   grid-gap: 30px;
   width: 100%;
   max-width: 1400px;
   margin: 0px auto;
   padding: 50px; }
 
-#main-gallery {
-  background-color: brown; }
-
 #main-genre {
-  background-color: purple; }
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-rows: auto 1fr; }
+
+#main-gallery {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-rows: auto 1fr; }
 
 #main-explore {
   background-color: orange; }
@@ -374,8 +452,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   color: #2d2d2d; }
 
 #main-actors > * {
-  -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: rgba(73, 89, 106, 0.1) 0px 0px 16px 0px;
+          box-shadow: rgba(73, 89, 106, 0.1) 0px 0px 16px 0px;
   padding: 20px;
   padding-bottom: 30px;
   background-color: #fcfcfc; }
@@ -388,7 +466,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   padding: 0px;
   grid-area: profile;
   display: grid;
-  background-image: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ3ODE2NTMxMV5BMl5BanBnXkFtZTgwOTIzOTQzMjE@._V1_UY317_CR21,0,214,317_AL_.jpg");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sylvester_Stallone.jpg/170px-Sylvester_Stallone.jpg");
   background-size: cover; }
 
 #main-actors-profile::after {
@@ -396,8 +474,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   background-color: rgba(10, 24, 41, 0.2);
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(10, 24, 41, 0.98)), color-stop(90%, rgba(51, 96, 107, 0.5)));
-  background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.98) 20%, rgba(51, 96, 107, 0.5) 90%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(10, 24, 41, 0.9)), color-stop(90%, rgba(51, 96, 107, 0.5)));
+  background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.9) 20%, rgba(51, 96, 107, 0.5) 90%);
   position: relative; }
 
 #map-name {
@@ -407,14 +485,14 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-transform: translateY(305px) translateX(20px);
           transform: translateY(305px) translateX(20px);
   font-family: "RobotoBold";
-  font-size: 24px;
+  font-size: 20px;
   color: #f2f2f2; }
 
 #main-actors-description {
   grid-area: description;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto 1fr; }
+  grid-template-rows: auto 1fr auto; }
 
 .mad-biography {
   border-bottom: 1px solid #DAEBF2;
@@ -440,7 +518,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 .mad-personel-text, .mad-personel-content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
@@ -465,5 +543,223 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #main-actors-filmography {
   grid-area: filmography; }
 
-#main-actors-knownfor {
-  grid-area: knownfor; }
+#mad-timeline {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px; }
+  #mad-timeline > li {
+    cursor: pointer; }
+
+.mad-content, .mad-empty {
+  font-family: "RobotoBold";
+  font-size: 14px;
+  color: #012C40;
+  padding: 15px 15px 15px 100px;
+  position: relative; }
+
+.mad-content::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid #0A1829;
+  top: 0px;
+  left: 80px; }
+
+.mad-content::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 10px;
+  top: 50%;
+  left: 80px;
+  border-top: 2px solid #0A1829;
+  border-top-style: dotted; }
+
+.mad-year {
+  font-family: "RobotoBold";
+  font-size: 14px;
+  color: #012C40;
+  padding: 15px 0px 15px 25px;
+  position: relative;
+  width: 82px;
+  background-color: #0A1829;
+  color: white;
+  margin: 20px 0px; }
+
+.mad-year::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  border-right: 2px solid #0A1829;
+  content: " ";
+  height: calc(100% + 40px);
+  top: -20px;
+  right: 0px; }
+
+.mad-end, .mad-start {
+  content: " ";
+  position: relative;
+  width: 20px;
+  margin-left: 73px;
+  top: -3px;
+  font-size: 18px;
+  color: #0A1829;
+  z-index: 0;
+  cursor: default; }
+
+.mad-start {
+  font-size: 20px !important;
+  margin-left: 72px;
+  top: 4px; }
+
+.mad-empty {
+  cursor: default !important; }
+
+.mad-empty::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid #0A1829;
+  top: 0px;
+  left: 80px; }
+
+#main-actors-trademark {
+  grid-area: trademark; }
+
+#mat-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  padding-top: 50px; }
+
+.mat-item {
+  background-size: cover;
+  margin: 0px 10px 80px 10px;
+  width: 150px;
+  height: 225px;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.45);
+          box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 3px; }
+
+.mat-item > span {
+  font-family: "RobotoBold";
+  font-size: 14px;
+  color: #012C40;
+  position: absolute;
+  bottom: -40px;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.main-genre-description {
+  margin-top: 30px; }
+  .main-genre-description .mgd-genre {
+    border-bottom: 1px solid #DAEBF2;
+    padding-bottom: 10px;
+    font-family: "MyriadProRegular";
+    font-size: 22px;
+    color: #012C40; }
+    .main-genre-description .mgd-genre > span {
+      padding-right: 10px; }
+
+#main-genre-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px; }
+  #main-genre-container > li {
+    justify-self: center;
+    background-color: rgba(8, 19, 32, 0.95);
+    border-radius: 6px;
+    width: 240px;
+    height: 135px;
+    margin: 20px 15px;
+    display: grid;
+    grid-template-rows: 1fr 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: #49596a 0px 0px 16px 0px;
+            box-shadow: #49596a 0px 0px 16px 0px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+    #main-genre-container > li > div {
+      margin: 0px auto;
+      color: #f2f2f2;
+      font-size: 40px; }
+    #main-genre-container > li > span {
+      font-family: "MyriadProRegular";
+      font-size: 14px;
+      color: #012C40;
+      text-transform: capitalize;
+      color: #f2f2f2;
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+      text-align: center; }
+
+#main-gallery > * {
+  border: 1px solid #8a8a8a;
+  margin-bottom: 40px; }
+
+#mg-movie-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0px 20px; }
+
+.mg-movie-item {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 160px;
+  height: 300px;
+  border: 1px solid #8a8a8a;
+  margin: 10px 10px 60px; }
+
+.mg-movie-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 240px;
+  width: 100%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 15px 0px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 15px 0px; }
+
+.mg-movie-title {
+  font-family: "RobotoBold";
+  font-size: 14px;
+  color: #012C40;
+  font-weight: 400;
+  padding-top: 10px; }
+
+.mg-movie-year {
+  font-family: "RobotoLight";
+  font-size: 14px;
+  color: #3a3a3a;
+  font-weight: 400;
+  padding-bottom: 10px; }

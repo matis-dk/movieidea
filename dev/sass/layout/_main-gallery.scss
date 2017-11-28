@@ -1,0 +1,51 @@
+// ==================== MAIN GALLERY  ==================== \\
+
+
+    // MAIN GALLERY
+
+#main-gallery {
+
+    > * {
+        border: 1px solid $c-g-5;
+        margin-bottom: 40px;
+    }
+}
+
+    #mg-text {
+
+    }
+
+    #mg-movie-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 0px 20px;
+    }
+
+        .mg-movie-item {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+
+            width: 160px;
+            height: 300px;
+            border: 1px solid $c-g-5;
+            margin: 10px 10px 60px;
+        }
+
+            .mg-movie-image {
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 240px;
+                width: 100%;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 15px 0px;
+            }
+
+            .mg-movie-title {
+                @include mgMovieTitle;
+                padding-top: 10px;
+            }
+
+            .mg-movie-year {
+                @include mgMovieYear;
+                padding-bottom: 10px;
+            }
