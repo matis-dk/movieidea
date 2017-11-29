@@ -763,3 +763,82 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   color: #3a3a3a;
   font-weight: 400;
   padding-bottom: 10px; }
+
+#overlay-movies {
+  position: fixed;
+  width: 100vw;
+  height: calc(100vh - 150px);
+  bottom: 0px;
+  background-color: rgba(20, 20, 20, 0.95);
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white; }
+
+#overlay-movies-container {
+  display: grid;
+  grid-template-columns: 30vh 1fr;
+  grid-template-rows: auto;
+  max-width: calc(55vh * 1.5);
+  width: 100%; }
+  #overlay-movies-container > * {
+    border: 1px solid blue; }
+
+#om-information {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 2fr 1fr;
+  height: 45vh; }
+  #om-information > * {
+    border: 1px solid orange; }
+    #om-information > * > * {
+      border: 1px solid red; }
+
+.om-settings {
+  padding: 10px; }
+
+.om-header-style0 {
+  display: grid; }
+
+.om-header-style1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr; }
+  .om-header-style1 > ul {
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center; }
+
+.om-header-style2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.om-header-style3 {
+  display: grid; }
+
+.om-header-style4 {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .om-header-style4 > ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
