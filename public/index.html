@@ -176,10 +176,35 @@
                         <li data-id="37">   <div class="icon-genre-western"></div>      <span>western</span></li>
                     </ul>
                 </section>
-
                 <section class="main-settings" id="main-gallery" data-active="true">
-                        <div id="mg-text">
-                            TEXT
+                        <div id="mg-arranger-container">
+                            <div class="mg-container">
+                                <h3 class="mg-header"><span class="fa fa-filter"></span>FILTERING</h3>
+                                <ul id="mg-filtering">
+                                    <li id="mg-genre">GENRE</li>
+                                    <li id="mg-year">YEAR</li>
+                                    <li id="mg-rating">RATING</li>
+                                    <li id="mg-runtime">
+                                        <h5>Runtime</h5>
+                                        <div class="mg-slider-container">
+                                            <div class="range-slider">
+                                              <input id="slider1" class="range-handle" type="range" multiple value="400" min="0" max="500" oninput="Outputslider1.value = slider1.value">
+                                              <input id="slider2" class="range-handle" type="range" multiple value="200" min="0" max="500" oninput="Outputslider2.value = slider2.value">
+                                              <input id="slider3" class="range-handle" type="range"  min="0" max="500">
+                                              <output name="sliderOutput1" id="Outputslider1">1</output>
+                                              <output name="sliderOutput2" id="Outputslider2">2</output>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mg-container">
+                                <h3 class="mg-header"><span class="fa fa-sort-amount-asc"></span>SORTING</h3>
+                                <ul id="mg-sorting">
+                                    <li id="mg-sortby">SORTBY: genre, year, rating, runtime</li>
+                                    <li id="mg-direction">ASCENDING or DESCENDING</li>
+                                </ul>
+                            </div>
                         </div>
                         <ul id="mg-movie-container" tabindex="0">
                             <li class="mg-movie-item">
@@ -287,24 +312,36 @@
                         </ul>
                 </section>
 
+                <section class="main-settings" id="main-discover" data-active="false">
 
-                <section class="main-settings" id="main-explore" data-active="false">
+                    asdsa
+
 
                 </section>
+
                 <section class="main-settings" id="main-about" data-active="false">
 
                 </section>
             </main>
             <div id="overlay">
-                <section class="overlay-settings" id="overlay-movies">
+                <section class="overlay-settings" id="overlay-movies" data-active="false">
                     <div id="overlay-movies-container">
-                        <div id="om-poster">
-                            POSTER
+                        <div id="om-poster" style="background-image: url('http://cafmp.com/wp-content/uploads/2012/11/Avatar-608x900.jpg')">
+                            <div id="om-poster-outer">
+                                <div id="om-poster-inner" style="background-image: url('http://cafmp.com/wp-content/uploads/2012/11/Avatar-608x900.jpg')">
+                                    Poster
+                                </div>
+                                <div id="om-poster-filter">
+                                    <i id="om-trailer-play" class="fa fa-youtube-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
                         </div>
                         <ul id="om-information">
-                            <li class="om-settings om-header-style0" id="om-title">TITLE</li>
+                            <li class="om-settings om-header-style0 om-header-xl">
+                                <p id="om-title">IT - Yours fears are unleashedYours fears are unleashedYours fears are unleashed</p>
+                            </li>
                             <ul class="om-settings om-header-style1">
-                                <li class="om-header-l" id="om-year">YEAR</li>
+                                <li class="om-header-l" id="om-year">2017</li>
                                 <ul>
                                     <li class="om-header-m-upper" id="om-duration">109</li>
                                     <li class="om-header-m-lower" >minutes</li>
@@ -320,8 +357,8 @@
                                     <li class="om-header-s-lower">Dean Devlin</li>
                                 </ul>
                                 <ul>
-                                    <li class="om-header-s-upper">Country</li>
-                                    <li class="om-header-s-lower">English</li>
+                                    <li class="om-header-s-upper">Genre</li>
+                                    <li class="om-header-s-lower">Horror, action, drama</li>
                                 </ul>
                             </ul>
                             <ul class="om-settings om-header-style2">
@@ -336,22 +373,26 @@
                             </ul>
                             <ul class="om-settings om-header-style3">
                                 <ul>
+                                    <li class="om-header-s-upper">Actors</li>
+                                    <li class="om-header-s-lower">Sylvester Stallone, Emma Watson, Anna Hathaway, Tom Hardy, Denzel Washington</li>
+                                </ul>
+                            </ul>
+                            <ul class="om-settings om-header-style3">
+                                <ul>
                                     <li class="om-header-s-upper">Description</li>
-                                    <li class="om-header-s-lower">Gerard Butler playing a stubborn but charming satelite designer who when the worlds.</li>
+                                    <li class="om-header-s-lower">Gerard Butler playing a stubborn but charming satelite designer who when the worlds.Gerard Butler playing a stubborn but charming satelite designer who when the worlds.Gerard Butler playing a stubborn but charming satelite designer who when the worlds.</li>
                                 </ul>
                             </ul>
                             <ul class="om-settings om-header-style4">
-                                <ul>
-                                    <li class="om-genreicons">icon1</li>
-                                    <li class="om-genreicons">icon2</li>
-                                    <li class="om-genreicons">icon3</li>
-                                </ul>
-                                <li>Trailer</li>
+                                <li class="om-header-actors" style="background-image: url('https://www.thextraordinary.org/images/authors/size-256/szvucy37wvwlvijgo5zp80lzy.jpg')"></li>
+                                <li class="om-header-actors" style="background-image: url('https://78.media.tumblr.com/avatar_595f4da6beef_128.png')"></li>
+                                <li class="om-header-actors" style="background-image: url('http://r.fod4.com/c=sq/s=w50,pd1/o=80/http://p.fod4.com/p/channels/szqxk/profile/Bwcsu1YQ9G15niiGsKmi_anne-hathaway-head-shot.jpg')"></li>
+                                <li class="om-header-actors" style="background-image: url('https://78.media.tumblr.com/avatar_bce4ac9ab806_128.png')"></li>
+                                <li class="om-header-actors" style="background-image: url('https://78.media.tumblr.com/avatar_6afd5b80b3ad_128.png')"></li>
                             </ul>
                         </ul>
                     </div>
                 </section>
-
             </div>
 
             <footer id="footer">

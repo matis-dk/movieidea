@@ -1,20 +1,76 @@
 // ==================== MAIN GALLERY  ==================== \\
 
-
     // MAIN GALLERY
+    #main-gallery {
 
-#main-gallery {
-
-    > * {
-        border: 1px solid $c-g-5;
-        margin-bottom: 40px;
-    }
-}
-
-    #mg-text {
-
+        > * {
+            margin-bottom: 40px;
+        }
     }
 
+
+
+    // ======================= MAIN ARRANGE =======================
+    #mg-arranger-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+
+        height: 30vh;
+
+        border-bottom: 4px double rgba($c-g-5, 0.5);
+        padding: 20px 0px;
+
+    }
+
+        .mg-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        #mg-filtering {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            > * {
+                border: 1px solid black;
+            }
+        }
+
+        .mg-header {
+            border-bottom: 1px solid $c-theme4;
+            padding-bottom: 10px;
+            @include mwsH3Header;
+
+            > span {
+                padding-right: 15px;
+            }
+        }
+
+
+            .mg-slider-container {
+                height: 100px;
+                width: 350px;
+                border: 1px solid black;
+
+                display: grid;
+                align-items: center;
+            }
+
+
+        #mg-sorting {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+
+            > * {
+                border: 1px solid black;
+            }
+        }
+
+
+
+    // ======================= MAIN MOVIE =======================
     #mg-movie-container {
         display: flex;
         justify-content: space-around;

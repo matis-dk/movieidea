@@ -53,6 +53,16 @@ function fetchTMDb (con) {
             .then(response => console.log(response))
             .catch(error   => console.log("TMDb data request failed => genre"))
     }
+
+    if (con.task == "discover") {
+        console.log("called")
+        const genreURL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+        return fetch(genreURL)
+            .then(handleErrors)
+            .then(response => {return response.json()})
+            .then(response => console.log(response))
+            .catch(error   => console.log("TMDb data request failed => genre"))
+    }
 }
 
 /*

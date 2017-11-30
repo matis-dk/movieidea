@@ -1,0 +1,96 @@
+// ==================== SLIDER  ==================== \\
+
+    // SLIDER
+
+
+
+
+.range-handle {
+  -webkit-appearance: none;
+  width: 300px;
+  position: absolute;
+}
+
+#slider1 {
+    width: 150px;
+}
+
+#slider1, #slider2 {
+
+    height: 0px;
+    visibility: hidden;
+
+    // Range Handle
+    &::-webkit-slider-thumb {
+    visibility: visible;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $c-red;
+      cursor: pointer;
+      transition: background .15s ease-in-out;
+      position: relative;
+      z-index: 2;
+
+      &:hover {
+        background: $c-theme5;
+      }
+    }
+
+    &:active::-webkit-slider-thumb {
+      background: $c-theme2;
+    }
+}
+
+
+#slider3 {
+
+    height: 5px;
+    background: $c-g-5;
+    border-radius: 5px;
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+    }
+}
+
+output {
+    font-size: 16px;
+    width: 50px !important;
+    height: 50px !important;
+    position: absolute;
+    display: block;
+    z-index: 1;
+    color: black;
+}
+
+
+
+
+// Range Label
+.range-slider__value {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  color: white;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: $c-red;
+  padding: 5px 10px;
+  margin-left: 8px;
+  top: 20px;
+
+  &:after {
+    position: absolute;
+    top: 8px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-right: 7px solid $c-red;
+    border-bottom: 7px solid transparent;
+    content: '';
+  }
+}

@@ -177,6 +177,67 @@
     }
 
 
+// MAIN - DISCOVER
+
+
+
+
+
+
+// OVERLAY - GALLERY
+
+    @mixin omHeaderXL {
+        font-family: "RobotoLight";
+        font-size: 26px;
+        color: $c-w-5;
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 700;
+    }
+
+    @mixin omHeaderL {
+        font-family: "RobotoBold";
+        font-size: 24px;
+        color: $c-w-5;
+    }
+
+    @mixin omHeaderMUpper {
+        font-family: "RobotoBold";
+        font-size: 18px;
+        color: $c-w-5;
+        font-weight: 700;
+    }
+
+    @mixin omHeaderMLower {
+        font-family: "RobotoLight";
+        font-size: 90%;
+        color: $c-w-5;
+    }
+
+
+    @mixin omHeaderSUpper {
+        font-family: "RobotoBold";
+        font-size: 90%;
+        padding-bottom: 4px;
+        color: $c-theme5;
+    }
+
+    @mixin omHeaderSLower {
+        font-family: "RobotoLight";
+        font-size: 14px;
+        color: $c-w-5;
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

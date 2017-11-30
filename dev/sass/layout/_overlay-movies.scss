@@ -12,63 +12,129 @@
     perspective:1000px;
     z-index: 2;
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 
     color: white;
 }
 
+#overlay-movies[data-active="true"] {
+    display: flex;
+}
 
     #overlay-movies-container {
         display: grid;
-        grid-template-columns: 30vh 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 30vh 55vh;
+        grid-template-rows: 45vh;
 
-        max-width: calc(55vh * 1.5);
-        width: 100%;
-
-        > * {
-            border: 1px solid blue;
-        }
+        background-color: rgba($c-b-2, 0.6);
+        overflow: hidden;
     }
 
-        #om-poster {
 
+        // OVERLAY POSTER
+        #om-poster {
+            background-color: rgba($c-g-5, 0.2);
+            background-size: cover;
+            background-position: bottom;
+            position: relative;
         }
+
+        #om-poster:hover {
+            #om-poster-outer {
+                opacity: 1;
+            }
+
+            #om-poster-filter > i {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+
+        // OVERLAY INFORMATION
+
+            #om-poster-outer {
+                overflow: hidden;
+                position: absolute;
+                bottom: 0px;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            #om-poster-inner {
+                height: 45vh;
+                width: 30vh;
+                background-size: cover;
+                transform: scale(1.35);
+                filter: blur(30px);
+            }
+
+            #om-poster-filter {
+                height: 45vh;
+                width: 30vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                display: grid;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+                #om-trailer-play {
+                    font-size: 64px;
+                    color: rgba($c-w-5, 0.2);
+                    cursor: pointer;
+
+                    transition: 0.2s;
+                    transform: translateY(30px);
+                    opacity: 0;
+                }
+
+
+                #om-trailer-play:hover {
+                    color: rgba($c-w-5, 0.45);
+                }
+
+            //style="background-image: url('https://s-media-cache-ak0.pinimg.com/originals/3e/33/92/3e3392d339c2b8028007d0f9af979be4.jpg')"
+
+        // OVERLAY INFORMATION
 
         #om-information {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr 2fr 1fr;
-            height: 45vh;
-
+            grid-template-rows: 1.5fr auto auto auto auto 4fr 1fr;
 
             > *  {
-                border: 1px solid orange;
-
-                > * {
-                    border: 1px solid red;
-                }
+                border-bottom: 1px solid rgba($c-b-5, 0.20);
             }
         }
 
+        // CLASS FOR POSITONING
         .om-settings {
-            padding: 10px;
+            padding: 10px 20px;
         }
 
         .om-header-style0 {
             display: grid;
+            align-items: center;
+
+            #om-title {
+                overflow: hidden;
+            }
         }
 
         .om-header-style1 {
             display: grid;
             grid-template-columns: 3fr 1fr 1fr;
+            align-items: center;
 
             > ul {
                 display: grid;
                 justify-content: center;
-                align-items: center;
                 text-align: center;
             }
         }
@@ -85,11 +151,50 @@
         }
 
         .om-header-style4 {
-            display: grid;
-            grid-template-columns: 1fr auto;
+            display: flex;
             align-items: center;
 
-            > ul {
-                display: flex;
+            > li {
+                cursor: pointer;
             }
+
+        }
+
+        // CLASS FOR FONT STYLING
+
+        .om-header-xl > #om-title {
+            @include omHeaderXL;
+        }
+
+        .om-header-l {
+            @include omHeaderL;
+        }
+
+        .om-header-m-upper {
+            @include omHeaderMUpper;
+        }
+
+        .om-header-m-lower {
+            @include omHeaderMLower;
+        }
+
+        .om-header-s-upper {
+            @include omHeaderSUpper;
+        }
+
+        .om-header-s-lower {
+            @include omHeaderSLower;
+        }
+
+        .om-header-actors {
+            border-radius: 5px;
+            width: 50px;
+            height: 50px;
+            margin: 0px 10px;
+            background-size: cover;
+        }
+
+        .om-header-genres {
+            font-size: 28px;
+            padding: 8px;
         }
