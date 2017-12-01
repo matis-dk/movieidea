@@ -1021,7 +1021,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   grid-template-rows: 1fr;
   border-bottom: 4px double rgba(138, 138, 138, 0.5);
   padding: 20px 20px;
-  background-color: #e4e4e4; }
+  background-color: rgba(228, 228, 228, 0.5); }
 
 .mg-container {
   display: grid;
@@ -1062,8 +1062,136 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #mg-sorting {
   display: grid;
   grid-template-rows: 1fr 1fr; }
-  #mg-sorting > * {
-    border: 1px solid black; }
+
+.mg-radiobuttons {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto; }
+
+.mg-radio-label {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: "RobotoMedium";
+  font-size: 10px;
+  color: #012C40;
+  font-weight: 400;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.mg-radio-input {
+  display: none; }
+
+.mg-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 14px;
+  width: 14px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  border: 4px solid rgba(189, 189, 189, 0.8);
+  margin-top: 10px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.2s;
+  transition: 0.2s; }
+
+.mg-checkmark::after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 5px 10px rgba(63, 184, 175, 0.3);
+          box-shadow: 0 5px 10px rgba(63, 184, 175, 0.3);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out; }
+
+.mg-radio-label:hover > .mg-radio-input ~ .mg-checkmark {
+  background-color: #fcfcfc; }
+
+.mg-radio-input:checked ~ .mg-checkmark {
+  border: 4px solid #3fb8af;
+  background-color: #fcfcfc; }
+
+.mg-radio-input:checked ~ .mg-checkmark::after {
+  opacity: 1; }
+
+#mg-order {
+  background: rgba(189, 189, 189, 0.3);
+  border-radius: 24px;
+  display: block;
+  height: 24px;
+  position: relative;
+  width: 60px;
+  margin: 10px 60px; }
+  #mg-order > label {
+    font-family: "RobotoMedium";
+    font-size: 10px;
+    color: #012C40;
+    font-weight: 400;
+    text-transform: uppercase;
+    top: 25%;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+    width: 32px; }
+  #mg-order > label:nth-of-type(1) {
+    left: -90%;
+    position: absolute;
+    text-align: right; }
+  #mg-order > label:nth-of-type(2) {
+    position: absolute;
+    right: -75%;
+    text-align: left; }
+  #mg-order > input {
+    height: 24px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 60px;
+    z-index: 2; }
+  #mg-order > input:checked ~ label:nth-of-type(1) {
+    color: #3fb8af; }
+  #mg-order > input:checked ~ label:nth-of-type(2) {
+    color: #8a8a8a; }
+  #mg-order > input ~ :checked ~ label:nth-of-type(1) {
+    color: #8a8a8a; }
+  #mg-order > input ~ :checked ~ label:nth-of-type(2) {
+    color: #3fb8af; }
+  #mg-order > input:checked ~ .toggle {
+    left: 4px; }
+  #mg-order > input ~ :checked ~ .toggle {
+    left: 36px; }
+  #mg-order > input:checked {
+    z-index: 0; }
+
+.toggle {
+  background: #3fb8af;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  left: 0;
+  position: absolute;
+  top: 2px;
+  -webkit-transition: left .2s ease;
+  transition: left .2s ease;
+  z-index: 1; }
 
 .mg-header-xl {
   border-bottom: 1px solid #DAEBF2;

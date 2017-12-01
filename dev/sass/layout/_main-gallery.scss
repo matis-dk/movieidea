@@ -19,7 +19,7 @@
         border-bottom: 4px double rgba($c-g-5, 0.5);
         padding: 20px 20px;
 
-        background-color: $c-g-1;
+        background-color: rgba($c-g-1, 0.5);
 
     }
 
@@ -69,11 +69,170 @@
             display: grid;
             grid-template-rows: 1fr 1fr;
 
-            > * {
-                border: 1px solid black;
-            }
+
         }
 
+            .mg-radiobuttons {
+                width: 100%;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+                .mg-radio-label {
+                    display: grid;
+                    align-items: center;
+
+                    position: relative;
+                    padding-left: 30px;
+                    cursor: pointer;
+                    font-size: 22px;
+
+                    @include mgHeaderMLower;
+
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                .mg-radio-input {
+                    display: none;
+                }
+
+                .mg-checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 14px;
+                    width: 14px;
+                    background-color: $c-w-5;
+                    border-radius: 50%;
+                    border: 4px solid rgba($c-g-3, 0.8);
+                    margin-top: 10px;
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+                    transition: 0.2s;
+                }
+
+                .mg-checkmark::after {
+                    display: block;
+                    content: " ";
+                    position: absolute;
+                    top: -4px;
+                    left: -4px;
+
+                    height: 14px;
+                    width: 14px;
+                    border-radius: 50%;
+
+                    box-shadow: 0 5px 10px rgba(63, 184, 175,0.3);
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+
+                    .mg-radio-label:hover > .mg-radio-input ~ .mg-checkmark {
+                        background-color: $c-w-2;
+                    }
+
+                    .mg-radio-input:checked ~ .mg-checkmark {
+                        border: 4px solid rgba(63, 184, 175, 1);
+                        background-color: $c-w-2;
+                    }
+
+                    .mg-radio-input:checked ~ .mg-checkmark::after {
+                        opacity: 1;
+                    }
+
+
+            #mg-order-container {
+
+            }
+
+            #mg-order {
+                background: rgba($c-g-3, 0.3);
+                border-radius: 24px;
+                display: block;
+                height: 24px;
+                position: relative;
+                width: 60px;
+
+                margin: 10px 60px;
+
+                > label {
+                    @include mgHeaderMLower;
+
+                    top: 25%;
+
+                    -webkit-transition: color .2s ease;
+                    -moz-transition: color .2s ease;
+                    -ms-transition: color .2s ease;
+                    -o-transition: color .2s ease;
+                    transition: color .2s ease;
+                    width: 32px;
+                }
+
+                > label:nth-of-type(1) {
+                    left: -90%;
+                    position: absolute;
+                    text-align: right;
+                }
+
+                > label:nth-of-type(2) {
+                    position: absolute;
+                    right: -75%;
+                	text-align: left;
+                }
+
+                > input {
+                    height: 24px;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 60px;
+                    z-index: 2;
+                }
+
+                > input:checked~label:nth-of-type(1) { color: rgba(63, 184, 175, 1); }
+                > input:checked~label:nth-of-type(2) { color: $c-g-5; }
+
+                > input~:checked~label:nth-of-type(1) { color: $c-g-5; }
+                > input~:checked~label:nth-of-type(2) { color: rgba(63, 184, 175, 1); }
+
+                > input:checked~.toggle {
+                	left: 4px;
+                }
+
+                > input~:checked~.toggle {
+                	left: 36px;
+                }
+
+                > input:checked {
+                	z-index: 0;
+                }
+            }
+
+
+
+            .toggle {
+            	background: rgba(63, 184, 175, 1);
+            	border-radius: 50%;
+                height: 20px;
+                width: 20px;
+
+            	left: 0;
+            	position: absolute;
+            	top: 2px;
+
+            	-webkit-transition: left .2s ease;
+            	-moz-transition: left .2s ease;
+            	-ms-transition: left .2s ease;
+            	-o-transition: left .2s ease;
+            	transition: left .2s ease;
+
+            	z-index: 1;
+            }
 
         // Text Classes
 

@@ -271,15 +271,59 @@
                                         <div class="mg-slider-container">
                                             <div class="mg-slider-settings" id="mg-slider-runtime"></div>
                                         </div>
-
                                     </li>
+
                                 </ul>
                             </div>
                             <div class="mg-container">
                                 <h3 class="mg-header-xl"><span class="fa fa-sort-amount-asc"></span>SORTING</h3>
                                 <ul id="mg-sorting">
-                                    <li id="mg-sortby">SORTBY: genre, year, rating, runtime</li>
-                                    <li id="mg-direction">ASCENDING or DESCENDING</li>
+                                    <li id="mg-sortby">
+                                        <h5 class="mg-header-m-upper">Sorting by</h5>
+                                        <div class="mg-radiobuttons">
+
+                                            <label class="mg-radio-label">Default
+                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <span class="mg-checkmark"></span>
+                                            </label>
+
+                                            <label class="mg-radio-label">Genre
+                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <span class="mg-checkmark"></span>
+                                            </label>
+
+                                            <label class="mg-radio-label">Rating
+                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <span class="mg-checkmark"></span>
+                                            </label>
+
+                                            <label class="mg-radio-label">Runtime
+                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <span class="mg-checkmark"></span>
+                                            </label>
+
+                                            <label class="mg-radio-label">Year
+                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <span class="mg-checkmark"></span>
+                                            </label>
+
+                                        </div>
+                                    </li>
+
+                                    <li id="mg-direction">
+                                        <h5 class="mg-header-m-upper">Sorting order</h5>
+                                        <div id="mg-order-container">
+                                            <div id="mg-order">
+                                                <input type="radio" name="switch" id="switch-off">
+                                                <input type="radio" name="switch" id="switch-on" checked>
+
+                                                <label for="switch-off">Highest</label>
+                                                <label for="switch-on">Lowest</label>
+
+                                                <span class="toggle"></span>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
