@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Boilerplate</title>
     <link rel="stylesheet" href="assets/css/style.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
   <body>
@@ -179,27 +179,104 @@
                 <section class="main-settings" id="main-gallery" data-active="true">
                         <div id="mg-arranger-container">
                             <div class="mg-container">
-                                <h3 class="mg-header"><span class="fa fa-filter"></span>FILTERING</h3>
+                                <h3 class="mg-header-xl"><span class="fa fa-filter"></span>FILTERING</h3>
                                 <ul id="mg-filtering">
-                                    <li id="mg-genre">GENRE</li>
-                                    <li id="mg-year">YEAR</li>
-                                    <li id="mg-rating">RATING</li>
-                                    <li id="mg-runtime">
-                                        <h5>Runtime</h5>
-                                        <div class="mg-slider-container">
-                                            <div class="range-slider">
-                                              <input id="slider1" class="range-handle" type="range" multiple value="400" min="0" max="500" oninput="Outputslider1.value = slider1.value">
-                                              <input id="slider2" class="range-handle" type="range" multiple value="200" min="0" max="500" oninput="Outputslider2.value = slider2.value">
-                                              <input id="slider3" class="range-handle" type="range"  min="0" max="500">
-                                              <output name="sliderOutput1" id="Outputslider1">1</output>
-                                              <output name="sliderOutput2" id="Outputslider2">2</output>
-                                            </div>
+                                    <li>
+                                        <h5 class="mg-header-m-upper">Genre</h5>
+                                        <ul id="mg-genre">
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-action" type="checkbox" value="action">
+                                              <label class="mg-checkbox-label" for="mg-genre-action">action</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-adventure" type="checkbox" value="adventure">
+                                              <label class="mg-checkbox-label" for="mg-genre-adventure">adventure</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-animation" type="checkbox" value="animation">
+                                              <label class="mg-checkbox-label" for="mg-genre-animation">animation</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-comedy" type="checkbox" value="comedy">
+                                              <label class="mg-checkbox-label" for="mg-genre-comedy">comedy</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-crime" type="checkbox" value="crime">
+                                              <label class="mg-checkbox-label" for="mg-genre-crime">crime</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-documentary" type="checkbox" value="documentary">
+                                              <label class="mg-checkbox-label" for="mg-genre-documentary">documentary</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-drama" type="checkbox" value="drama">
+                                              <label class="mg-checkbox-label" for="mg-genre-drama">drama</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-fantasy" type="checkbox" value="fantasy">
+                                              <label class="mg-checkbox-label" for="mg-genre-fantasy">fantasy</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-history" type="checkbox" value="history">
+                                              <label class="mg-checkbox-label" for="mg-genre-history">history</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-horror" type="checkbox" value="horror">
+                                              <label class="mg-checkbox-label" for="mg-genre-horror">horror</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-mystery" type="checkbox" value="mystery">
+                                              <label class="mg-checkbox-label" for="mg-genre-mystery">mystery</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-romance" type="checkbox" value="romance">
+                                              <label class="mg-checkbox-label" for="mg-genre-romance">romance</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-scifi" type="checkbox" value="scifi">
+                                              <label class="mg-checkbox-label" for="mg-genre-scifi">scifi</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-thriller" type="checkbox" value="thriller">
+                                              <label class="mg-checkbox-label" for="mg-genre-thriller">thriller</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-war" type="checkbox" value="war">
+                                              <label class="mg-checkbox-label" for="mg-genre-war">war</label>
+                                            </li>
+                                            <li>
+                                              <input class="mg-checkbox" id="mg-genre-western" type="checkbox" value="western">
+                                              <label class="mg-checkbox-label" for="mg-genre-western">western</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="mg-year">
+                                        <h5 class="mg-header-m-upper">Year</h5>
+                                        <div class="mg-slider-container-vertical">
+                                            <div class="mg-slider-settings-vertical" id="mg-slider-year"></div>
                                         </div>
+
+                                    </li>
+
+                                    <li id="mg-rating">
+                                        <h5 class="mg-header-m-upper">Rating</h5>
+                                        <div class="mg-slider-container">
+                                            <div class="mg-slider-settings" id="mg-slider-rating"></div>
+                                        </div>
+                                    </li>
+
+                                    <li id="mg-runtime">
+                                        <h5 class="mg-header-m-upper">Runtime</h5>
+                                        <div class="mg-slider-container">
+                                            <div class="mg-slider-settings" id="mg-slider-runtime"></div>
+                                        </div>
+
                                     </li>
                                 </ul>
                             </div>
                             <div class="mg-container">
-                                <h3 class="mg-header"><span class="fa fa-sort-amount-asc"></span>SORTING</h3>
+                                <h3 class="mg-header-xl"><span class="fa fa-sort-amount-asc"></span>SORTING</h3>
                                 <ul id="mg-sorting">
                                     <li id="mg-sortby">SORTBY: genre, year, rating, runtime</li>
                                     <li id="mg-direction">ASCENDING or DESCENDING</li>
@@ -421,6 +498,8 @@
 
         </div>
 
+      <script src="assets/js/nouislider.js"></script>
+      <script src="assets/js/wNumb.js"></script>
 
       <script src="assets/js/main.js"></script>
   </body>

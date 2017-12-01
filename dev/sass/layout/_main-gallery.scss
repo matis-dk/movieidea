@@ -16,10 +16,10 @@
         grid-template-columns: 2fr 1fr;
         grid-template-rows: 1fr;
 
-        height: 30vh;
-
         border-bottom: 4px double rgba($c-g-5, 0.5);
-        padding: 20px 0px;
+        padding: 20px 20px;
+
+        background-color: $c-g-1;
 
     }
 
@@ -28,37 +28,43 @@
             grid-template-rows: auto 1fr;
         }
 
+
+        // FILTER
         #mg-filtering {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-
-            > * {
-                border: 1px solid black;
-            }
+            grid-template-rows: 1fr auto;
         }
 
-        .mg-header {
-            border-bottom: 1px solid $c-theme4;
-            padding-bottom: 10px;
-            @include mwsH3Header;
+                .mg-slider-container {
+                    display: grid;
+                    align-items: center;
+                    width: 250px;
+                    margin-left: 10px;
+                }
 
-            > span {
-                padding-right: 15px;
-            }
-        }
+                    .mg-slider-settings {
+                        height: 10px;
+                        margin: 30px 0px;
+                    }
+
+                .mg-slider-container-vertical {
+                    display: grid;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: 240px;
+                    width: 100px;
+                }
+
+                    .mg-slider-settings-vertical {
+                        height: 200px;
+                        width: 12px;
+                    }
 
 
-            .mg-slider-container {
-                height: 100px;
-                width: 350px;
-                border: 1px solid black;
 
-                display: grid;
-                align-items: center;
-            }
-
-
+        // SORTER
         #mg-sorting {
             display: grid;
             grid-template-rows: 1fr 1fr;
@@ -68,6 +74,35 @@
             }
         }
 
+
+        // Text Classes
+
+        .mg-header-xl {
+            border-bottom: 1px solid $c-theme4;
+            padding-bottom: 10px;
+            @include mwsH3Header;
+
+            > span {
+                padding-right: 15px;
+            }
+        }
+
+        .mg-header-m-upper {
+            @include mgHeaderMUpper;
+            border-bottom: 1px solid $c-g-3;
+            padding-bottom: 3px;
+            width: 80%;
+        }
+
+        .mg-header-m-lower {
+            @include mgHeaderMLower;
+
+        }
+
+        .mg-header-s {
+            @include mgHeaderS;
+
+        }
 
 
     // ======================= MAIN MOVIE =======================

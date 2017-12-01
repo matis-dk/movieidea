@@ -13,6 +13,11 @@
 }
 
 @font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype')
+}
+
+@font-face {
     font-family: 'RobotoBold';
     src: url('../fonts/Roboto-Bold.ttf') format('truetype')
 }
@@ -175,6 +180,29 @@
         color: $c-b-5;
         font-weight: 400;
     }
+
+    @mixin mgHeaderMUpper {
+        font-family: "RobotoBold";
+        font-size: 10px;
+        color: $c-theme2;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    @mixin mgHeaderMLower {
+        font-family: "RobotoMedium";
+        font-size: 10px;
+        color: $c-theme2;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    @mixin mgHeaderS {
+        font-family: "MyriadProRegular";
+        font-size: 8px;
+        color: $c-theme2;
+    }
+
 
 
 // MAIN - DISCOVER
