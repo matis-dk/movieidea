@@ -5,7 +5,7 @@
 
 
   noUiSlider.create(sliderRating, {
-      start: [2, 6],
+      start: [6, 10],
       connect: true,
       tooltips: [ wNumb({ decimals: 1 }), wNumb({ decimals: 1 }) ],
       range: {

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
             jsWatcher: {
                 files: ['dev/js/*.js'],
-                tasks: ['babel', 'concat', 'uglify', 'clean'],
+                tasks: ['babel', 'concat', 'uglify'],
                 option: {
                     interrupt: true,
                 }
