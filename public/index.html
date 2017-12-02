@@ -27,8 +27,9 @@
                             <li class="header-navigation-elements">about</li>
                         </ul>
                     </nav>
-                    <div id="header-search">
-                        <img id="header-logo-image" src="assets/img/header-search.svg" alt="MovieIdea image search">
+                    <div id="header-search" data-active="false">
+                        <input id="header-search-input" type="text" spellcheck="false">
+                        <i id="header-search-logo"  class="fa fa-search" aria-hidden="true"></i>
                     </div>
                 </div>
             </header>
@@ -177,8 +178,8 @@
                     </ul>
                 </section>
                 <section class="main-settings" id="main-gallery" data-active="true">
-                        <div id="mg-arranger-container">
-                            <div class="mg-container">
+                        <div id="mg-arranger-container" data-open="false">
+                            <div id="mg-filtering-container" class="mg-container">
                                 <h3 class="mg-header-xl"><span class="fa fa-filter"></span>FILTERING</h3>
                                 <ul id="mg-filtering">
                                     <li id="mg-genre">
@@ -256,7 +257,6 @@
                                         <div class="mg-slider-container-vertical">
                                             <div class="mg-slider-settings-vertical" id="mg-slider-year"></div>
                                         </div>
-
                                     </li>
 
                                     <li id="mg-rating">
@@ -275,7 +275,7 @@
 
                                 </ul>
                             </div>
-                            <div class="mg-container">
+                            <div id="mg-sorting-container" class="mg-container">
                                 <h3 class="mg-header-xl"><span class="fa fa-sort-amount-asc"></span>SORTING</h3>
                                 <ul id="mg-sorting">
                                     <li id="mg-sortby">
@@ -283,7 +283,7 @@
                                         <div class="mg-radiobuttons">
 
                                             <label class="mg-radio-label">Default
-                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <input class="mg-radio-input" type="radio" name="radio" checked>
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
@@ -325,6 +325,12 @@
                                         </div>
                                     </li>
                                 </ul>
+                            </div>
+                            <div id="mg-navigation-container">
+                                <div id="mg-refresh">
+                                    Update
+                                </div>
+                                <i id="mg-toggle" class="fa fa-cog" aria-hidden="true"></i>
                             </div>
                         </div>
                         <ul id="mg-movie-container" tabindex="0">
@@ -541,8 +547,8 @@
 
         </div>
 
-      <script src="assets/js/nouislider.js"></script>
-      <script src="assets/js/wNumb.js"></script>
+      <script src="assets/js/vendors/nouislider.js"></script>
+      <script src="assets/js/vendors/wNumb.js"></script>
 
       <script src="assets/js/main.js"></script>
   </body>

@@ -1,6 +1,12 @@
 /* ==================== HEADER ==================== */
 
 
+#header {
+    background-color: $c-g-1;
+    position: relative;
+    z-index: 3;
+}
+
 #header-container {
 
     max-width: 1400px;
@@ -17,9 +23,6 @@
     align-items: center;
 
     //border-bottom: 2px solid $c-theme1;
-    position: relative;
-    z-index: 2;
-
 }
 
 
@@ -42,7 +45,7 @@
     }
 
         #header-logo-image {
-            width: 60px;
+            width: 40px;
         }
 
         #header-logo-title {
@@ -77,9 +80,49 @@
     #header-search {
         grid-area: headerSearch;
 
-        border-left: 2px solid $c-theme1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        cursor: pointer;
     }
 
-        #header-logo-image {
-            padding: 10px 15px;
+
+    #header-search-input {
+        width: 0px;
+        transition: 0.3s;
+        border: none;
+        color: $c-w-5;
+        background-color: rgba($c-theme2, 0);
+        padding-left: 20px;
+
+        @include headerSearch;
+    }
+
+
+	#header-search-input::selection {
+		background-color: $c-theme3;
+	}
+
+    #header-search[data-active="true"] {
+
+        > #header-search-input {
+            width: 320px;
+            background-color: $c-theme1;
+            transform: translateX(76px);
+        }
+
+        > #header-search-logo {
+            border-left-color: white;
+            color: white;
+        }
+    }
+
+
+
+        #header-search-logo {
+            border-left: 3px solid $c-theme1;
+            padding: 15px 25px;
+            font-size: 26px;
+            z-index: 2;
+            transition: 0.3s;
         }

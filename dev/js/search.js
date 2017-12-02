@@ -2,7 +2,6 @@
 
 SEARCH MODULE ON SECTION HOME
 
-*/
 
 
 (function () {
@@ -25,3 +24,5 @@ SEARCH MODULE ON SECTION HOME
     }
 
 })();
+
+*/

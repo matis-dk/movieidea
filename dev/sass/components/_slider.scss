@@ -46,6 +46,7 @@
 .noUi-handle {
   position: relative;
   z-index: 1;
+  cursor: grab !important;
 }
 .noUi-state-tap .noUi-connect,
 .noUi-state-tap .noUi-origin {
