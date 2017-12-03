@@ -49,6 +49,10 @@
             transform: rotateZ(90deg);
         }
 
+        .noUi-connect {
+            background-color: $c-theme6;
+        }
+
     }
 
     #mg-arranger-container::after {
@@ -168,7 +172,7 @@
                 padding-bottom: 45px;
             }
 
-            .mg-radiobuttons {
+            #mg-radiobuttons {
                 width: 100%;
                 height: 100%;
                 margin-top: 10px;
@@ -395,6 +399,14 @@
             opacity: 0;
         }
 
+        #mg-refresh:hover {
+            background-color: rgba($c-theme1, 0.6);
+        }
+
+        #mg-refresh:active {
+            background-color: $c-theme1;
+        }
+
 
         #mg-toggle {
             color: white;
@@ -413,7 +425,7 @@
             z-index: 3;
             background-color: $c-theme6;
             box-shadow: 0 5px 10px rgba(63, 184, 175,0.3);
-            transition: 1s;
+            transition: 1.2s;
 
             transform: rotateZ(0deg);
 

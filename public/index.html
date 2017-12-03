@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>Boilerplate</title>
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
   <body>
@@ -186,7 +186,7 @@
                                         <h5 class="mg-header-m-upper">Genre</h5>
                                         <ul id="mg-genre-container">
                                             <li>
-                                              <input class="mg-checkbox" id="mg-genre-action" type="checkbox" value="action">
+                                              <input class="mg-checkbox" id="mg-genre-action" type="checkbox" value="action" checked>
                                               <label class="mg-checkbox-label" for="mg-genre-action">action</label>
                                             </li>
                                             <li>
@@ -202,7 +202,7 @@
                                               <label class="mg-checkbox-label" for="mg-genre-comedy">comedy</label>
                                             </li>
                                             <li>
-                                              <input class="mg-checkbox" id="mg-genre-crime" type="checkbox" value="crime">
+                                              <input class="mg-checkbox" id="mg-genre-crime" type="checkbox" value="crime" checked>
                                               <label class="mg-checkbox-label" for="mg-genre-crime">crime</label>
                                             </li>
                                             <li>
@@ -280,30 +280,30 @@
                                 <ul id="mg-sorting">
                                     <li id="mg-sortby">
                                         <h5 class="mg-header-m-upper">Sorting by</h5>
-                                        <div class="mg-radiobuttons">
+                                        <div id="mg-radiobuttons">
 
                                             <label class="mg-radio-label">Default
-                                                <input class="mg-radio-input" type="radio" name="radio" checked>
+                                                <input class="mg-radio-input" type="radio" name="radio"  value="default" checked>
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
                                             <label class="mg-radio-label">Genre
-                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <input class="mg-radio-input" type="radio" name="radio" value="genre" >
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
                                             <label class="mg-radio-label">Rating
-                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <input class="mg-radio-input" type="radio" name="radio" value="rating" >
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
                                             <label class="mg-radio-label">Runtime
-                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <input class="mg-radio-input" type="radio" name="radio" value="runtime" >
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
                                             <label class="mg-radio-label">Year
-                                                <input class="mg-radio-input" type="radio" name="radio">
+                                                <input class="mg-radio-input" type="radio" name="radio" value="year" >
                                                 <span class="mg-checkmark"></span>
                                             </label>
 
@@ -314,8 +314,8 @@
                                         <h5 class="mg-header-m-upper">Sorting order</h5>
                                         <div id="mg-order-container">
                                             <div id="mg-order">
-                                                <input type="radio" name="switch" id="switch-off">
-                                                <input type="radio" name="switch" id="switch-on" checked>
+                                                <input class="mg-sorting-order" type="radio" name="switch" value="highest" id="switch-off">
+                                                <input class="mg-sorting-order" type="radio" name="switch" value="lowest" id="switch-on" checked>
 
                                                 <label for="switch-off">Highest</label>
                                                 <label for="switch-on">Lowest</label>
@@ -327,116 +327,11 @@
                                 </ul>
                             </div>
                             <div id="mg-navigation-container">
-                                <div id="mg-refresh">
-                                    Update
-                                </div>
+                                <div id="mg-refresh">Update</div>
                                 <i id="mg-toggle" class="fa fa-cog" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <ul id="mg-movie-container" tabindex="0">
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/oSLd5GYGsiGgzDPKTwQh7wamO8t.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/9E2y5Q7WlCVNEhP5GiVTjhEhx1o.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/9rtrRGeRnL0JKtu9IMBWsmlmmZz.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/zUbUtxiTdEgWnkXY945gtYYqBZ1.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/imekS7f1OuHyUP2LAiTEM0zBzUz.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                <div class="mg-movie-image" style="background-image:url('http://image.tmdb.org/t/p/w154/5vHssUeVe25bMrof1HyaPyWgaP.jpg')"></div>
-                                <h3 class="mg-movie-title">Thor: Ragnarock</h3>
-                                <h4 class="mg-movie-year">2015</h4>
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                            <li class="mg-movie-item">
-                                test
-                            </li>
-                        </ul>
+                        <ul id="mg-movie-container" tabindex="0"></ul>
                 </section>
 
                 <section class="main-settings" id="main-discover" data-active="false">

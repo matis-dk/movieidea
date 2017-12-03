@@ -56,46 +56,21 @@ function fetchTMDb (con) {
 
     if (con.task == "discover") {
         console.log("called")
+
+        const URL = assembleURL(con.settings);
         const genreURL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+
         return fetch(genreURL)
             .then(handleErrors)
             .then(response => {return response.json()})
-            .then(response => console.log(response))
+            .then(response => response)
             .catch(error   => console.log("TMDb data request failed => genre"))
     }
 }
 
-/*
-function loadMovies (task, genreID = false) {
-    siteOpen = "Movies";
-    loadingScreen();
-    setTimeout(clearMovies(), 500);
-
-    Promise.all([fetchTMDb(false, task, 1, genreID),
-                 fetchTMDb(false, task, 2, genreID),
-                 fetchTMDb(false, task, 3, genreID)])
-        .then(resp => { return mergeNestedArrays(resp) })
-        .then(payload => {
-            if (task == "nowplaying") {
-                payload = checkDate(payload);
-            }
-            return payload })
-        .then(payload => {
-            movieAPI.setMovieArr (payload);
-            DOMcontroller (payload);
-            selectedMovie = {
-                movieID:        movieContainer.children[0].id,
-                movieDomIndex:  movieAPI.getIndex(movieContainer.children[0].id)
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            console.log("Failed somewhere at => loadMovies")})
-}
 
 
 
-*/
 // ================== HELPERS ==================
 
 function handleErrors(response) {
@@ -103,4 +78,9 @@ function handleErrors(response) {
         console.log(`${movieID}      <=========== movieID not found`)
     }
     return response;
+}
+
+
+function assembleURL (settings) {
+
 }
