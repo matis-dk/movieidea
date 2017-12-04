@@ -56,7 +56,6 @@ function fetchTMDb (con) {
     if (con.task == "discover") {
         console.log("TASK = DISCOVER")
         monitorMovieElements.current_page += 1;
-        console.log(monitorMovieElements.current_page)
         const settings = assembleSettings(con.settings);
         const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}${adult}${video}${settings}&page=${monitorMovieElements.current_page}`;
         return fetchFunction(URL, con.task);
@@ -78,7 +77,6 @@ function handleErrors(response, task) {
 
 
 function assembleSettings (settings) {
-
     let genres      = `with_genres=${getGenreID(settings.filtering.genre)}`;
     let rating_gte  = `vote_average.gte=${settings.filtering.rating[0]}`;
     let rating_lte  = `vote_average.lte=${settings.filtering.rating[1]}`;
@@ -88,7 +86,6 @@ function assembleSettings (settings) {
     let year_lte    = `primary_release_date.lte=${settings.filtering.year[1]}-01-01`;
 
     let stringSettings = `&${genres}&${rating_gte}&${rating_lte}&${runtime_gte}&${runtime_lte}&${year_gte}&${year_lte}`
-    console.log(year_gte);
     return stringSettings;
 }
 

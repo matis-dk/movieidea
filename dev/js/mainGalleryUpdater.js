@@ -1,8 +1,8 @@
 let urlImageBase        =   "http://image.tmdb.org/t/p/w154";
+let mgMovieContainer    =   document.getElementById('mg-movie-container');
 
 
 function addMovieElements (payload = 0) {
-    let mgMovieContainer    =   document.getElementById('mg-movie-container');
     let mgFragment          =   document.createDocumentFragment();
 
     for (let i = 0; i < payload.length; i++) {
@@ -16,7 +16,7 @@ function addMovieElements (payload = 0) {
 
         let mgMovieTitle = document.createElement("h3");
             mgMovieTitle.className = "mg-movie-title";
-            mgMovieTitle.innerText = `${payload[i].original_title}`
+            mgMovieTitle.innerText = `${payload[i].title}`
 
         let mgMovieYear = document.createElement("h4");
             mgMovieYear.className = "mg-movie-year";
@@ -35,7 +35,6 @@ function addMovieElements (payload = 0) {
 
 
 function clearMovieElements () {
-    let mgMovieContainer    =   document.getElementById('mg-movie-container');
     mgMovieContainer.innerHTML = "";
 }
 
@@ -45,5 +44,17 @@ function resetMonitor () {
         total_pages: 0,
         current_page: 0,
         fetched: false
+    }
+}
+
+
+function updateElementsPosition (movieElements) {
+    console.log(movieElements);
+    let length =  movieElements.length;
+    for (let i = 0; i < length; i++) {
+        let DOMelements         = mgMovieContainer.children;
+        let DOMelementsIndex    = movieElements[i].DOMindex;
+
+        DOMelements[DOMelementsIndex].setAttribute("style", `order: -${length - 1 - i}`)
     }
 }

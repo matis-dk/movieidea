@@ -24,7 +24,6 @@
             "filtering sorting"
             "navigation navigation";
 
-
         //border-bottom: 4px double rgba($c-g-5, 0.5);
         padding: 25px 35px 0px;
         position: absolute;
@@ -436,9 +435,10 @@
 
     // ======================= MAIN MOVIE =======================
     #mg-movie-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        grid-template-rows: auto auto;
+
 
         width: 100%;
         max-width: 1200px;

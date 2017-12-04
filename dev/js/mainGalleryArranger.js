@@ -78,23 +78,24 @@
 
 
 
-    // ========== UPDATING WITH ARRANGER SETTINGS ==========
+    // ========== COMPARING AND UPDATING WITH ARRANGER SETTINGS ==========
 
 
     function compareArranger () {
         let settings = getArrangerSettings();
 
         if (compareSettings(settings, "filtering")) {
+            console.log("--------------------------------------------");
             console.log("UPDATE DOM - with new filter");
+
+            window.lastSettings = settings;
 
             let con = {
                 task: "discover",
-                loadState: "loadStart",
-                settings: settings
+                settings: lastSettings
             }
 
             toggleArranger();
-            window.lastSettings = settings;
             loadController(con, "reset-movies")
 
             return;
@@ -102,21 +103,124 @@
 
         if (compareSettings(settings, "sorting")) {
             console.log("UPDATE DOM - with new positioning");
-            toggleArranger();
+
             window.lastSettings = settings;
+            toggleArranger();
+            sortingMovies(settings.sorting.sortingby, settings.sorting.sortingorder)
+
             return;
         }
 
         console.log("No changes found");
         toggleArranger();
-
+    }
 
         function compareSettings (settings, task) {
             return (JSON.stringify(lastSettings[task]) !== JSON.stringify(settings[task]));
         }
 
-    }
 
-        function setLastSettings () {
-            window.lastSettings = getArrangerSettings();
+
+    // ========== SORTING MECHANISM ==========
+
+    function sortingMovies (sortingBy, sortingOrder) {
+
+        movieAPI.setMovieIndex();
+
+        let movieElements   =   movieAPI.getMovieArr();
+
+        if (!movieElements) { return };
+
+        console.log("Sorting by " + sortingBy);
+
+        // NUMBER SORTING
+            if (sortingBy == "rating") {
+                updateSite("number", "vote_average", sortingOrder)
+            }
+
+            if (sortingBy == "popularity") {
+                updateSite("number", "popularity", sortingOrder)
+            }
+
+            if (sortingBy == "year") {
+                updateSite("number", "release_date", sortingOrder)
+            }
+
+        // WORD SORTING
+            if (sortingBy == "title") {
+                updateSite("word", "title", sortingOrder)
+            }
+
+
+            function updateSite (datatype, key, sortingOrder) {
+                let sortedMovieElements;
+
+                if (datatype == "word") {
+                    sortedMovieElements = movieElements.sort(sortingWords(key, sortingOrder))
+                }
+
+                if (datatype == "number") {
+                    sortedMovieElements = movieElements.sort(sortingNumbers(key, sortingOrder))
+                }
+
+                //movieAPI.setMovieArr(sortedMovieElements);
+                updateElementsPosition(sortedMovieElements);
+
+            }
+
+
+
+}
+
+
+
+
+
+    // =========== HELPERS ====================
+
+        // Sort by number
+        function sortingNumbers (key, sortingOrder) {
+            return function sortingAlgo (a, b,) {
+
+                if (sortingOrder == "lowest") {
+                    console.log("lowest");
+                    return parseFloat(a[key]) - parseFloat(b[key]);
+                }
+
+                if (sortingOrder == "highest") {
+                    console.log("highest");
+                    return parseFloat(b[key]) - parseFloat(a[key]);
+                }
+            }
+        }
+
+
+        // Sort by word
+        function sortingWords (key, sortingOrder) {
+            return function sortingAlgo (a, b) {
+                let nameA = a[key].toUpperCase();
+                let nameB = b[key].toUpperCase();
+
+                if (sortingOrder == "lowest") {
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                }
+
+                if (sortingOrder == "highest") {
+                    if (nameA > nameB) {
+                        return -1;
+                    }
+
+                    if (nameA < nameB) {
+                        return 1;
+                    }
+                }
+
+                return 0;
+            }
         }

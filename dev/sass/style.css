@@ -571,7 +571,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 /* ==================== MAIN ==================== */
 #main {
-  display: grid;
   background-color: #f2f2f2; }
 
 .main-settings {
@@ -1406,13 +1405,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   cursor: pointer; }
 
 #mg-movie-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-rows: auto auto;
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;

@@ -1,9 +1,11 @@
+
 window.onload = function () {
+
+    window.lastSettings = getArrangerSettings();
 
     let con = {
         task: "discover",
-        loadState: "loadMore",
-        settings: getArrangerSettings()
+        settings: lastSettings
     }
 
     loadController(con);

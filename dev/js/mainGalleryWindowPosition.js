@@ -6,13 +6,15 @@ let scrollGate = false;
 let mainGallery     =   document.getElementById('main-gallery');
 let header          =   document.getElementById('header');
 
-let windowSize, scrollPosition;
+let windowSize, scrollPosition, mainGalleryActive;
 
 
 function calcWindowPosition (e) {
 
-    if (scrollGate) {
-        return;rea
+    mainGalleryActive = mainGallery.getAttribute('data-active');
+
+    if (scrollGate || mainGalleryActive == "false") {
+        return;
     }
 
     windowSize     = window.innerHeight;
@@ -26,15 +28,13 @@ function calcWindowPosition (e) {
 
     console.log(heightFromBottom)
 
-    if (Number(heightFromBottom) < 350) {
-        console.log()
+    if (Number(heightFromBottom) < 450) {
         scrollGate = true;
         let con = {
             task: "discover",
-            loadState: "loadMore",
             settings: lastSettings
         }
 
-        loadController(con, "load-movies");
+        loadController(con);
     }
 }
