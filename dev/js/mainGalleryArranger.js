@@ -8,6 +8,8 @@
      mgToggle.addEventListener('click', toggleArranger);
      mgRefresh.addEventListener('click', compareArranger);
 
+     let lastSettings = [];
+
      function toggleArranger (e) {
         if (mgArranger.getAttribute("data-open") == "false") {
             mgArranger.setAttribute("data-open", "true");
@@ -42,10 +44,11 @@
     }
 
             function parseData (data) {
+                let container = [];
                 for (let i in data) {
-                    data[i] = parseFloat(data[i])
+                    container.push(parseInt(data[i]));
                 }
-                return data;
+                return container;
             }
 
             function getArrangerCheckbox () {
@@ -86,13 +89,13 @@
 
             let con = {
                 task: "discover",
-                loadState: "loadMore",
+                loadState: "loadStart",
                 settings: settings
             }
 
             toggleArranger();
             window.lastSettings = settings;
-            loadController(con)
+            loadController(con, "reset-movies")
 
             return;
         }
