@@ -412,7 +412,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
   background-color: #fcfcfc; }
 
 /* ==================== HEADER ==================== */
@@ -559,12 +558,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   color: #ecf0f1;
   font-size: 10px !important;
   font-weight: 100;
-  border: 1px solid #3a3a3a;
   padding: 14px;
   border-radius: 3px;
   -webkit-box-shadow: 0 0.1em 0 0.05em #33606B;
           box-shadow: 0 0.1em 0 0.05em #33606B;
-  margin: 0px 2px 6px;
+  margin: 0px 4px 6px;
   background-color: #0A1829;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
@@ -1068,7 +1066,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 100%;
   max-width: 1400px;
-  z-index: 1;
+  z-index: 2;
   -webkit-transform: translateY(-90%);
           transform: translateY(-90%);
   background-color: rgba(236, 236, 236, 0);
@@ -1408,6 +1406,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-template-rows: auto auto;
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
@@ -1420,6 +1420,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   height: 300px;
   border: 1px solid #8a8a8a;
   margin: 10px 10px 60px; }
+
+.mg-movie-item[movie-selected] {
+  border: 3px solid #3fb8af; }
 
 .mg-movie-image {
   background-repeat: no-repeat;

@@ -29,7 +29,7 @@
         position: absolute;
         width: 100%;
         max-width: 1400px;
-        z-index: 1;
+        z-index: 2;
         transform: translateY(-90%);
         background-color: rgba($c-g-1, 0.0);
         transition: 0.45s;
@@ -439,6 +439,8 @@
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         grid-template-rows: auto auto;
 
+        position: relative;
+        z-index: 1;
 
         width: 100%;
         max-width: 1200px;
@@ -456,6 +458,10 @@
             height: 300px;
             border: 1px solid $c-g-5;
             margin: 10px 10px 60px;
+        }
+
+        .mg-movie-item[movie-selected] {
+            border: 3px solid $c-theme6;
         }
 
             .mg-movie-image {

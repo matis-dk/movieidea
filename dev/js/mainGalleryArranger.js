@@ -111,6 +111,8 @@
             clearMovieElements();
             addMovieElements(sortedMovies);
 
+            movieAPI.setMovieArr(sortedMovies)
+
             return;
         }
 

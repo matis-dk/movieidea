@@ -76,11 +76,11 @@ let movieAPI = (() => {
 
     function clearMovies    (x) { moviesOnSite = []}
     function setMovie       (x) { x.map(i => moviesOnSite.push(i)) };
-    function setMovieArr    (x) { moviesOnSite = x};             // Overwriting
+    function setMovieArr    (x) { moviesOnSite = JSON.parse(JSON.stringify(x)) };             // Overwriting
     function setMovieIndex  () {  moviesOnSite = addMovieIndex(moviesOnSite) };
     function getMovie       (x) { return moviesOnSite[x]};
     function getID          (x) { return moviesOnSite[x].id};
-    function getMovieArr    ()  { return JSON.parse(JSON.stringify(moviesOnSite))};
+    function getMovieArr    ()  { return JSON.parse(JSON.stringify(moviesOnSite)) };
     function getIndex       (x) { findMovieIndex(x) };
 
     return {

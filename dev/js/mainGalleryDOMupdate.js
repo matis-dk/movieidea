@@ -11,6 +11,7 @@ function addMovieElements (payload = 0) {
 
         let mgMovieItem  = document.createElement("li");
             mgMovieItem.className = "mg-movie-item";
+            mgMovieItem.setAttribute('movie-id', `${payload[i].id}`)
 
         let mgMovieImage = document.createElement("div");
             mgMovieImage.className = "mg-movie-image";
