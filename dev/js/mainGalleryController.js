@@ -1,5 +1,5 @@
 
-// The following is monitoring how many pages that are
+// The monitorMovieElements is monitoring how many pages that are
 // currently loaded and the total number of hits
 
 let monitorMovieElements = {
@@ -29,8 +29,13 @@ function loadController (con, direction) {
 
     loadMovies(con)
         .then (resp => {
+
+            // SORTING RESPOND
+            let respSorted = sortingMovies(lastSettings.sorting.sortingby, lastSettings.sorting.sortingorder, resp.results);
+
             // UPDATING MOVIEAPI
-            movieAPI.setMovie(resp.results);
+            movieAPI.setMovie(respSorted);
+            movieAPI.setMovieIndex();
 
             // UPDATING MONITOR
             monitorMovieElements.total_pages = resp.total_pages;
@@ -39,9 +44,9 @@ function loadController (con, direction) {
             // UPDATING SCOLL FUNCTIONALITY
             scrollGate = false
 
-            return resp })
-        .then (resp => { addMovieElements(resp.results); return resp })
-        .then (resp => {
+            return respSorted })
+        .then (resp => { addMovieElements(resp)})
+        .then (() => {
             // PRE-FETCHING SECOND PAGE
             if (monitorMovieElements.current_page == 1) {
                 console.log("PRE-FETCHING")
@@ -72,10 +77,10 @@ let movieAPI = (() => {
     function clearMovies    (x) { moviesOnSite = []}
     function setMovie       (x) { x.map(i => moviesOnSite.push(i)) };
     function setMovieArr    (x) { moviesOnSite = x};             // Overwriting
-    function setMovieIndex  () { moviesOnSite = addMovieIndex(moviesOnSite) };
+    function setMovieIndex  () {  moviesOnSite = addMovieIndex(moviesOnSite) };
     function getMovie       (x) { return moviesOnSite[x]};
     function getID          (x) { return moviesOnSite[x].id};
-    function getMovieArr    ()  { return moviesOnSite};
+    function getMovieArr    ()  { return JSON.parse(JSON.stringify(moviesOnSite))};
     function getIndex       (x) { findMovieIndex(x) };
 
     return {
@@ -95,11 +100,14 @@ let movieAPI = (() => {
 
 function addMovieIndex (moviesOnSite) {
     //if (moviesOnSite[0].DOMindex)
-
+    console.log("==============")
+    console.log(moviesOnSite)
+    console.log("==============")
+    let data = moviesOnSite;
     for (let i = 0; i < moviesOnSite.length; i++) {
-        moviesOnSite[i].DOMindex = i;
+        data[i].DOMindex = i;
     }
-    return moviesOnSite;
+    return data;
 }
 
 

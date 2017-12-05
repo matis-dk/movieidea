@@ -106,7 +106,10 @@
 
             window.lastSettings = settings;
             toggleArranger();
-            sortingMovies(settings.sorting.sortingby, settings.sorting.sortingorder)
+            let sortedMovies = sortingMovies(settings.sorting.sortingby, settings.sorting.sortingorder)
+
+            clearMovieElements();
+            addMovieElements(sortedMovies);
 
             return;
         }
@@ -123,11 +126,8 @@
 
     // ========== SORTING MECHANISM ==========
 
-    function sortingMovies (sortingBy, sortingOrder) {
+    function sortingMovies (sortingBy, sortingOrder, movieElements = movieAPI.getMovieArr()) {
 
-        movieAPI.setMovieIndex();
-
-        let movieElements   =   movieAPI.getMovieArr();
 
         if (!movieElements) { return };
 
@@ -135,20 +135,20 @@
 
         // NUMBER SORTING
             if (sortingBy == "rating") {
-                updateSite("number", "vote_average", sortingOrder)
+                return updateSite("number", "vote_average", sortingOrder)
             }
 
             if (sortingBy == "popularity") {
-                updateSite("number", "popularity", sortingOrder)
+                return updateSite("number", "popularity", sortingOrder)
             }
 
             if (sortingBy == "year") {
-                updateSite("number", "release_date", sortingOrder)
+                return updateSite("number", "release_date", sortingOrder)
             }
 
         // WORD SORTING
             if (sortingBy == "title") {
-                updateSite("word", "title", sortingOrder)
+                return updateSite("word", "title", sortingOrder)
             }
 
 
@@ -163,13 +163,8 @@
                     sortedMovieElements = movieElements.sort(sortingNumbers(key, sortingOrder))
                 }
 
-                //movieAPI.setMovieArr(sortedMovieElements);
-                updateElementsPosition(sortedMovieElements);
-
+                return sortedMovieElements;
             }
-
-
-
 }
 
 
@@ -183,12 +178,10 @@
             return function sortingAlgo (a, b,) {
 
                 if (sortingOrder == "lowest") {
-                    console.log("lowest");
                     return parseFloat(a[key]) - parseFloat(b[key]);
                 }
 
                 if (sortingOrder == "highest") {
-                    console.log("highest");
                     return parseFloat(b[key]) - parseFloat(a[key]);
                 }
             }
