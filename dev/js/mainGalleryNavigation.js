@@ -25,6 +25,9 @@
             if (e.type == "dblclick") {
                 console.log("dblclick")
 
+                let movieID     =   e.target.parentNode.getAttribute('movie-id');
+                let movieItem   =   movieAPI.getMovieById(movieID);
+                controllerMovieOverlay("open", movieItem)
                 return;
             }
         }
@@ -178,6 +181,7 @@
             }
         }
     }
+
 
 
     // =============== HELPERS ===============

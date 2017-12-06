@@ -30,7 +30,7 @@
         width: 100%;
         max-width: 1400px;
         z-index: 2;
-        transform: translateY(-90%);
+        transform: translateY(-87%);
         background-color: rgba($c-g-1, 0.0);
         transition: 0.45s;
     }
@@ -447,7 +447,7 @@
 
         margin: 0px auto;
 
-        padding: 90px 20px 0px;
+        padding: 130px 20px 0px;
     }
 
         .mg-movie-item {
@@ -456,25 +456,55 @@
 
             width: 160px;
             height: 300px;
-            border: 1px solid $c-g-5;
+            //border: 1px solid $c-g-5;
             margin: 10px 10px 60px;
+
+            transition: 0.3s;
+
+            > * {
+                cursor: pointer;
+            }
         }
 
         .mg-movie-item[movie-selected] {
-            border: 3px solid $c-theme6;
+
+            transform: translateY(-20px);
+
+            > .mg-movie-title {
+                color: $c-theme6;
+            }
+
+            > .mg-movie-image::after {
+                opacity: 1;
+            }
         }
+
 
             .mg-movie-image {
                 background-repeat: no-repeat;
                 background-size: cover;
                 height: 240px;
                 width: 100%;
-                box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 15px 0px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+            }
+
+            .mg-movie-image::after {
+                content: " ";
+                display: block;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: 0.5s;
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             }
 
             .mg-movie-title {
                 @include mgMovieTitle;
                 padding-top: 10px;
+                transition: 0.3s;
+                position: relative;
+                z-index: 1;
+
             }
 
             .mg-movie-year {

@@ -29,6 +29,12 @@ function fetchTMDb (con) {
     }
 
 
+    if (con.task == "movie") {
+        console.log("TASK = MOVIE")
+        const URL = `https://api.themoviedb.org/3/movie/${con.movieID}?api_key=${APIkey}&append_to_response=credits`;
+        return fetchFunction(URL, con.task);
+    }
+
     if (con.task == "multisearch") {
         console.log("TASK = MULTISEARCH")
         const URL = `https://api.themoviedb.org/3/search/multi?api_key=${APIkey}${languageUS}${adult}&query=${con.query}&page=${con.pageNr}`;

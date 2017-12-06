@@ -74,14 +74,14 @@ function loadController (con, direction) {
 let movieAPI = (() => {
     let moviesOnSite = [];
 
-    function clearMovies    (x) { moviesOnSite = []}
-    function setMovie       (x) { x.map(i => moviesOnSite.push(i)) };
-    function setMovieArr    (x) { moviesOnSite = JSON.parse(JSON.stringify(x)) };             // Overwriting
-    function setMovieIndex  () {  moviesOnSite = addMovieIndex(moviesOnSite) };
-    function getMovie       (x) { return moviesOnSite[x]};
-    function getID          (x) { return moviesOnSite[x].id};
-    function getMovieArr    ()  { return JSON.parse(JSON.stringify(moviesOnSite)) };
-    function getIndex       (x) { findMovieIndex(x) };
+    function clearMovies            (x) { moviesOnSite = []}
+    function setMovie               (x) { x.map(i => moviesOnSite.push(i)) };
+    function setMovieArr            (x) { moviesOnSite = JSON.parse(JSON.stringify(x)) };             // Overwriting
+    function setMovieIndex          ()  {  moviesOnSite = addMovieIndex(moviesOnSite) };
+    function getMovie               (x) { return moviesOnSite[x]};
+    //function getID                  (x) { return moviesOnSite[x].id};
+    function getMovieArr            ()  { return JSON.parse(JSON.stringify(moviesOnSite)) };
+    function getMovieById           (x) { return moviesOnSite[findMovieIndex(x, moviesOnSite)] };
 
     return {
             clearMovies: clearMovies,
@@ -89,9 +89,9 @@ let movieAPI = (() => {
             setMovieArr: setMovieArr,
             setMovieIndex: setMovieIndex,
             getMovie: getMovie,
-            getID: getID,
+            //getID: getID,
             getMovieArr: getMovieArr,
-            getIndex: getIndex
+            getMovieById: getMovieById
         }
 })();
 
@@ -111,7 +111,7 @@ function addMovieIndex (moviesOnSite) {
 }
 
 
-function findMovieIndex (x) {
+function findMovieIndex (x, moviesOnSite) {
     for (let i = 0; i < moviesOnSite.length; i++) {
         if(moviesOnSite[i].id == x) {
             return i;

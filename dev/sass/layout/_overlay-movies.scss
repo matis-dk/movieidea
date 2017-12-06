@@ -198,3 +198,20 @@
             font-size: 28px;
             padding: 8px;
         }
+
+
+    #om-exit-overlay {
+
+			position: fixed;
+			right: 2vw;
+			top: 1vw;
+
+			width: 30px;
+			height: 30px;
+
+			color: white;
+
+			font-size: 30px;
+			font-weight: 100;
+			cursor: pointer;
+		}
