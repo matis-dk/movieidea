@@ -599,7 +599,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   padding: 40px 20%; }
 
 #main-actors {
-  grid-template-columns: 1fr 1.75fr 1.75fr;
+  grid-template-columns: 265px 1.75fr 1.75fr;
   grid-template-rows: 350px 1fr;
   grid-template-areas: "profile    description filmography" "trademark   trademark     filmography";
   grid-gap: 30px;
@@ -798,7 +798,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   padding: 0px;
   grid-area: profile;
   display: grid;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sylvester_Stallone.jpg/170px-Sylvester_Stallone.jpg");
   background-size: cover; }
 
 #main-actors-profile::after {
@@ -806,11 +805,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   background-color: rgba(10, 24, 41, 0.2);
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(10, 24, 41, 0.9)), color-stop(90%, rgba(51, 96, 107, 0.5)));
-  background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.9) 20%, rgba(51, 96, 107, 0.5) 90%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(10, 24, 41, 0.65)), color-stop(90%, rgba(51, 96, 107, 0.3)));
+  background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.65) 20%, rgba(51, 96, 107, 0.3) 90%);
   position: relative; }
 
-#map-name {
+#mad-name {
   color: white;
   position: absolute;
   z-index: 2;
@@ -984,7 +983,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.45);
           box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.45);
-  border-radius: 3px; }
+  border-radius: 3px;
+  cursor: pointer; }
 
 .mat-item > span {
   font-family: "RobotoBold";
@@ -1474,12 +1474,12 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #overlay-movies {
   position: fixed;
   width: 100vw;
-  height: calc(100vh - 150px);
+  height: 100vh;
   bottom: 0px;
   background-color: rgba(20, 20, 20, 0.95);
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  z-index: 2;
+  z-index: 4;
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1548,16 +1548,16 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 #om-trailer-play {
   font-size: 64px;
-  color: rgba(242, 242, 242, 0.2);
+  color: rgba(242, 242, 242, 0.3);
   cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px);
   opacity: 0; }
 
 #om-trailer-play:hover {
-  color: rgba(242, 242, 242, 0.45); }
+  color: rgba(242, 242, 242, 0.65); }
 
 #om-information {
   display: grid;
@@ -1648,14 +1648,20 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 .om-header-actors {
   border-radius: 5px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 60px;
   margin: 0px 10px;
-  background-size: cover; }
+  background-size: cover;
+  border: 1px solid #3a3a3a; }
 
-.om-header-genres {
-  font-size: 28px;
-  padding: 8px; }
+.om-inner-element {
+  padding-right: 6px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.om-inner-element:hover {
+  color: #3fb8af; }
 
 #om-exit-overlay {
   position: fixed;

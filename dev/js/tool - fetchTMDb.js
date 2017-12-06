@@ -49,13 +49,7 @@ function fetchTMDb (con) {
 
     if (con.task == "actor") {
         console.log("TASK = ACTOR")
-        const URL = `https://api.themoviedb.org/3/person/${con.personID}?api_key=${APIkey}${languageUS}`;
-        return fetchFunction(URL, con.task);
-    }
-
-    if (con.task == "actorcredits") {
-        console.log("TASK = ACTOR CREDITS")
-        const URL = `https://api.themoviedb.org/3/person/${con.personID}/movie_credits?api_key=${APIkey}${languageUS}`;
+        const URL = `https://api.themoviedb.org/3/person/${con.personID}?api_key=${APIkey}${languageUS}&append_to_response=combined_credits`;
         return fetchFunction(URL, con.task);
     }
 

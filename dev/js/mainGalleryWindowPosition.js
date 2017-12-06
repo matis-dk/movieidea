@@ -3,7 +3,6 @@ window.addEventListener("scroll", calcWindowPosition);
 // Enabling and disabling scroll events
 let scrollGate = false;
 
-let mainGallery     =   document.getElementById('main-gallery');
 let header          =   document.getElementById('header');
 
 let windowSize, scrollPosition, mainGalleryActive;

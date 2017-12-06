@@ -26,7 +26,6 @@
             grid-area: profile;
             display: grid;
 
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sylvester_Stallone.jpg/170px-Sylvester_Stallone.jpg');
             background-size: cover;
         }
 
@@ -35,12 +34,12 @@
             width: 100%;
             height: 100%;
             background-color: rgba(#0a1829, 0.2);
-            background-image: linear-gradient(0deg, rgba(#0a1829, 0.9) 20%, rgba(#33606b, 0.5) 90%);
+            background-image: linear-gradient(0deg, rgba(#0a1829, 0.65) 20%, rgba(#33606b, 0.3) 90%);
 
             position: relative;
         }
 
-            #map-name {
+            #mad-name {
                 color: white;
                 position: absolute;
                 z-index: 2;
@@ -239,7 +238,7 @@
                 box-shadow:0 0 12px 0 rgba(0,0,0,.45);
 
                 border-radius: 3px;
-
+                cursor: pointer;
             }
 
             .mat-item > span {
