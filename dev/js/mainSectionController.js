@@ -17,8 +17,20 @@ function mainSectionController (mainSection, payload) {
         mainSection.setAttribute("data-active", "true");
 
 
-        if (mainSection.id == "main-actors") {
+        if (mainSection == mainActors) {
             controllerActors(payload);
         }
 
+        if (mainSection == mainGallery) {
+            let con = {
+                task: "discover",
+                settings: lastSettings
+            }
+
+            controllerMovies(con);
+        }
+
+        if (mainSection == mainWall) {
+            controllerSearch(payload)
+        }
 }

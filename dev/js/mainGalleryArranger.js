@@ -96,7 +96,7 @@
             }
 
             toggleArranger();
-            loadController(con, "reset-movies")
+            controllerMovies(con, "reset-movies")
 
             return;
         }

@@ -20,10 +20,10 @@
                     </div>
                     <nav id="header-navigation">
                         <ul id="header-navigation-ul">
-                            <li class="header-navigation-elements">Movies</li>
-                            <li class="header-navigation-elements">Genre</li>
-                            <li class="header-navigation-elements">Search</li>
-                            <li class="header-navigation-elements">About</li>
+                            <li class="header-navigation-elements" data-section="mainGallery">Movies</li>
+                            <li class="header-navigation-elements" data-section="mainGenres">Genre</li>
+                            <li class="header-navigation-elements" data-section="mainHome">Search</li>
+                            <li class="header-navigation-elements" data-section="">About</li>
                         </ul>
                     </nav>
                     <div id="header-search" data-active="false">
@@ -34,7 +34,7 @@
             </header>
             <main id="main">
 
-                <section class="main-settings" id="main-home" data-active="false">
+                <section class="main-settings" id="main-home" data-active="true">
 
                     <div id="main-home-search">
                         <input id="mhs-input" type="text" placeholder="Search in our database"  spellcheck="false">
@@ -45,58 +45,64 @@
                 </section>
                 <section class="main-settings" id="main-wall" data-active="false">
                     <div id="main-wall-search">
-                        <h4 id="mws-results">Search results for '<span>Sylvester Stallone</span>'</h3>
+                        <h4 id="mws-results">Search results for '<span id="mws-query">Sylvester Stallone</span>'</h3>
                         <span class="spanTag">Movies<span id="mws-results-movies">12</span></span>
                         <span class="spanTag">Actors<span id="mws-results-persons">32</span></span>
                         <span class="spanTag">TV - shows<span id="mws-results-tv">7</span></span>
                     </div>
-                    <div class="main-wall-group" id="main-wall-movie">
+                    <div class="main-wall-group">
                         <h3 class="mws-h3-header"><span class="fa fa-film"></span>Movies</h3>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
-                        </div>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
-                        </div>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                        <div id="mws-movies-container">
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="main-wall-group" id="main-wall-persons">
+                    <div class="main-wall-group">
                         <h3 class="mws-h3-header"><span class="fa fa-user-o"></span>Persons</h3>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
-                        </div>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
-                        </div>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                        <div id="mws-persons-container">
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-fire"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="main-wall-group" id="main-wall-tv">
+                    <div class="main-wall-group">
                         <h3 class="mws-h3-header"><span class="fa fa-television"></span>TV shows</h3>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
-                        </div>
-                        <div class="mws-item">
-                            <h3 class="mws-h3-item">Terminator Genesis</h3>
-                            <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
-                            <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                        <div id="mws-tvshows-container">
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
+                            <div class="mws-item">
+                                <h3 class="mws-h3-item">Terminator Genesis</h3>
+                                <h5 class="mws-h5-item"><span class="fa fa-calendar"></span>02/06/2012</h5>
+                                <p class="mws-p-item">Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others"Hamlet is Shakespeare's longest play, and is considered among the most powerful and influential works of world literature, with a story capable of "seemingly endless retelling and adaptation by others".[1] </p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -122,21 +128,7 @@
                     </div>
                     <div id="main-actors-filmography">
                         <h3 class="mad-biography"><span class="fa fa-list-ul "></span>Filmography</h4>
-                        <ul id="mad-timeline">
-                    <!--    <li class="mad-start"><i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></li>
-                            <li class="mad-year">2017</li>
-                            <li class="mad-content">Mad Max</li>
-                            <li class="mad-content">Dark Knight Rises</li>
-                            <li class="mad-content">Redemption</li>
-                            <li class="mad-year">2015</li>
-                            <li class="mad-content">Mad Max</li>
-                            <li class="mad-content">Dark Knight Rises</li>
-                            <li class="mad-content">Redemption</li>
-                            <li class="mad-year">2013</li>
-                            <li class="mad-content">Redemption</li>
-                            <li class="mad-empty"></li>
-                            <li class="mad-end"><i class="fa fa-stop-circle" aria-hidden="true"></i></li>-->
-                        </ul>
+                        <ul id="mad-timeline"></ul>
                     </div>
                     <div id="main-actors-trademark">
                         <h3 class="mad-biography"><span class="fa fa-trophy"></span>Trademarks</h4>
@@ -176,7 +168,7 @@
                         <li data-id="37">   <div class="icon-genre-western"></div>      <span>western</span></li>
                     </ul>
                 </section>
-                <section class="main-settings" id="main-gallery" data-active="true">
+                <section class="main-settings" id="main-gallery" data-active="false">
                         <div id="mg-arranger-container" data-open="false">
                             <div id="mg-filtering-container" class="mg-container">
                                 <h3 class="mg-header-xl"><span class="fa fa-filter"></span>FILTERING</h3>

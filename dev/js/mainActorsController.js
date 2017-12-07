@@ -1,5 +1,5 @@
-
-let mainActorsProfile   =   document.getElementById('main-actors-profile');
+let mainActors          =   document.getElementById('main-actors')
+let mainActorsProfile   =   document.getElementById('main-actors-profile')
 
 let madName             =   document.getElementById('mad-name')
 let madBiography        =   document.getElementById('mad-biography')
@@ -10,10 +10,20 @@ let madHomepage         =   document.getElementById('mad-homepage')
 let madTimeline         =   document.getElementById('mad-timeline')
 
 let madActorsTrademark  =   Array.from(document.getElementById('mat-container').children)
-// let mad      =   document.getElementById('mad-')
-// let mad      =   document.getElementById('mad-')
-//
 
+
+
+mainActors.addEventListener('click', openMovieoverlay);
+
+
+function openMovieoverlay (e) {
+    console.log("Event called");
+    console.log(e)
+    if (e.target.hasAttribute('movie-id')){
+        let movieID = e.target.getAttribute('movie-id');
+        controllerMovieOverlay("open", movieAPI.getMovieById(movieID))
+    }
+}
 
 
 function controllerActors (payload) {
@@ -34,9 +44,13 @@ function controllerActors (payload) {
             madBirthday.textContent     =   resp.birthday;
             madHomepage.textContent     =   resp.homepage;
 
-            addMostPopular(resp.combined_credits.cast)
 
-            assembelFilmography(sortMovieByYear(resp.combined_credits.cast))
+            // Clearing movielist with missing information
+            let movieCleared = clearMovieList(resp.movie_credits.cast);
+
+            addMostPopular(movieCleared)
+            assembelFilmography(sortMovieByYear(movieCleared))
+
         })
 }
 
@@ -45,6 +59,7 @@ function controllerActors (payload) {
 function addMostPopular (movieList) {
 
     movieList = sortMovieByRating(movieList);
+    console.log(movieList)
 
     for (let i = 0; i < 8; i++) {
         madActorsTrademark[i].setAttribute('style', `background-image:url('http://image.tmdb.org/t/p/w185${movieList[i].poster_path}')`)
@@ -56,36 +71,43 @@ function addMostPopular (movieList) {
 }
 
 
+// ==================== SORTING ====================
+
+function clearMovieList (movieList) {
+    let movieCleared = [];
+
+    movieList.map(i => {
+        if (!i.release_date || !i.poster_path) { return }
+         movieCleared.push(i);
+    })
+
+    return movieCleared;
+
+}
+
 function sortMovieByRating (movieList) {
     movieList.sort(function(a, b){
-        if (a.media_type == "tv") { return 0 }  // Removing tv series
-        return b.vote_average - a.vote_average;
+        return b.vote_count - a.vote_count;
     })
 
     return movieList;
 }
 
 function sortMovieByYear (movieList) {
-
-    let movieSorted = [];
-    movieList.map(i => {
-        if (!i.release_date) { return }
-        if (i.media_type == "movie") { movieSorted.push(i)};
-    })
-
-    movieSorted.sort(function(a, b){
+    movieList.sort(function(a, b){
         return parseFloat(b.release_date ) - parseFloat(a.release_date);
     })
 
+    movieAPI.setMovieArr(movieList);
 
-    console.log(movieSorted);
-
-    return movieSorted;
+    return movieList;
 }
 
 
-function assembelFilmography (movieList) {
 
+// ==================== FILMOGRAPHY TIMELINE ====================
+
+function assembelFilmography (movieList) {
    let madFragment          =   document.createDocumentFragment();
 
     let year = 0;
@@ -103,7 +125,13 @@ function assembelFilmography (movieList) {
             madFragment.appendChild(addFilmographyYear(yearParse))
         }
 
-        madFragment.appendChild(addFilmographyContent(movieList[i].title))
+        madFragment.appendChild(addFilmographyContent(movieList[i].title, movieList[i].id))
+
+        if (i == movieList.length - 1) {
+            madFragment.appendChild(addFilmographyEmpty());
+            madFragment.appendChild(addFilmographyEnd());
+        }
+
    }
 
     madTimeline.appendChild(madFragment);
@@ -133,10 +161,11 @@ function assembelFilmography (movieList) {
     }
 
 
-    function addFilmographyContent (title) {
+    function addFilmographyContent (title, movieid) {
         let contentElement = document.createElement("li");
         contentElement.className = "mad-content";
         contentElement.textContent = title;
+        contentElement.setAttribute('movie-id', `${movieid}`)
 
         return contentElement;
     }
@@ -145,7 +174,6 @@ function assembelFilmography (movieList) {
     function addFilmographyEmpty () {
         let emptyElement = document.createElement("li");
         emptyElement.className = "mad-empty";
-        emptyElement.className = "mad-start";
 
         return emptyElement;
     }

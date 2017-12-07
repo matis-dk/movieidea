@@ -24,7 +24,7 @@ function openSearchField (e) {
         DOMbody.addEventListener('click', closeSearchField);
     } else {
         if (headerSearchInput.value != "") {
-            console.log("request data ")
+            mainSectionController(mainWall, headerSearchInput.value)
         }
 
         searchField = false;
@@ -66,14 +66,10 @@ function closeSearchField(e) {
 
     function searchGuard (e) {
         if (e.type == "click" || e.keyCode == 13) {
-            search(mhsInput.value);
+            mainSectionController(mainWall, mhsInput.value)
             mhsInput.value = "";
             return;
         }
-    }
-
-    function search(searchInput) {
-        console.log(searchInput)
     }
 
 })();

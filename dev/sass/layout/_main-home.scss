@@ -15,7 +15,7 @@
             border: none;
             background-color: transparent;
             border-bottom: 1px solid $c-g-5;
-            color: $c-theme11;
+            color: $c-theme6;
             margin-right: 30px;
 
             @include mainInput;
@@ -26,7 +26,7 @@
         }
 
         #mhs-input::selection {
-            background-color: $c-theme11;
+            background-color: $c-theme6;
             color: $c-w-5;
         }
 

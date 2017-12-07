@@ -468,6 +468,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
   font-family: "MyriadProRegular";
   font-size: 16px;
   color: #0A1829;
@@ -582,6 +583,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #main-home {
   width: 100%;
   max-width: 1400px;
+  height: 100%;
   margin: 0px auto;
   padding: 0px 50px;
   -webkit-box-pack: center;
@@ -646,7 +648,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid #8a8a8a;
-  color: #FF404C;
+  color: #3fb8af;
   margin-right: 30px;
   font-family: "RobotoLight";
   font-size: 56px; }
@@ -664,11 +666,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   color: #bdbdbd; }
 
 #mhs-input::-moz-selection {
-  background-color: #FF404C;
+  background-color: #3fb8af;
   color: #f2f2f2; }
 
 #mhs-input::selection {
-  background-color: #FF404C;
+  background-color: #3fb8af;
   color: #f2f2f2; }
 
 .mhs-icons-container {
@@ -837,6 +839,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #mad-biography {
   margin: 20px 0px;
   font-size: 14px;
+  height: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-family: "RobotoLight";
   font-size: 12px;
   color: #2d2d2d; }

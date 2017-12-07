@@ -70,6 +70,9 @@
             #mad-biography {
                 margin: 20px 0px;
                 font-size: 14px;
+                height: 155px;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 @include mwsPItem;
             }
 

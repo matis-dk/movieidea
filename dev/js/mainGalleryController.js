@@ -13,7 +13,7 @@ function loadMovies (con) {
     return Promise.resolve(fetchTMDb(con))
 }
 
-function loadController (con, direction) {
+function controllerMovies (con, direction) {
     if (direction == "reset-movies") {
         console.log("Resetting movies!")
         movieAPI.clearMovies();

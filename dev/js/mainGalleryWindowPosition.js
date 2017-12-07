@@ -34,6 +34,6 @@ function calcWindowPosition (e) {
             settings: lastSettings
         }
 
-        loadController(con);
+        controllerMovies(con);
     }
 }
