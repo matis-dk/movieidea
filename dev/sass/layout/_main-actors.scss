@@ -117,6 +117,7 @@
                 display: grid;
                 justify-content: center;
                 margin-top: 40px;
+                padding: 0px 10px;
 
                 > li {
                     cursor: pointer;
@@ -136,7 +137,7 @@
 
             .mad-content, .mad-empty {
                 @include madContent;
-                padding: 15px 15px 15px 100px;;
+                padding: 5px 15px 5px 100px;;
                 position: relative;
             }
 
@@ -161,12 +162,12 @@
 
                 .mad-year {
                     @include madContent;
-                    padding: 15px 0px 15px 25px;
+                    padding: 10px 0px 10px 25px;
                     position: relative;
                     width: 82px;
                     background-color: $c-theme1;
                     color: white;
-                    margin: 20px 0px;
+                    margin: 10px 0px;
                 }
 
                 .mad-year::after {

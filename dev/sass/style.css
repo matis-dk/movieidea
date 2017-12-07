@@ -879,7 +879,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 40px; }
+  margin-top: 40px;
+  padding: 0px 10px; }
   #mad-timeline > li {
     cursor: pointer; }
 
@@ -887,7 +888,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   font-family: "RobotoBold";
   font-size: 14px;
   color: #012C40;
-  padding: 15px 15px 15px 100px;
+  padding: 5px 15px 5px 100px;
   position: relative; }
 
 .mad-content::after {
@@ -913,12 +914,12 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   font-family: "RobotoBold";
   font-size: 14px;
   color: #012C40;
-  padding: 15px 0px 15px 25px;
+  padding: 10px 0px 10px 25px;
   position: relative;
   width: 82px;
   background-color: #0A1829;
   color: white;
-  margin: 20px 0px; }
+  margin: 10px 0px; }
 
 .mad-year::after {
   content: " ";
