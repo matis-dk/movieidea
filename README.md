@@ -1,11 +1,24 @@
-# Boilerplate
+# MovieIdea
 
-## Website template with settings
-This template is what im using the 26-10-2017.
-Its probably going to be updated in the future.
+## A simple manageable website with a great amount of movie suggestions 
+MovieIdea can be used everytime you wanna watch a movie, 
+but are unsure about which one. The site consists of a simple and lightweight user interface,
+and extremly easy to use. This project had some specific topics,
+which was my main focus area im trying to address in my learning journey. 
+Those parts was the following:
+ 
+ - Fetching from a external API endpoint - from TMDb in this case.
+ - Develop a filter - and sorting functionality giving the user different settings availabel.
+ - Handling a considerable amount of data with great perfomance.
+ - Advanced DOM manipulation in terms of creating, injecting, transversing and deleting items.
+ - A single DOM UI where JS is handling different states, subsites etc.
+ - User navigation through keyboard interaction.
+ 
+ ### Specifications
+This site is only using the noUIslider libary to create the range slider.
 
-Right now, it consist of the following tools:
-- Preprocessor *SASS*
-- GIT *GitHub* 
-- Package manager *NPM*
-- Task-runner *Grunt*
+No other libary - or framework was used to handle css or js.
+
+### Thoughts
+All css settings, js configuration etc. is custom coded,
+and is considered a learn-by-doing challenge. 
