@@ -4,7 +4,7 @@
 MovieIdea can be used everytime you wanna watch a movie, 
 but are unsure about which one. The site consists of a simple and lightweight user interface,
 and extremly easy to use. This project had some specific topics,
-which was my main focus area im trying to address in my learning journey. 
+which was my main focus area i was trying to address as a part of my learning journey. 
 Those parts was the following:
  
  - Fetching from a external API endpoint - from TMDb in this case.
@@ -21,4 +21,21 @@ No other libary - or framework was used to handle css or js.
 
 ### Thoughts
 All css settings, js configuration etc. is custom coded,
-and is considered a learn-by-doing challenge. 
+and is considered as a learn-by-doing challenge. 
+
+### Developing environment 
+ - npm - as package manager
+ - grunt - as task runner
+ - SASS - as preprocessor
+ - git - as version control system
+
+### Running enviroment
+ 1. Choose a directory where you want to install MovieIdea
+ 2. "git clone git@github.com:matis-dk/movieidea.git"
+ 3. Enter root folder and "npm install --save-dev"
+ 4. Write "grunt" to run the express / nodejs server
+
+### Requirements
+ - nodejs
+ - gitbash
+
