@@ -56,8 +56,9 @@
         max-width: 1200px;
         margin: 0px auto;
 
-        display: grid;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto 1fr !important;
+        height: calc(100vh - 150px);
+
     }
 
     #main-gallery {

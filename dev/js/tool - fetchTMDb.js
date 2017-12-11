@@ -41,13 +41,6 @@ function fetchTMDb (con) {
         return fetchFunction(URL, con.task);
     }
 
-    if (con.task == "genre") {
-        console.log("TASK = GENRE")
-        const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}${languageUS}${adult}&with_genres=${con.genreID}&page=${con.pageNr}`
-        console.log(URL)
-        return fetchFunction(URL, con.task);
-    }
-
     if (con.task == "actor") {
         console.log("TASK = ACTOR")
         const URL = `https://api.themoviedb.org/3/person/${con.personID}?api_key=${APIkey}${languageUS}&append_to_response=movie_credits`;

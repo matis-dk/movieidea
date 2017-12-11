@@ -9,7 +9,6 @@ let monitorMovieElements = {
 }
 
 function loadMovies (con) {
-    console.log("Loading movies")
     return Promise.resolve(fetchTMDb(con))
 }
 
@@ -48,14 +47,13 @@ function controllerMovies (con, direction) {
         .then (resp => {
             if (monitorMovieElements.current_page == 1) {
                 // PRE-FETCHING SECOND PAGE
-                console.log("PRE-FETCHING")
                 calcWindowPosition();
 
                 // SELECTING FIRST MOVIE IN GALLERY
-                let firstMovieItem = mgMovieContainer.children[0];
-                updateMovieSeletion(firstMovieItem);
-                mgMovieContainer.focus();
-                document.scrollingElement.scrollTop = 0;
+                // let firstMovieItem = mgMovieContainer.children[0];
+                // updateMovieSeletion(firstMovieItem);
+                // mgMovieContainer.focus();
+                // document.scrollingElement.scrollTop = 0;
             }
             return resp;
         })

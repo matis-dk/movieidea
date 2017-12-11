@@ -73,7 +73,7 @@ function controllerMovieOverlay (direction, movie) {
             window.lastSettings = getArrangerSettings();
 
             let con = {
-                task: "genre",
+                task: "discover",
                 genreID: e.target.getAttribute("data-genre-id"),
                 settings: lastSettings
             }

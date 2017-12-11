@@ -615,8 +615,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
-  display: grid;
-  grid-template-rows: auto 1fr; }
+  grid-template-rows: auto 1fr !important;
+  height: calc(100vh - 150px); }
 
 #main-gallery {
   width: 100%;
@@ -1032,10 +1032,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #main-genre-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-rows: auto auto auto auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-self: center;
   padding-top: 20px; }
   #main-genre-container > li {
     justify-self: center;
@@ -1052,6 +1053,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    cursor: pointer;
     -webkit-box-shadow: #49596a 0px 0px 16px 0px;
             box-shadow: #49596a 0px 0px 16px 0px;
     -webkit-transition: 0.5s;
