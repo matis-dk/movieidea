@@ -54,8 +54,8 @@ function controllerMovies (con, direction) {
                 // SELECTING FIRST MOVIE IN GALLERY
                 let firstMovieItem = mgMovieContainer.children[0];
                 updateMovieSeletion(firstMovieItem);
-                //mgMovieContainer.focus();
-                //document.scrollingElement.scrollTop = 0;
+                mgMovieContainer.focus();
+                document.scrollingElement.scrollTop = 0;
             }
             return resp;
         })

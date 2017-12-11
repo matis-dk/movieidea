@@ -16,21 +16,28 @@ function mainSectionController (mainSection, payload) {
 
         mainSection.setAttribute("data-active", "true");
 
-
+        // Extra changes - specific for each page
         if (mainSection == mainActors) {
             controllerActors(payload);
+            document.scrollingElement.scrollTop = 0;
         }
 
         if (mainSection == mainGallery) {
-            let con = {
-                task: "discover",
-                settings: lastSettings
+            if (!payload) {
+                payload = {
+                    task: "discover",
+                    settings: lastSettings
+                }
             }
-
-            controllerMovies(con);
+            controllerMovies(payload, "reset-movies")
         }
 
         if (mainSection == mainWall) {
             controllerSearch(payload)
         }
+
+        if (mainSection == mainHome) {
+            mhsInput.focus();
+        }
+
 }

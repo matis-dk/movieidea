@@ -14,7 +14,8 @@ let omWriter      =   document.getElementById('om-writer')
 let omReleasedate =   document.getElementById('om-releasedate')
 let omActors      =   document.getElementById('om-actors')
 let omDescription =   document.getElementById('om-description')
-let omActorsIcon  =   Array.from(document.getElementById('om-actors-icon').children);
+let omActorsIcon  =   document.getElementById('om-actors-icon')
+let omActorsIconChildren  =   Array.from(document.getElementById('om-actors-icon').children);
 
 let overlayMovies =   document.getElementById('overlay-movies');
 let overlayMovieCon = document.getElementById('overlay-movies-container');
@@ -60,15 +61,25 @@ function controllerMovieOverlay (direction, movie) {
         if (e.target.hasAttribute('data-actor-id')) {
             controllerMovieOverlay("close");
             mainSectionController(mainActors, e.target.getAttribute("data-actor-id"));
-            console.log("calling actor page");
         }
 
         if (e.target.hasAttribute('data-genre-id')) {
-            //controllerMovieOverlay("close");
-            //mainSectionController(mainGenres, e.target.getAttribute("data-genre-id"));
-            //console.log("calling genre page");
-        }
+            controllerMovieOverlay("close");
 
+            // Resetting and setting genre in filter
+            removeGenres();
+            setGenre(e.target.getAttribute("data-genre-id"))
+
+            window.lastSettings = getArrangerSettings();
+
+            let con = {
+                task: "genre",
+                genreID: e.target.getAttribute("data-genre-id"),
+                settings: lastSettings
+            }
+
+            mainSectionController(mainGallery, con);
+        }
     }
 
 
@@ -97,8 +108,9 @@ function updateMovieOverlay (movie) {
 
 // ============= HELPERS ========================
 function addCastPictures (actors) {
-    for (let i in omActorsIcon) {
-        omActorsIcon[i].setAttribute("style", `background-image: url('http://image.tmdb.org/t/p/w45${actors[i].profile_path}')`)
+    for (let i in omActorsIconChildren) {
+        omActorsIconChildren[i].setAttribute("style", `background-image: url('http://image.tmdb.org/t/p/w45${actors[i].profile_path}')`)
+        omActorsIconChildren[i].setAttribute('data-actor-id', `${actors[i].id}`)
     }
 }
 

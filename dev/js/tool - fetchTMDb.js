@@ -43,7 +43,8 @@ function fetchTMDb (con) {
 
     if (con.task == "genre") {
         console.log("TASK = GENRE")
-        const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}&with_genres=${genreID}&primary_release_date.gte=2015-01-01&vote_count.gte=10&page=${pageNr}&include_video&popularity.desc`
+        const URL = `https://api.themoviedb.org/3/discover/movie?api_key=${APIkey}${languageUS}${adult}&with_genres=${con.genreID}&page=${con.pageNr}`
+        console.log(URL)
         return fetchFunction(URL, con.task);
     }
 

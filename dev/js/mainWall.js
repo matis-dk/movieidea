@@ -1,8 +1,11 @@
 let mwsMoviesContainer       =   document.getElementById('mws-movies-container')
 let mwsPersonsContainer      =   document.getElementById('mws-persons-container')
+
 let mwsMovies                =   document.getElementById('mws-movies')
 let mwsPersons               =   document.getElementById('mws-persons')
 
+let mwsMoviesQueryResult     =   document.getElementById('mws-results-movies');
+let mwsPersonsQueryResult    =   document.getElementById('mws-results-persons');
 
 let mwsQuery                 =    document.getElementById('mws-query');
 
@@ -48,17 +51,23 @@ function assembelSearch (response, query, totalNumbers) {
 
     mwsQuery.textContent = query;
 
+    // Resetting search results
     mwsMoviesContainer.textContent = "";
     mwsPersonsContainer.textContent = "";
 
     mwsMovies.classList.remove('mws-visible');
     mwsPersons.classList.remove('mws-visible');
 
+    // Looping through search results
+    let movieN = 0;
+    let personN = 0;
+
     for (let i = 0; i < response.length; i++) {
 
         let m   =   response[i];
 
         if (m.media_type == "movie") {
+            movieN++;
             if (!m.poster_path) return;
             if (!mwsMovies.classList.contains("mws-visible")) mwsMovies.classList.add("mws-visible");
 
@@ -68,12 +77,19 @@ function assembelSearch (response, query, totalNumbers) {
         }
 
         if (m.media_type == "person") {
+            personN++;
             if (!m.profile_path) return;
             if (!mwsPersons.classList.contains("mws-visible")) mwsPersons.classList.add("mws-visible");
 
             let item =  createMwsItem(m.name, m.popularity, "", "fa fa-fire", m.profile_path)
             item.setAttribute('data-id', `${m.id}`);
             mwsPersonsContainer.appendChild(item)
+        }
+
+
+        if ((i + 1 < response.length)) {
+            mwsMoviesQueryResult.textContent = movieN;
+            mwsPersonsQueryResult.textContent = personN;
         }
 
     }

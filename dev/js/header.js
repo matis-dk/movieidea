@@ -2,7 +2,7 @@ let headerNavigation    =   document.getElementById('header-navigation-ul');
 let headerLogo          =   document.getElementById('header-logo');
 
 headerNavigation.addEventListener('click', changeSite)
-headerLogo.addEventListener('click', changeToStart)
+headerLogo.addEventListener('click', changeToHome)
 
 function changeSite (e) {
 
@@ -13,6 +13,6 @@ function changeSite (e) {
     if (page == "mainHome") { mainSectionController(mainHome) }
 }
 
-function changeToStart (e) {
+function changeToHome (e) {
     mainSectionController(mainHome)
 }

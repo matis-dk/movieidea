@@ -6,7 +6,8 @@ let headerSearchLogo    =   document.getElementById('header-search-logo');
 let headerSearchInput   =   document.getElementById('header-search-input');
 let headerSearch        =   document.getElementById('header-search');
 let movieContainer      =   document.getElementById('mg-movie-container');
-
+let mhsInput            =   document.getElementById("mhs-input");
+let mhsSearch   = document.getElementById('mhs-search');
 
 let searchField = false;
 
@@ -58,14 +59,13 @@ function closeSearchField(e) {
 
 
 (function () {
-    let mhsInput    = document.getElementById('mhs-input');
-    let mhsSearch   = document.getElementById('mhs-search');
-
     mhsInput.addEventListener('keyup', searchGuard);
     mhsSearch.addEventListener('click', searchGuard);
 
     function searchGuard (e) {
         if (e.type == "click" || e.keyCode == 13) {
+            if (mhsInput.value == "") { return }
+
             mainSectionController(mainWall, mhsInput.value)
             mhsInput.value = "";
             return;

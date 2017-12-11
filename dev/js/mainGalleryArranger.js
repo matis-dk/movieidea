@@ -170,6 +170,27 @@
 }
 
 
+    // SETTING and RESETTING GENRES
+    let mgGenreContainer    =   Array.from(document.getElementById('mg-genre-container').children);
+
+    function setGenre (genre) {
+        for (let i in mgGenreContainer) {
+            if(mgGenreContainer[i].getAttribute('data-genre-id') == genre) {
+                mgGenreContainer[i].children[0].checked = true;;
+            }
+        }
+    }
+
+    function removeGenres () {
+        for (let i in mgGenreContainer) {
+            mgGenreContainer[i].children[0].checked = false;
+        }
+    }
+
+
+
+
+
 
 
 
