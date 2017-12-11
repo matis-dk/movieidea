@@ -221,3 +221,12 @@
 			font-weight: 100;
 			cursor: pointer;
 		}
+
+
+// =========== MEDIA QUERY ===============
+
+@include media("retina2x", ">desktop") {
+        #main-gallery {
+            background-color: red !important;
+        }
+}

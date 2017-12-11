@@ -5,6 +5,10 @@
    \\--------------------------------------------------//
 */
 
+// ================== VENDORS FOLDER ================== \\
+@import "vendors/include-media";
+
+
 // ==================== BASE FOLDER ==================== \\
 @import 'base/colors';
 @import 'base/typography';
@@ -40,10 +44,4 @@
 @import 'layout/main-actors';
 @import 'layout/main-genre';
 @import 'layout/main-gallery';
-
 @import 'layout/overlay-movies';
-
-
-
-
-// ================== VENDORS FOLDER ================== \\

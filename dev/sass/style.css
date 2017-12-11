@@ -1693,3 +1693,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   font-size: 30px;
   font-weight: 100;
   cursor: pointer; }
+
+@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1025px), (min-resolution: 192dpi) and (min-width: 1025px), (min-resolution: 2dppx) and (min-width: 1025px) {
+  #main-gallery {
+    background-color: red !important; } }
