@@ -37,12 +37,30 @@
 
     mgMovieContainer.addEventListener('keyup', function () {keyboardStateActive = false});
     mgMovieContainer.addEventListener('keydown', function (e) {
+        console.log(e);
+
+        // Disabling key down events
         if (keyboardStateActive) {
             e.preventDefault();
             console.log("keyboard event cancelled");
             return;
         }
+
         keyboardStateActive = true;
+
+        // Disabling keyboard navigation when overlay is open
+        let overlayActive       = overlayMovies.getAttribute("data-active");
+
+        // Closing overlay with escape key
+        if (e.keyCode == "27" && overlayActive == "true") {
+            e.preventDefault();
+            controllerMovieOverlay("close");
+            return;
+        }
+
+        if (overlayActive == "true") {
+            return;
+        }
 
         if (   e.keyCode == "37"
             || e.keyCode == "38"
@@ -50,17 +68,9 @@
             || e.keyCode == "40"
             || e.keyCode == "13") {
                 e.preventDefault();
-                calcMovieSelection(e.keyCode);
+                calcMovieSelection(e.keyCode, e);
         }
 
-        // if ( e.keyCode == "27" && olWindowActive) {
-        //     oiContainer.style = "display: none";
-        //     movieContainer.style = 	"filter: blur(0px)"
-        //     olWindowActive = false;
-        //     oiPoster.removeAttribute('style');
-        //
-        //     return;
-        // }
     })
 
 
@@ -69,7 +79,7 @@
 
 
     let movieSelection = {
-        current: 291805
+        current: null
     }
 
     function updateMovieSeletion (mgMovieItem) {
@@ -84,7 +94,7 @@
         movieSelection.current = mgMovieItem.getAttribute('movie-id');
     }
 
-    function calcMovieSelection(key) {
+    function calcMovieSelection(key, e) {
 
         let domIndex    = currentDomPosition(movieSelection.current)
         let elemPrRow   = moviesPrRow();
@@ -121,9 +131,10 @@
                 go(domIndex, key); return;
             }
 
-            // if (key == "13" || key == "27") {
-            //     selectedMovieInfo (e.target, key);
-            // }
+            if (key == "13") {
+                let movieItem = movieAPI.getMovieByIndex(domIndex)
+                controllerMovieOverlay("open", movieItem)
+            }
 
 
             function go (domIndex, key) {

@@ -25,7 +25,7 @@ function calcWindowPosition (e) {
     let totalHeight         = headerHeight + mainGalleryHeight;
     let heightFromBottom    = totalHeight - windowSize - scrollPosition;
 
-    console.log(heightFromBottom)
+    //console.log(heightFromBottom)
 
     if (Number(heightFromBottom) < 450) {
         scrollGate = true;

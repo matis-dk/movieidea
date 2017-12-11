@@ -1,6 +1,8 @@
-let headerNavigation     =   document.getElementById('header-navigation-ul');
+let headerNavigation    =   document.getElementById('header-navigation-ul');
+let headerLogo          =   document.getElementById('header-logo');
 
 headerNavigation.addEventListener('click', changeSite)
+headerLogo.addEventListener('click', changeToStart)
 
 function changeSite (e) {
 
@@ -9,4 +11,8 @@ function changeSite (e) {
     if (page == "mainGallery") { mainSectionController(mainGallery) }
     if (page == "mainGenres") { mainSectionController(mainGenres) }
     if (page == "mainHome") { mainSectionController(mainHome) }
+}
+
+function changeToStart (e) {
+    mainSectionController(mainHome)
 }

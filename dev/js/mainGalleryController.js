@@ -35,7 +35,6 @@ function controllerMovies (con, direction) {
 
             // UPDATING MOVIEAPI
             movieAPI.setMovie(respSorted);
-            movieAPI.setMovieIndex();
 
             // UPDATING MONITOR
             monitorMovieElements.total_pages = resp.total_pages;
@@ -46,12 +45,19 @@ function controllerMovies (con, direction) {
 
             return respSorted })
         .then (resp => { addMovieElements(resp)})
-        .then (() => {
-            // PRE-FETCHING SECOND PAGE
+        .then (resp => {
             if (monitorMovieElements.current_page == 1) {
+                // PRE-FETCHING SECOND PAGE
                 console.log("PRE-FETCHING")
                 calcWindowPosition();
+
+                // SELECTING FIRST MOVIE IN GALLERY
+                let firstMovieItem = mgMovieContainer.children[0];
+                updateMovieSeletion(firstMovieItem);
+                //mgMovieContainer.focus();
+                //document.scrollingElement.scrollTop = 0;
             }
+            return resp;
         })
         .catch(error => {
             console.log("---------------------------------")
@@ -77,39 +83,24 @@ let movieAPI = (() => {
     function clearMovies            (x) { moviesOnSite = []}
     function setMovie               (x) { x.map(i => moviesOnSite.push(i)) };
     function setMovieArr            (x) { moviesOnSite = JSON.parse(JSON.stringify(x)) };             // Overwriting
-    function setMovieIndex          ()  {  moviesOnSite = addMovieIndex(moviesOnSite) };
     function getMovie               (x) { return moviesOnSite[x]};
-    //function getID                  (x) { return moviesOnSite[x].id};
     function getMovieArr            ()  { return JSON.parse(JSON.stringify(moviesOnSite)) };
     function getMovieById           (x) { return moviesOnSite[findMovieIndex(x, moviesOnSite)] };
+    function getMovieByIndex        (x) { return JSON.parse(JSON.stringify(moviesOnSite[x])) };
 
     return {
             clearMovies: clearMovies,
             setMovie: setMovie,
             setMovieArr: setMovieArr,
-            setMovieIndex: setMovieIndex,
             getMovie: getMovie,
-            //getID: getID,
             getMovieArr: getMovieArr,
-            getMovieById: getMovieById
+            getMovieById: getMovieById,
+            getMovieByIndex: getMovieByIndex
         }
 })();
 
 
 // ================== HELPERS ==================
-
-function addMovieIndex (moviesOnSite) {
-    //if (moviesOnSite[0].DOMindex)
-    console.log("==============")
-    console.log(moviesOnSite)
-    console.log("==============")
-    let data = moviesOnSite;
-    for (let i = 0; i < moviesOnSite.length; i++) {
-        data[i].DOMindex = i;
-    }
-    return data;
-}
-
 
 function findMovieIndex (x, moviesOnSite) {
     for (let i = 0; i < moviesOnSite.length; i++) {

@@ -444,7 +444,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
           align-items: center;
   background-color: #0A1829;
   padding: 10px 70px 10px 10px;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 #header-logo-image {
   width: 40px; }
@@ -722,6 +723,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
     margin-left: 10px; }
 
 .main-wall-group {
+  display: none;
   margin: 15px 0px;
   background-color: #fcfcfc;
   padding: 20px 40px;
@@ -740,9 +742,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 .mws-item {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: auto 1fr 2fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "h3Item pItem" "h5Item pItem";
+  grid-template-areas: "posterItem h3Item pItem" "posterItem h5Item pItem";
   border-bottom: 1px solid #DAEBF2;
   padding: 15px 10px;
   cursor: pointer;
@@ -762,6 +764,13 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
     padding-left: 10px; }
   .mws-item:hover > .mws-h5-item {
     padding-left: 15px; }
+
+.mws-poster-item {
+  grid-area: posterItem;
+  width: 47px;
+  height: 70px;
+  margin-right: 15px;
+  background-size: cover; }
 
 .mws-h3-item {
   grid-area: h3Item;
@@ -784,6 +793,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   font-family: "RobotoLight";
   font-size: 12px;
   color: #2d2d2d; }
+
+.mws-visible {
+  display: block; }
 
 #main-actors > * {
   -webkit-box-shadow: rgba(73, 89, 106, 0.1) 0px 0px 16px 0px;

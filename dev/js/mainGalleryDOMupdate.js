@@ -49,16 +49,3 @@ function resetMonitor () {
         fetched: false
     }
 }
-
-//
-// function updateElementsPosition (movieElements) {
-//     //console.log(movieElements);
-//
-//     let length =  movieElements.length;
-//     for (let i = 0; i < length; i++) {
-//         let DOMelements         = mgMovieContainer.children;
-//         let DOMelementsIndex    = movieElements[i].DOMindex;
-//
-//         DOMelements[DOMelementsIndex].setAttribute("style", `order: -${length - 1 - i}`)
-//     }
-// }
