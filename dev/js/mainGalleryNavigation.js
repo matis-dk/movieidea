@@ -13,24 +13,28 @@
     mgMovieContainer.addEventListener('click', mouseFilter);
 
     function mouseFilter (e) {
+        let movieElem;
         if (e.target.parentNode.classList.contains("mg-movie-item")) {
-
-            updateMovieSeletion(e.target.parentNode)
-
-            if (e.type == "click") {
-                console.log("click")
-                return;
-            }
-
-            if (e.type == "dblclick") {
-                console.log("dblclick")
-
-                let movieID     =   e.target.parentNode.getAttribute('movie-id');
-                let movieItem   =   movieAPI.getMovieById(movieID);
-                controllerMovieOverlay("open", movieItem)
-                return;
-            }
+            movieElem = e.target.parentNode;
+        } else if (e.target.parentNode.parentNode.classList.contains("mg-movie-item")) {
+            movieElem = e.target.parentNode.parentNode;
+        } else {
+            return;
         }
+
+        updateMovieSeletion(movieElem)
+
+        if (e.type == "click") {
+            return;
+        }
+
+        if (e.type == "dblclick") {
+            let movieID     =   movieElem.getAttribute('movie-id');
+            let movieItem   =   movieAPI.getMovieById(movieID);
+            controllerMovieOverlay("open", movieItem)
+            return;
+        }
+
     }
 
     // =============== KEYBOARD EVENT ===============

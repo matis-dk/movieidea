@@ -36,6 +36,13 @@
             background-image: linear-gradient(0deg, rgba(#0a1829, 0.65) 20%, rgba(#33606b, 0.3) 90%);
         }
 
+            #mat-img-container {
+                width: 220px;
+                height: 332px;
+                position: relative;
+                display: block;
+            }
+
             #mat-img {
                 transition: 0.5s;
                 width: 100%;
@@ -254,10 +261,6 @@
                 border-radius: .19rem;
                 opacity: 1;
                 transition: 0.5s;
-            }
-
-            .lazy {
-                opacity: 0 !important;
             }
 
             .mat-item-title {

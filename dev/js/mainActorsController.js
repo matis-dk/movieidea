@@ -1,5 +1,6 @@
 let mainActors          =   document.getElementById('main-actors')
 let matImg              =   document.getElementById('mat-img')
+let matImgContainer     =   document.getElementById('mat-img-container');
 let matName             =   document.getElementById('mat-name')
 
 let madBiography        =   document.getElementById('mad-biography')
@@ -11,7 +12,6 @@ let madTimeline         =   document.getElementById('mad-timeline')
 let matItem             =   document.querySelectorAll('.mat-item')
 let matItemImg          =   document.querySelectorAll('.mat-item-img')
 let matItemTitle        =   document.querySelectorAll('.mat-item-title')
-
 
 
 mainActors.addEventListener('click', openMovieoverlay);
@@ -43,8 +43,8 @@ function controllerActors (payload) {
     fetchTMDb(con)
         .then(resp => {
 
-            lazyLoading(matImg)
-            matImg.onload = function () { this.classList.remove('lazy') }
+            addLazySpinner(matImg, matImgContainer)
+            matImg.onload = function () { this.classList.remove('lazy'); removeLazySpinner(matImgContainer) }
             matImg.setAttribute('src', `http://image.tmdb.org/t/p/w185${resp.profile_path}`)
             matName.textContent         =   resp.name;
 
@@ -63,30 +63,41 @@ function controllerActors (payload) {
 }
 
 
+function addLazySpinner (item, parent) {
+    parent.classList.add('lazy-spinner');
+    if (item.classList.contains('lazy') == false) {
+        item.classList.add('lazy');
+        item.setAttribute('src', ``);
+    }
+}
+
+function removeLazySpinner (parent) {
+    parent.classList.remove('lazy-spinner');
+}
+
+
+
 function addMostPopular (movieList) {
 
     movieList = sortMovieByRating(movieList);
 
     for (let i = 0; i < 8; i++) {
 
-        lazyLoading(matItemImg[i]);
+        addLazySpinner(matItemImg[i], matItem[i]);
 
         if ((i+1) >= movieList.length) {
             matItemTitle[i].textContent = "";
+            removeLazySpinner(matItem[i])
             continue;
         }
 
-        matItemImg[i].onload = function () { this.classList.remove('lazy') }
+        matItemImg[i].onload = function () { this.classList.remove('lazy'); removeLazySpinner(matItem[i])}
         matItemImg[i].setAttribute('src', `http://image.tmdb.org/t/p/w185${movieList[i].poster_path}`)
         matItem[i].setAttribute('movie-id', `${movieList[i].id}`)
 
         let movieName = `${movieList[i].title} (${parseFloat(movieList[i].release_date)})`
         matItemTitle[i].textContent = movieName;
     }
-
-
-
-
 }
 
 
@@ -212,10 +223,3 @@ function assembelFilmography (movieList) {
     }
 
 // ==================== Helpers ====================
-
-    function lazyLoading (item) {
-        if (!item.classList.contains('lazy')) {
-            item.classList.add('lazy');
-            item.setAttribute('src', ``);
-        }
-    }

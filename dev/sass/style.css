@@ -116,11 +116,41 @@ h1, h2, h3, h4, h5, h6 {
           box-sizing: border-box;
   outline: none; }
 
-/* ==================== MEDIA ==================== */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  html {
-    font-size: 50% !important; } }
+.lazy {
+  opacity: 0 !important; }
 
+.lazy-spinner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 2rem);
+  left: calc(50% - 1.5rem);
+  border: 1px solid red;
+  width: 3rem;
+  height: 3rem;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #3fb8af;
+  border-width: 3px 0px 0px 0px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.65s infinite linear;
+  animation: spin 0.65s infinite linear; }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg); } }
+
+/* ==================== MEDIA ==================== */
 /*! nouislider - 10.0.0 - 2017-05-28 14:52:48 */
 /* Functional styling;
  * These styles are required for noUiSlider to function.
@@ -582,9 +612,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s; }
 
 /* ==================== MAIN ==================== */
-html {
-  font-size: 100%; }
-
 #main {
   background-color: #f2f2f2; }
 
@@ -836,6 +863,12 @@ html {
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(10, 24, 41, 0.65)), color-stop(90%, rgba(51, 96, 107, 0.3)));
   background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.65) 20%, rgba(51, 96, 107, 0.3) 90%); }
 
+#mat-img-container {
+  width: 220px;
+  height: 332px;
+  position: relative;
+  display: block; }
+
 #mat-img {
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -1030,9 +1063,6 @@ html {
   opacity: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
-
-.lazy {
-  opacity: 0 !important; }
 
 .mat-item-title {
   font-family: "RobotoBold";
@@ -1474,7 +1504,7 @@ html {
   .mg-movie-item > * {
     cursor: pointer; }
 
-.mg-movie-item::after {
+.mg-movie-item::before {
   content: " ";
   display: block;
   width: 10rem;
@@ -1495,6 +1525,12 @@ html {
   .mg-movie-item[movie-selected]::after {
     opacity: 1; }
 
+.mg-movie-image-con {
+  display: block;
+  position: relative;
+  height: 15rem;
+  width: calc(15rem / 1.5); }
+
 .mg-movie-image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -1504,8 +1540,7 @@ html {
           box-shadow: 0 0.19rem 0.38rem rgba(0, 0, 0, 0.16), 0 0.19rem 0.38rem rgba(0, 0, 0, 0.23);
   -webkit-transition: 1s;
   transition: 1s;
-  opacity: 1;
-  z-index: 1; }
+  opacity: 1; }
 
 .mg-movie-title {
   font-family: "RobotoBold";

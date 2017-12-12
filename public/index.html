@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="HTML">
 
   <head>
     <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>Boilerplate</title>
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
   </head>
 
   <body>
+      <script type="text/javascript">
+          const HTML = document.getElementById('HTML')
+          HTML.setAttribute('style', `font-size: ${Math.floor(1 / window.devicePixelRatio * 100)}%`);
+      </script>
 
         <div id="site-container">
             <header id="header">
@@ -35,13 +38,11 @@
             <main id="main">
 
                 <section class="main-settings" id="main-home" data-active="true">
-
                     <div id="main-home-search">
                         <input id="mhs-input" type="text" placeholder="Search in our database"  spellcheck="false">
                         <a id="mhs-search" class="mhs-icons-container" href="#"><span class="fa fa-search mhs-icons"></span></a>
                         <a id="mhs-shuffle" class="mhs-icons-container" href="#"><span class="fa fa-random mhs-icons"></span></a>
                     </div>
-
                 </section>
                 <section class="main-settings" id="main-wall" data-active="false">
                     <div id="main-wall-search">
@@ -92,7 +93,9 @@
                 </section>
                 <section class="main-settings" id="main-actors" data-active="false">
                     <div id="main-actors-profile">
-                        <img id="mat-img" class="lazy" src="" alt="">
+                        <div id="mat-img-container">
+                            <img id="mat-img" class="lazy" src="" alt="">
+                        </div>
                         <h2 id="mat-name"></h2>
                     </div>
                     <div id="main-actors-description">
@@ -326,7 +329,6 @@
                         </div>
                         <ul id="mg-movie-container" tabindex="0"></ul>
                 </section>
-
                 <section class="main-settings" id="main-about" data-active="false">
 
                 </section>

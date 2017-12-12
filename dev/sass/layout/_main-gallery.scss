@@ -469,7 +469,7 @@
             }
         }
 
-        .mg-movie-item::after {
+        .mg-movie-item::before {
             content: " ";
             display: block;
             width: 10rem;
@@ -494,6 +494,13 @@
             }
         }
 
+            .mg-movie-image-con {
+                display: block;
+                position: relative;
+                height: 15rem;
+                width: calc(15rem / 1.5);
+            }
+
 
             .mg-movie-image {
                 background-repeat: no-repeat;
@@ -503,7 +510,6 @@
                 box-shadow: 0 .19rem .38rem rgba(0,0,0,0.16), 0 .19rem .38rem rgba(0,0,0,0.23);
                 transition: 1s;
                 opacity: 1;
-                z-index: 1;
             }
 
             .mg-movie-title {

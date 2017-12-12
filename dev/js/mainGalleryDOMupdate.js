@@ -13,10 +13,15 @@ function addMovieElements (payload = 0) {
             mgMovieItem.className = "mg-movie-item";
             mgMovieItem.setAttribute('movie-id', `${payload[i].id}`);
 
+        let mgMovieImageCon = document.createElement('div');
+            mgMovieImageCon.className = "mg-movie-image-con";
+
         let mgMovieImage = document.createElement("img");
-            mgMovieImage.className = "mg-movie-image lazy";
-            mgMovieImage.onload = function () { this.classList.remove('lazy') }
+            mgMovieImage.className = "mg-movie-image";
+            addLazySpinner(mgMovieImage, mgMovieImageCon);
+            mgMovieImage.onload = function () { this.classList.remove('lazy'); removeLazySpinner(mgMovieImageCon) }
             mgMovieImage.setAttribute('src', `${urlImageBase + payload[i].poster_path}`);
+            mgMovieImageCon.appendChild(mgMovieImage)
 
         let mgMovieTitle = document.createElement("h3");
             mgMovieTitle.className = "mg-movie-title";
@@ -26,7 +31,7 @@ function addMovieElements (payload = 0) {
             mgMovieYear.className = "mg-movie-year";
             mgMovieYear.innerText = `${parseFloat(payload[i].release_date)}`;
 
-        mgMovieItem.appendChild(mgMovieImage);
+        mgMovieItem.appendChild(mgMovieImageCon);
         mgMovieItem.appendChild(mgMovieTitle);
         mgMovieItem.appendChild(mgMovieYear);
 

@@ -1,0 +1,54 @@
+
+.lazy {
+    //background: rgba(255,255,255,0.8);
+    opacity: 0 !important;
+}
+
+.lazy-spinner::before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    top: calc(50% - 2rem);
+    left: calc(50% - 1.5rem);
+
+    border: 1px solid red;
+
+    width: 3rem;
+    height: 3rem;
+
+    border-style: solid;
+    border-color: rgba(0,0,0,0);
+    border-top-color: $c-theme6;
+    border-width: 3px 0px 0px 0px;
+
+    -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+
+    -webkit-animation: spin 0.65s infinite linear;
+     -moz-animation: spin 0.65s infinite linear;
+       -o-animation: spin 0.65s infinite linear;
+          animation: spin 0.65s infinite linear;
+
+}
+
+    @-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+    }
+
+    @-moz-keyframes spin {
+    from {-moz-transform: rotate(0deg);}
+    to   {-moz-transform: rotate(359deg);}
+    }
+
+    @-o-keyframes spin {
+    from {-o-transform: rotate(0deg);}
+    to   {-o-transform: rotate(359deg);}
+    }
+
+    @keyframes spin{
+    from {transform: rotate(0deg);}
+    to   {transform: rotate(359deg);}
+    }
