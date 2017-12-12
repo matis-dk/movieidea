@@ -5,15 +5,15 @@
 
     .main-genre-description {
 
-        margin-top: 30px;
+        margin-top: 1.88rem;
 
         .mgd-genre {
             border-bottom: 1px solid $c-theme4;
-            padding-bottom: 10px;
+            padding-bottom: .63rem;
             @include mgdGenre;
 
             > span {
-                padding-right: 10px;
+                padding-right: .63rem;
             }
         }
     }
@@ -26,17 +26,17 @@
         align-items: center;
         align-self: center;
 
-        padding-top: 20px;
+        padding-top: 1.25rem;
 
         > li {
             justify-self: center;
 
             background-color: rgba($c-theme0, 0.95);
-            border-radius: 6px;
+            border-radius: .38rem;
 
-            width: 240px;
-            height: 135px;
-            margin: 20px 15px;
+            width: 15rem;
+            height: 8.44rem;
+            margin: 1.25rem .94rem;
 
             display: grid;
             grid-template-rows: 1fr 0px;
@@ -44,21 +44,21 @@
             align-items: center;
 
             cursor: pointer;
-            box-shadow: rgba(73, 89, 106, 1) 0px 0px 16px 0px;
+            box-shadow: rgba(73, 89, 106, 1) 0px 0px 1rem 0px;
 
             transition: 0.5s;
 
             > div {
                 margin: 0px auto;
                 color: $c-w-5;
-                font-size: 40px;
+                font-size: 2.5rem;
             }
 
             > span {
                 @include mainGenre;
 
                 color: $c-w-5;
-                transform: translateY(-20px);
+                transform: translateY(-1.25rem);
                 text-align: center;
             }
         }

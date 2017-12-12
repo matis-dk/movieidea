@@ -7,9 +7,9 @@
 
     align-items: center;
 
-	height: 160px;
+	height: 10rem;
 	width: 100vw;
-	padding: 0px 60px;
+	padding: 0px 3.75rem;
 
 	position: fixed;
 	bottom: 0px;
@@ -29,7 +29,9 @@
 
     	#footer-github, #footer-tmdb {
     		fill: $c-theme1;
-            margin: 0px 10px;
+            margin: 0px .63rem;
+			width: 3.5rem;
+			height: 3.5rem;
     	}
 
 
@@ -54,13 +56,13 @@
 
     	.footer-keys {
     		color: $c-white;
-    		font-size: 10px !important;
+    		font-size: .63rem !important;
     		font-weight: 100;
 
-    		padding: 14px;
-    		border-radius: 3px;
+    		padding: .88rem;
+    		border-radius: .19rem;
     		box-shadow: 0 0.1em 0 0.05em $c-theme3;
-    		margin: 0px 4px 6px;
+    		margin: 0px .25rem .38rem;
     		background-color: $c-theme1;
     		transition: all 0.3s;
     	}

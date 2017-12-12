@@ -1,5 +1,8 @@
 /* ==================== MAIN ==================== */
 
+html {
+    font-size: 100%;
+}
 
 #main {
     background-color: $c-w-5;
@@ -15,11 +18,11 @@
 
     #main-home {
         width: 100%;
-        max-width: 1400px;
+        max-width: 87.5rem;
         height: 100%;
 
         margin: 0px auto;
-        padding: 0px 50px;
+        padding: 0px 3.13rem;
 
         justify-content: center;
         align-items: center;
@@ -33,37 +36,37 @@
         overflow-y: auto;
         background-color: $c-w-5;
 
-        padding: 40px 20%;
+        padding: 2.5rem 20%;
     }
 
     #main-actors {
-        grid-template-columns: 265px 1.75fr 1.75fr;
-        grid-template-rows: 350px 1fr;
+        grid-template-columns: 13.75rem 2fr 1.75fr;
+        grid-template-rows: 20.75rem 1fr;
         grid-template-areas:
             "profile    description filmography"
             "trademark   trademark     filmography";
-            grid-gap: 30px;
+            grid-gap: 1.88rem;
 
         width: 100%;
-        max-width: 1400px;
+        max-width: 87.5rem;
         margin: 0px auto;
 
-        padding: 50px;
+        padding: 3.13rem;
     }
 
     #main-genre {
         width: 100%;
-        max-width: 1200px;
+        max-width: 75rem;
         margin: 0px auto;
 
         grid-template-rows: auto 1fr !important;
-        height: calc(100vh - 150px);
+        height: calc(100vh - 9.38rem);
 
     }
 
     #main-gallery {
         width: 100%;
-        max-width: 1400px;
+        max-width: 87.5rem;
         margin: 0px auto;
 
         display: grid;
@@ -72,7 +75,7 @@
 
     #main-discover {
         width: 100%;
-        max-width: 1200px;
+        max-width: 75rem;
         margin: 0px auto;
 
         display: grid;

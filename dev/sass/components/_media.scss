@@ -16,3 +16,13 @@
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+
+
+// =========== MEDIA QUERY ===============
+
+@include media("retina2x") {
+
+    html {
+        font-size: 50% !important;
+    }
+}

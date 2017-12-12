@@ -1,15 +1,16 @@
 let mainActors          =   document.getElementById('main-actors')
-let mainActorsProfile   =   document.getElementById('main-actors-profile')
+let matImg              =   document.getElementById('mat-img')
+let matName             =   document.getElementById('mat-name')
 
-let madName             =   document.getElementById('mad-name')
 let madBiography        =   document.getElementById('mad-biography')
 let madFrom             =   document.getElementById('mad-from')
 let madBirthday         =   document.getElementById('mad-birthday')
-let madHomepage         =   document.getElementById('mad-homepage')
 
 let madTimeline         =   document.getElementById('mad-timeline')
 
-let madActorsTrademark  =   Array.from(document.getElementById('mat-container').children)
+let matItem             =   document.querySelectorAll('.mat-item')
+let matItemImg          =   document.querySelectorAll('.mat-item-img')
+let matItemTitle        =   document.querySelectorAll('.mat-item-title')
 
 
 
@@ -17,9 +18,15 @@ mainActors.addEventListener('click', openMovieoverlay);
 
 
 function openMovieoverlay (e) {
-    console.log("Event called");
     console.log(e)
-    if (e.target.hasAttribute('movie-id')){
+
+    // Listener for trandemarks
+    if (e.target.parentNode.hasAttribute('movie-id')){
+        let movieID = e.target.parentNode.getAttribute('movie-id');
+        controllerMovieOverlay("open", movieAPI.getMovieById(movieID))
+    }
+    // Listener for filmography
+    if (e.target.hasAttribute('movie-id')) {
         let movieID = e.target.getAttribute('movie-id');
         controllerMovieOverlay("open", movieAPI.getMovieById(movieID))
     }
@@ -36,13 +43,14 @@ function controllerActors (payload) {
     fetchTMDb(con)
         .then(resp => {
 
-            mainActorsProfile.setAttribute('style', `background-image:url('http://image.tmdb.org/t/p/w185${resp.profile_path}')`)
+            lazyLoading(matImg)
+            matImg.onload = function () { this.classList.remove('lazy') }
+            matImg.setAttribute('src', `http://image.tmdb.org/t/p/w185${resp.profile_path}`)
+            matName.textContent         =   resp.name;
 
-            madName.textContent         =   resp.name;
             madBiography.textContent    =   resp.biography
             madFrom.textContent         =   resp.place_of_birth;
             madBirthday.textContent     =   resp.birthday;
-            madHomepage.textContent     =   resp.homepage;
 
 
             // Clearing movielist with missing information
@@ -55,19 +63,30 @@ function controllerActors (payload) {
 }
 
 
-
 function addMostPopular (movieList) {
 
     movieList = sortMovieByRating(movieList);
-    console.log(movieList)
 
     for (let i = 0; i < 8; i++) {
-        madActorsTrademark[i].setAttribute('style', `background-image:url('http://image.tmdb.org/t/p/w185${movieList[i].poster_path}')`)
-        madActorsTrademark[i].setAttribute('movie-id', `${movieList[i].id}`)
+
+        lazyLoading(matItemImg[i]);
+
+        if ((i+1) >= movieList.length) {
+            matItemTitle[i].textContent = "";
+            continue;
+        }
+
+        matItemImg[i].onload = function () { this.classList.remove('lazy') }
+        matItemImg[i].setAttribute('src', `http://image.tmdb.org/t/p/w185${movieList[i].poster_path}`)
+        matItem[i].setAttribute('movie-id', `${movieList[i].id}`)
 
         let movieName = `${movieList[i].title} (${parseFloat(movieList[i].release_date)})`
-        madActorsTrademark[i].children[0].textContent = movieName;
+        matItemTitle[i].textContent = movieName;
     }
+
+
+
+
 }
 
 
@@ -190,4 +209,13 @@ function assembelFilmography (movieList) {
         endElement.appendChild(endDetail);
 
         return endElement;
+    }
+
+// ==================== Helpers ====================
+
+    function lazyLoading (item) {
+        if (!item.classList.contains('lazy')) {
+            item.classList.add('lazy');
+            item.setAttribute('src', ``);
+        }
     }

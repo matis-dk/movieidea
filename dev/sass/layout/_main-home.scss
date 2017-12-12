@@ -5,7 +5,7 @@
 
     #main-home-search {
         display: grid;
-        grid-template-columns: 600px auto auto;
+        grid-template-columns: 37.5rem auto auto;
         grid-template-rows: 1fr;
 
     }
@@ -16,7 +16,7 @@
             background-color: transparent;
             border-bottom: 1px solid $c-g-5;
             color: $c-theme6;
-            margin-right: 30px;
+            margin-right: 1.88rem;
 
             @include mainInput;
         }
@@ -37,12 +37,12 @@
 
             .mhs-icons {
                 color: $c-g-3;
-                font-size: 50px !important;
-                margin-left: 15px;
+                font-size: 3.13rem !important;
+                margin-left: .94rem;
                 transition: 0.3s;
             }
 
             .mhs-icons:hover {
-                color: $c-theme11;
+                color: $c-theme6;
 
             }

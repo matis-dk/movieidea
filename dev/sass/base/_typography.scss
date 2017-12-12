@@ -25,18 +25,17 @@
 
 /* ==================== Mixins'S ==================== */
 
-
 // HEADER
 
 @mixin headerLogoTitle {
     font-family: "MyriadProRegular";
-    font-size: 20px;
+    font-size: 1.2rem;
     color: $c-w-5;
 }
 
 @mixin headerNav {
     font-family: "MyriadProRegular";
-    font-size: 16px;
+    font-size: 1rem;
     color: $c-theme1;
     text-transform: uppercase;
 }
@@ -44,13 +43,13 @@
 
 @mixin headerSearch {
     font-family: "RobotoLight";
-    font-size: 14px;
+    font-size: 0.8rem;
     color: $c-w-5;
 }
 
 @mixin headerMgRefresh {
     font-family: "RobotoLight";
-    font-size: 12px;
+    font-size: 0.75rem;
     color: $c-w-5;
     font-weight: 700;
     text-transform: uppercase;
@@ -60,39 +59,39 @@
 
 @mixin mainInput {
     font-family: "RobotoLight";
-    font-size: 56px;
+    font-size: 3.5rem;
 }
 
 
 @mixin robotoLight {
     font-family: "RobotoLight";
-    font-size: 14px;
+    font-size: .88rem;
 }
 
 @mixin robotoBold {
     font-family: "RobotoBold";
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 // MAIN - WALL
 
 @mixin mwsResults {
     font-family: "RobotoLight";
-    font-size: 18px;
+    font-size: 1.13rem;
     font-weight: 100;
 }
 
 @mixin mwsResultsClass {
     font-family: "RobotoLight";
-    font-size: 14px;
+    font-size: .88rem;
     font-weight: 400;
     color: $c-w-5;
 }
 
     @mixin mwsResultsSpan {
         font-family: "RobotoBold";
-        font-size: 14px;
-        margin-left: 10px;
+        font-size: .88rem;
+        margin-left: .63rem;
         font-weight: 700;
         color: $c-w-5;
     }
@@ -100,59 +99,59 @@
 
 @mixin mwsH3Header {
     font-family: "MyriadProRegular";
-    font-size: 22px;
+    font-size: 1.4rem;
     color: $c-theme2;
 }
 
     @mixin mwsH3Item {
         font-family: "RobotoLight";
-        font-size: 16px;
+        font-size: 1rem;
         color: $c-theme2;
     }
 
     @mixin mwsH5Item {
         font-family: "RobotoLight";
-        font-size: 12px;
+        font-size: .75rem;
         color: $c-b-5;
         font-weight: 100;
     }
 
     @mixin mwsPItem {
         font-family: "RobotoLight";
-        font-size: 12px;
+        font-size: .75rem;
         color: $c-b-4;
     }
 
 
 // MAIN - ACTORS
 
-    @mixin mapName {
+    @mixin matName {
         font-family: "RobotoBold";
-        font-size: 20px;
+        font-size: 1rem;
         color: $c-w-5;
     }
 
     @mixin mapPersonel {
         font-family: "RobotoBold";
-        font-size: 14px;
+        font-size: .88rem;
         color: $c-theme2;
     }
 
     @mixin mapPersonelContent {
         font-family: "RobotoLight";
-        font-size: 12px;
+        font-size: .75rem;
         color: $c-b-4;
     }
 
     @mixin madContent {
         font-family: "RobotoBold";
-        font-size: 14px;
+        font-size: .88rem;
         color: $c-theme2;
     }
 
     @mixin matItem {
         font-family: "RobotoBold";
-        font-size: 14px;
+        font-size: .88rem;
         color: $c-theme2;
     }
 
@@ -162,7 +161,7 @@
 
     @mixin mgdGenre {
         font-family: "MyriadProRegular";
-        font-size: 22px;
+        font-size: 1.38rem;
         color: $c-theme2;
     }
 
@@ -173,7 +172,7 @@
 
     @mixin mainGenre {
         font-family: "MyriadProRegular";
-        font-size: 14px;
+        font-size: .88rem;
         color: $c-theme2;
         text-transform: capitalize;
     }
@@ -183,21 +182,21 @@
 
     @mixin mgMovieTitle {
         font-family: "RobotoBold";
-        font-size: 14px;
+        font-size: 0.85rem;
         color: $c-theme2;
         font-weight: 400;
     }
 
     @mixin mgMovieYear {
         font-family: "RobotoLight";
-        font-size: 14px;
+        font-size: 0.85rem;
         color: $c-b-5;
         font-weight: 400;
     }
 
     @mixin mgHeaderMUpper {
         font-family: "RobotoBold";
-        font-size: 10px;
+        font-size: 0.6rem;
         color: $c-theme2;
         font-weight: 400;
         text-transform: uppercase;
@@ -205,7 +204,7 @@
 
     @mixin mgHeaderMLower {
         font-family: "RobotoMedium";
-        font-size: 10px;
+        font-size: .63rem;
         color: $c-theme2;
         font-weight: 400;
         text-transform: uppercase;
@@ -213,7 +212,7 @@
 
     @mixin mgHeaderS {
         font-family: "MyriadProRegular";
-        font-size: 8px;
+        font-size: .6rem;
         color: $c-theme2;
     }
 
@@ -230,7 +229,7 @@
 
     @mixin omHeaderXL {
         font-family: "RobotoLight";
-        font-size: 26px;
+        font-size: 1.5rem;
         color: $c-w-5;
         text-transform: uppercase;
         text-overflow: ellipsis;
@@ -240,34 +239,34 @@
 
     @mixin omHeaderL {
         font-family: "RobotoBold";
-        font-size: 24px;
+        font-size: 1.4rem;
         color: $c-w-5;
     }
 
     @mixin omHeaderMUpper {
         font-family: "RobotoBold";
-        font-size: 18px;
+        font-size: 1.1rem;
         color: $c-w-5;
         font-weight: 700;
     }
 
     @mixin omHeaderMLower {
         font-family: "RobotoLight";
-        font-size: 90%;
+        font-size: 0.8rem;
         color: $c-w-5;
     }
 
 
     @mixin omHeaderSUpper {
         font-family: "RobotoBold";
-        font-size: 90%;
-        padding-bottom: 4px;
+        font-size: 0.9rem;
+        padding-bottom: .25rem;
         color: $c-theme5;
     }
 
     @mixin omHeaderSLower {
         font-family: "RobotoLight";
-        font-size: 14px;
+        font-size: 0.9rem;
         color: $c-w-5;
     }
 

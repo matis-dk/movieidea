@@ -1,8 +1,10 @@
 let headerNavigation    =   document.getElementById('header-navigation-ul');
 let headerLogo          =   document.getElementById('header-logo');
 
-headerNavigation.addEventListener('click', changeSite)
-headerLogo.addEventListener('click', changeToHome)
+window.addEventListener('load', function () {
+    headerNavigation.addEventListener('click', changeSite)
+    headerLogo.addEventListener('click', changeToHome)
+}) 
 
 function changeSite (e) {
 

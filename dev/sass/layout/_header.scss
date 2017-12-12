@@ -9,11 +9,11 @@
 
 #header-container {
 
-    max-width: 1400px;
+    max-width: 87.5rem;
     width: 100%;
-    height: 150px;
+    height: 9.38rem;
 
-    padding: 0px 50px;
+    padding: 0px 3.13rem;
     margin: 0px auto;
 
     display: grid;
@@ -22,7 +22,7 @@
 
     align-items: center;
 
-    //border-bottom: 2px solid $c-theme1;
+    //border-bottom: .13rem solid $c-theme1;
 }
 
 
@@ -39,14 +39,15 @@
         align-items: center;
 
         background-color: $c-theme1;
-        padding: 10px 70px 10px 10px;
+        padding: .63rem 4.38rem .63rem .63rem;
 
         color: white;
         cursor: pointer;
     }
 
         #header-logo-image {
-            width: 40px;
+
+            height: 3rem;
         }
 
         #header-logo-title {
@@ -63,17 +64,17 @@
             display: grid;
             grid-template-columns: auto auto auto auto auto;
 
-            margin-right: 20px;
+            margin-right: 1.25rem;
         }
 
             .header-navigation-elements {
-                height: 150px;
+                height: 9.38rem;
                 display: grid;
                 align-items: center;
                 cursor: pointer;
 
                 @include headerNav;
-                padding: 0px 20px;
+                padding: 0px 1.25rem;
             }
 
 
@@ -95,7 +96,7 @@
         border: none;
         color: $c-w-5;
         background-color: rgba($c-theme2, 0);
-        padding-left: 20px;
+        padding-left: 1.25rem;
 
         @include headerSearch;
     }
@@ -108,9 +109,9 @@
     #header-search[data-active="true"] {
 
         > #header-search-input {
-            width: 320px;
+            width: 20rem;
             background-color: $c-theme1;
-            transform: translateX(76px);
+            transform: translateX(4.75rem);
         }
 
         > #header-search-logo {
@@ -122,9 +123,9 @@
 
 
         #header-search-logo {
-            border-left: 3px solid $c-theme1;
-            padding: 15px 25px;
-            font-size: 26px;
+            border-left: .19rem solid $c-theme1;
+            padding: .94rem 1.56rem;
+            font-size: 1.63rem;
             z-index: 2;
             transition: 0.3s;
         }

@@ -9,7 +9,7 @@
     height: 100vh;
     bottom: 0px;
     background-color: rgba($c-b-2, 0.95);
-    perspective:1000px;
+    perspective:62.5rem;
     z-index: 4;
 
     display: none;
@@ -67,8 +67,8 @@
                 height: 45vh;
                 width: 30vh;
                 background-size: cover;
-                transform: scale(1.35);
-                filter: blur(30px);
+                transform: scale(1.3);
+                filter: blur(1.6rem);
 
             }
 
@@ -86,12 +86,12 @@
 
 
                 #om-trailer-play {
-                    font-size: 64px;
+                    font-size: 4rem;
                     color: rgba($c-w-5, 0.3);
                     cursor: pointer;
 
                     transition: 0.3s;
-                    transform: translateY(20px);
+                    transform: translateY(1.25rem);
                     opacity: 0;
                 }
 
@@ -116,7 +116,7 @@
 
         // CLASS FOR POSITONING
         .om-settings {
-            padding: 10px 20px;
+            padding: 0.8rem 1.2rem;
         }
 
         .om-header-style0 {
@@ -188,16 +188,16 @@
         }
 
         .om-header-actors {
-            border-radius: 5px;
-            width: 40px;
-            height: 60px;
-            margin: 0px 10px;
+            border-radius: .31rem;
+            width: calc(3.75rem / 1.5);
+            height: 3.75rem;
+            margin: 0px 0.8rem;
             background-size: cover;
             border: 1px solid $c-b-5;
         }
 
         .om-inner-element {
-            padding-right: 6px;
+            padding-right: .38rem;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -212,21 +212,12 @@
 			right: 2vw;
 			top: 1vw;
 
-			width: 30px;
-			height: 30px;
+			width: 2rem;
+			height: 2rem;
 
 			color: white;
 
-			font-size: 30px;
+			font-size: 1.8rem;
 			font-weight: 100;
 			cursor: pointer;
 		}
-
-
-// =========== MEDIA QUERY ===============
-
-@include media("retina2x", ">desktop") {
-        #main-gallery {
-            background-color: red !important;
-        }
-}

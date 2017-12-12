@@ -6,7 +6,7 @@
     #main-wall-search {
         display: grid;
         grid-template-columns: 1fr auto auto auto;
-        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
         align-items: center;
     }
 
@@ -20,15 +20,15 @@
 
         .spanTag {
             @include mwsResultsClass;
-            margin: 0px 10px;
+            margin: 0px .63rem;
             background-color: $c-theme6;
-            padding: 8px 15px;
-            border-radius: 3px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+            padding: .5rem .94rem;
+            border-radius: .19rem;
+            box-shadow: 0 .19rem .94rem rgba(0,0,0,0.3);
 
             > span {
                 @include mwsResultsSpan;
-                margin-left: 10px;
+                margin-left: .63rem;
             }
         }
 
@@ -36,19 +36,19 @@
 
     .main-wall-group {
         display: none;
-        margin: 15px 0px;
+        margin: .94rem 0px;
         background-color: $c-w-2;
-        padding: 20px 40px;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+        padding: 1.25rem 2.5rem;
+        box-shadow: 0 .19rem .94rem rgba(0,0,0,0.3);
     }
 
     .mws-h3-header {
         border-bottom: 1px solid $c-theme4;
-        padding-bottom: 10px;
+        padding-bottom: .63rem;
         @include mwsH3Header;
 
         > span {
-            margin-right: 10px;
+            margin-right: .63rem;
             color: $c-theme3;
         }
     }
@@ -62,7 +62,7 @@
             "posterItem h5Item pItem";
 
         border-bottom: 1px solid $c-theme4;
-        padding: 15px 10px;
+        padding: .94rem .63rem;
         cursor: pointer;
         transition: 0.5s;
 
@@ -80,19 +80,19 @@
         border-bottom-color: $c-g-4;
 
         & > .mws-h3-item {
-            padding-left: 10px;
+            padding-left: .63rem;
         }
 
         & > .mws-h5-item {
-            padding-left: 15px;
+            padding-left: .94rem;
         }
     }
 
         .mws-poster-item {
             grid-area: posterItem;
-            width: 47px;
-            height: 70px;
-            margin-right: 15px;
+            width: 2.94rem;
+            height: 4.38rem;
+            margin-right: .94rem;
             background-size: cover;
         }
 
@@ -106,8 +106,8 @@
             @include mwsH5Item
 
             > span {
-                padding-left: 2px;
-                padding-right: 10px;
+                padding-left: .13rem;
+                padding-right: .63rem;
             }
         }
 
