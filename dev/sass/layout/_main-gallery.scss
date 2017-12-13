@@ -1,21 +1,9 @@
 // ==================== MAIN GALLERY  ==================== \\
 
     // MAIN GALLERY
-    #main-gallery {
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-
-        justify-content: center;
-
-        width: 95vw;
-
-        > * {
+    #main-gallery > * {
             margin-bottom: 2.5rem;
-        }
     }
-
 
 
     // ======================= MAIN ARRANGE =======================

@@ -15,6 +15,9 @@ function mainSectionController (mainSection, payload) {
             }
         }
 
+        // Changing section
+        mainSection.setAttribute("data-active", "true");
+
         // Extra changes - specific for each page
         if (mainSection == mainActors) {
             controllerActors(payload);
@@ -29,6 +32,9 @@ function mainSectionController (mainSection, payload) {
                 }
             }
             controllerMovies(payload, "reset-movies")
+            header.classList.add("scrollbar");
+        } else {
+            header.classList.remove("scrollbar");
         }
 
         if (mainSection == mainWall) {
@@ -45,7 +51,6 @@ function mainSectionController (mainSection, payload) {
         }
 
 
-        // Changing section
-        mainSection.setAttribute("data-active", "true");
+
 
 }

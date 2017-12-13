@@ -450,23 +450,24 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 #site-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   background-color: #fcfcfc;
   height: 100vh; }
 
 /* ==================== HEADER ==================== */
 #header {
-  position: relative;
   z-index: 3;
-  display: grid;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  width: 100vw; }
+          justify-content: center; }
 
 #header-container {
   max-width: 87.5rem;
-  width: 100vw;
+  width: 100%;
   height: 9.38rem;
   padding: 0px 3.13rem;
   display: grid;
@@ -475,6 +476,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.scrollbar {
+  margin-left: calc(100vw - 100%); }
 
 #header-logo {
   grid-area: headerLogo;
@@ -521,18 +525,25 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   grid-area: headerSearch;
   display: grid;
   grid-template-columns: 1fr auto;
+  position: relative;
   cursor: pointer; }
 
 #header-search-input {
-  width: 0px;
+  height: 100%;
+  width: 30rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   border: none;
+  position: absolute;
   color: #f2f2f2;
   background-color: rgba(1, 44, 64, 0);
   padding-left: 1.25rem;
+  -webkit-transform: translateX(0) scaleX(0);
+          transform: translateX(0) scaleX(0);
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
   font-family: "RobotoLight";
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #f2f2f2; }
 
 #header-search-input::-moz-selection {
@@ -542,22 +553,21 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   background-color: #33606B; }
 
 #header-search[data-active="true"] > #header-search-input {
-  width: 20rem;
   background-color: #0A1829;
-  -webkit-transform: translateX(4.75rem);
-          transform: translateX(4.75rem); }
+  -webkit-transform: translateX(-25.25rem) scaleX(1);
+          transform: translateX(-25.25rem) scaleX(1); }
 
 #header-search[data-active="true"] > #header-search-logo {
   border-left-color: white;
   color: white; }
 
 #header-search-logo {
-  border-left: 0.19rem solid #0A1829;
-  padding: .94rem 1.56rem;
-  font-size: 1.63rem;
+  border-left: 0.2rem solid #0A1829;
+  padding: 1rem 1.50rem;
+  font-size: 1.50rem;
   z-index: 2;
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s; }
 
 /* ==================== FOOTER ==================== */
 #footer {
@@ -644,7 +654,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   background-color: #f2f2f2;
   width: 100%;
   max-width: 87.5rem;
-  margin: 0px auto; }
+  margin: 0px auto;
+  padding-top: 2rem; }
 
 #main-actors {
   grid-template-columns: 13.75rem 2fr 1.75fr;
@@ -668,7 +679,12 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   max-width: 87.5rem;
   margin: 0px auto;
   display: grid;
-  grid-template-rows: auto 1fr; }
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden; }
 
 #main-discover {
   width: 100%;
@@ -1130,16 +1146,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
               transform: translateY(-1.25rem);
       text-align: center; }
 
-#main-gallery {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 95vw; }
-  #main-gallery > * {
-    margin-bottom: 2.5rem; }
+#main-gallery > * {
+  margin-bottom: 2.5rem; }
 
 #mg-arranger-container {
   display: grid;
@@ -1884,4 +1892,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   position: absolute;
-  height: 100%; }
+  height: 100%;
+  -webkit-filter: blur(20px);
+          filter: blur(20px); }

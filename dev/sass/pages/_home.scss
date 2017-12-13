@@ -1,7 +1,7 @@
 #site-container {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: auto 1fr auto auto;
 
 	background-color: $c-w-2;
 	height: 100vh;

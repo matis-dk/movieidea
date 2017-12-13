@@ -3,6 +3,11 @@
 // html {
 //     font-size: 100%;
 // }
+// 
+// html, body, #site-container, #main {
+//     width: 100% !important;
+// }
+
 
 
 #main {
@@ -42,6 +47,7 @@
         width: 100%;
         max-width: 87.5rem;
         margin: 0px auto;
+        padding-top: 2rem;
     }
 
     #main-actors {
@@ -74,8 +80,13 @@
         max-width: 87.5rem;
         margin: 0px auto;
 
+
         display: grid;
+        grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
+
+        justify-content: center;
+        overflow: hidden;
     }
 
     #main-discover {

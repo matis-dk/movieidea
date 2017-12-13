@@ -1,4 +1,5 @@
 
+
 #overlay-background {
     position: fixed;
     top: 0px;
@@ -39,4 +40,5 @@
         transform: scaleX(0);
         position: absolute;
         height: 100%;
+        filter: blur(20px);
     }
