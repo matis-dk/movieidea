@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 3rem;
   border-style: solid;
   border-color: transparent;
-  border-top-color: #3fb8af;
+  border-top-color: rgba(63, 184, 175, 0.5);
   border-width: 3px 0px 0px 0px;
   border-radius: 50%;
   -webkit-animation: spin 0.65s infinite linear;
@@ -864,8 +864,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   background-image: linear-gradient(0deg, rgba(10, 24, 41, 0.65) 20%, rgba(51, 96, 107, 0.3) 90%); }
 
 #mat-img-container {
-  width: 220px;
-  height: 332px;
+  width: 13.75rem;
+  height: 20.75rem;
   position: relative;
   display: block; }
 
@@ -1513,31 +1513,40 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   z-index: 0;
   opacity: 0;
   -webkit-transition: 0.5s;
-  transition: 0.5s;
-  -webkit-box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.22);
-          box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.22); }
+  transition: 0.5s; }
 
 .mg-movie-item[movie-selected] {
   -webkit-transform: translateY(-1.25rem);
           transform: translateY(-1.25rem); }
   .mg-movie-item[movie-selected] > .mg-movie-title {
     color: #3fb8af; }
-  .mg-movie-item[movie-selected]::after {
+  .mg-movie-item[movie-selected] > .mg-movie-image-con::after {
     opacity: 1; }
 
 .mg-movie-image-con {
   display: block;
   position: relative;
   height: 15rem;
-  width: calc(15rem / 1.5); }
-
-.mg-movie-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 15rem;
   width: calc(15rem / 1.5);
   -webkit-box-shadow: 0 0.19rem 0.38rem rgba(0, 0, 0, 0.16), 0 0.19rem 0.38rem rgba(0, 0, 0, 0.23);
-          box-shadow: 0 0.19rem 0.38rem rgba(0, 0, 0, 0.16), 0 0.19rem 0.38rem rgba(0, 0, 0, 0.23);
+          box-shadow: 0 0.19rem 0.38rem rgba(0, 0, 0, 0.16), 0 0.19rem 0.38rem rgba(0, 0, 0, 0.23); }
+
+.mg-movie-image-con::after {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  -webkit-box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.22);
+          box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.22);
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.mg-movie-image {
+  height: 15rem;
+  width: calc(15rem / 1.5);
   -webkit-transition: 1s;
   transition: 1s;
   opacity: 1; }

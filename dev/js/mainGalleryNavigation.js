@@ -41,7 +41,6 @@
 
     mgMovieContainer.addEventListener('keyup', function () {keyboardStateActive = false});
     mgMovieContainer.addEventListener('keydown', function (e) {
-        console.log(e);
 
         // Disabling key down events
         if (keyboardStateActive) {
@@ -112,7 +111,7 @@
                 go(domIndex, key); return;
             }
 
-            if (key == "38") {            // Arrow Up
+            if (key == "38" && scrollActive == false) {            // Arrow Up
                 if (elemPrRow > domIndex) { return }
                 domIndex -= elemPrRow;
                 pageScroll("up");
@@ -128,7 +127,7 @@
                 go(domIndex, key); return;
             }
 
-            if (key == "40") {            // Arrow down
+            if (key == "40" && scrollActive == false) {            // Arrow down
                 if (domIndex + elemPrRow > movieAPI.getMovieArr().length - 1) { return }
                 domIndex += elemPrRow;
                 pageScroll("down");
@@ -156,47 +155,44 @@
 
     // =============== PAGE SCROLL ===============
 
-    let main = document.getElementById('main');
-    let upActive    = true;
-    let downActive  = true;
-
+    let elementScroll = document.scrollingElement;
+    let scrollActive = false;
 
     function pageScroll (direction) {
-        let elementScroll = document.scrollingElement;
+        if (scrollActive == true) { return }
+        scrollActive = true;
 
-        if (direction == "down" && downActive) {
-            let i = 0;
-            let idDown = setInterval(frameDown, 5);
+        let movieHeight     = 18.75 + 0.625 + 3.75;                     // Height and margin for movie item
+        let movieHeightRel = 1 / window.devicePixelRatio * 16 * movieHeight;
+        let i = 0;
+        let iteration = 30;
+        let inc = Math.trunc(movieHeightRel / iteration * 100) / 100;
 
-            function frameDown() {
-                if (i >= 35 || elementScroll.scrollTop == elementScroll.scrollHeight) {
-                    clearInterval(idDown);
-                    downActive = true;
-                } else {
-                    downActive = false;
-                    i++;
-                    elementScroll.scrollTop += 10;
-                }
-            }
+        console.log(inc)
+        console.log(movieHeightRel)
+
+        if (direction == "up") { inc *= -1 }
+
+        let loopScroll = setInterval(function () {
+            startScroll(direction)
+        }, 5);
+
+        function startScroll (direction) {
+            if (direction == "up"   && elementScroll.scrollTop == 0) { clearScroll(); return }
+            if (direction == "down" && elementScroll.scrollTop == elementScroll.scrollHeight) { clearScroll(); return }
+            if (i > iteration)  { clearScroll(); return }
+
+            i++;
+            elementScroll.scrollTop += inc
         }
 
-        if (direction == "up" && upActive) {
-            let i = 0;
-            let idUp = setInterval(frameUp, 5);
-
-            function frameUp() {
-                if (i >= 35 || elementScroll.scrollTop == 0) {
-                    clearInterval(idUp);
-                    upActive = true;
-                } else {
-                    upActive = false;
-                    i++;
-                    elementScroll.scrollTop -= 10;
-                }
-            }
+        function clearScroll () {
+            scrollActive = false;
+            i = 0;
+            clearInterval(loopScroll);
         }
+
     }
-
 
 
     // =============== HELPERS ===============

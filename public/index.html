@@ -10,8 +10,8 @@
 
   <body>
       <script type="text/javascript">
-          const HTML = document.getElementById('HTML')
-          HTML.setAttribute('style', `font-size: ${Math.floor(1 / window.devicePixelRatio * 100)}%`);
+          const pixelRatio  = Math.floor(1 / window.devicePixelRatio * 100);
+          document.getElementById('HTML').setAttribute('style', `font-size: ${pixelRatio}%`);
       </script>
 
         <div id="site-container">
