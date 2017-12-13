@@ -122,7 +122,7 @@ omTrailerExit.addEventListener('click', closeTrailer);
 let youtubeID;
 
 function openTrailer () {
-    let youtubeURL = `https://www.youtube.com/embed/${youtubeID}?rel=0&modestbranding=1&autohide=1&autoplay=1&enablejsapi=1`;
+    let youtubeURL = `https://www.youtube.com/embed/${youtubeID}?rel=0&modestbranding=1&autohide=1&autoplay=1&iv_load_policy=3`;
     omTraileriFrame.setAttribute('src', youtubeURL);
     omTrailer.setAttribute('data-open', 'true');
 }

@@ -1,11 +1,14 @@
 /* ==================== MAIN ==================== */
-// 
+//
 // html {
 //     font-size: 100%;
 // }
 
+
 #main {
-    background-color: $c-w-5;
+    //background-color: $c-w-5;
+    z-index: 1;
+
 }
 
     .main-settings {
@@ -36,7 +39,9 @@
         overflow-y: auto;
         background-color: $c-w-5;
 
-        padding: 2.5rem 20%;
+        width: 100%;
+        max-width: 87.5rem;
+        margin: 0px auto;
     }
 
     #main-actors {

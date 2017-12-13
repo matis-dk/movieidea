@@ -456,16 +456,19 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 /* ==================== HEADER ==================== */
 #header {
-  background-color: #ececec;
   position: relative;
-  z-index: 3; }
+  z-index: 3;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw; }
 
 #header-container {
   max-width: 87.5rem;
-  width: 100%;
+  width: 100vw;
   height: 9.38rem;
   padding: 0px 3.13rem;
-  margin: 0px auto;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   grid-template-areas: "headerLogo . headerNav headerSearch";
@@ -613,7 +616,7 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 /* ==================== MAIN ==================== */
 #main {
-  background-color: #f2f2f2; }
+  z-index: 1; }
 
 .main-settings {
   display: none !important; }
@@ -639,7 +642,9 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   grid-template-rows: auto auto auto auto 1fr;
   overflow-y: auto;
   background-color: #f2f2f2;
-  padding: 2.5rem 20%; }
+  width: 100%;
+  max-width: 87.5rem;
+  margin: 0px auto; }
 
 #main-actors {
   grid-template-columns: 13.75rem 2fr 1.75fr;
@@ -1131,7 +1136,8 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   grid-template-rows: auto 1fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  width: 95vw; }
   #main-gallery > * {
     margin-bottom: 2.5rem; }
 
@@ -1840,3 +1846,42 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 .ote-tag:nth-child(1) {
   -webkit-transform: translateY(-0.1rem);
           transform: translateY(-0.1rem); }
+
+#overlay-background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; }
+
+#overlay-img {
+  background-image: url("https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?auto=format&fit=crop&w=2700&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+#overlay-color {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100vw;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute; }
+
+#overlay-color[data-home-active=true] {
+  opacity: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  position: absolute;
+  height: 100%; }

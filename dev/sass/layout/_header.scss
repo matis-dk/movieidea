@@ -2,19 +2,21 @@
 
 
 #header {
-    background-color: $c-g-1;
+    //background-color: $c-g-1;
     position: relative;
     z-index: 3;
+    display: grid;
+    justify-content: center;
+    width: 100vw;
 }
 
 #header-container {
 
     max-width: 87.5rem;
-    width: 100%;
+    width: 100vw;
     height: 9.38rem;
 
     padding: 0px 3.13rem;
-    margin: 0px auto;
 
     display: grid;
     grid-template-columns: auto 1fr auto auto;

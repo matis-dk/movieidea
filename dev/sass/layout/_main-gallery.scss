@@ -9,6 +9,8 @@
 
         justify-content: center;
 
+        width: 95vw;
+
         > * {
             margin-bottom: 2.5rem;
         }
@@ -17,6 +19,8 @@
 
 
     // ======================= MAIN ARRANGE =======================
+
+
     #mg-arranger-container {
         display: grid;
         grid-template-columns: 2fr 1fr;
