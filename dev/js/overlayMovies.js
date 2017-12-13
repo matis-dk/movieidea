@@ -21,7 +21,6 @@ let overlayMovies =   document.getElementById('overlay-movies');
 let overlayMovieCon = document.getElementById('overlay-movies-container');
 
 
-
 function controllerMovieOverlay (direction, movie) {
     if (direction == "open") {
 
@@ -51,6 +50,7 @@ function controllerMovieOverlay (direction, movie) {
         overlayMovies.removeEventListener('click', toggleOverlay);
         overlayMovieCon.removeEventListener('click', toggleOverlayCon);
 
+        closeTrailer();
     }
 }
 
@@ -80,13 +80,19 @@ function controllerMovieOverlay (direction, movie) {
 
             mainSectionController(mainGallery, con);
         }
+
+        if (e.target.id == "om-trailer-play") {
+            openTrailer();
+        }
     }
 
 
 
 function updateMovieOverlay (movie) {
 
-    omTitle.textContent         =   `${movie.title}  ${"- " + movie.tagline}`
+    addCastPictures(movie.credits.cast)
+
+    omTitle.textContent                 =   `${movie.title}  ${"- " + movie.tagline}`
 
     omYear.textContent                  = parseFloat(movie.release_date);
     omDuration.textContent              = movie.runtime;
@@ -102,8 +108,34 @@ function updateMovieOverlay (movie) {
     addInnerElements(movie.credits.cast, 6, "actor", omActors);
     addInnerElements(movie.genres, false, "genre", omGenre);
 
-    addCastPictures(movie.credits.cast)
+    youtubeID = movie.videos.results[0].key;
 }
+
+// ============= TRAILER ========================
+
+let omTrailer       =   document.getElementById('om-trailer');
+let omTrailerExit   =   document.getElementById('om-trailer-exit');
+let omTraileriFrame =   document.getElementById('om-trailer-iframe');
+
+omTrailerExit.addEventListener('click', closeTrailer);
+
+let youtubeID;
+
+function openTrailer () {
+    let youtubeURL = `https://www.youtube.com/embed/${youtubeID}?rel=0&modestbranding=1&autohide=1&autoplay=1&enablejsapi=1`;
+    omTraileriFrame.setAttribute('src', youtubeURL);
+    omTrailer.setAttribute('data-open', 'true');
+}
+
+function closeTrailer () {
+    omTrailer.setAttribute('data-open', 'false')
+    omTraileriFrame.setAttribute('src', "");
+}
+
+
+
+
+
 
 
 // ============= HELPERS ========================

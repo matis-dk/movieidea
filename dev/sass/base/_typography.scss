@@ -216,6 +216,14 @@
         color: $c-theme2;
     }
 
+    @mixin oteTag {
+        font-family: "RobotoLight";
+        font-size: 1rem;
+        color: rgba($c-w-5, 0.5);
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
 
 
 // MAIN - DISCOVER
