@@ -1,4 +1,3 @@
-
     // let body                = document.getElementsByTagName('body')[0];
     // let movieContainer      = document.getElementsByClassName('movie-container')[0];
 
@@ -155,43 +154,41 @@
 
     // =============== PAGE SCROLL ===============
 
-    let elementScroll = document.scrollingElement;
     let scrollActive = false;
+
+    let movieHeight     = 18.75 + 0.625 + 3.75;                     // Height and margin for movie item
+    let movieHeightRel  = 1 / window.devicePixelRatio * 16 * movieHeight;
+    let inc             = Math.trunc(movieHeightRel * 100 / 10) / 100;
+
 
     function pageScroll (direction) {
         if (scrollActive == true) { return }
         scrollActive = true;
 
-        let movieHeight     = 18.75 + 0.625 + 3.75;                     // Height and margin for movie item
-        let movieHeightRel = 1 / window.devicePixelRatio * 16 * movieHeight;
+        if (direction == "up") { inc = (-Math.abs(inc)) }
+        else                   { inc = (Math.abs(inc)) }
+
+        let stopId;
+        let start;
         let i = 0;
-        let iteration = 30;
-        let inc = Math.trunc(movieHeightRel / iteration * 100) / 100;
 
-        console.log(inc)
-        console.log(movieHeightRel)
+        (function startScroll () {
+            window.requestAnimationFrame(step);
+        })();
 
-        if (direction == "up") { inc *= -1 }
-
-        let loopScroll = setInterval(function () {
-            startScroll(direction)
-        }, 5);
-
-        function startScroll (direction) {
-            if (direction == "up"   && elementScroll.scrollTop == 0) { clearScroll(); return }
-            if (direction == "down" && elementScroll.scrollTop == elementScroll.scrollHeight) { clearScroll(); return }
-            if (i > iteration)  { clearScroll(); return }
-
+        function step (timestamp) {
+            if (!start) start = timestamp;
+            if (i == 10) {
+                cancelAnimationFrame(stopId)
+                start = 0;
+                scrollActive = false;
+                return;
+            }
+            //document.scrollingElement.scrollTop += inc;
+            window.scrollBy(0, inc)
             i++;
-            elementScroll.scrollTop += inc
+            stopId = window.requestAnimationFrame(step)
         }
-
-        function clearScroll () {
-            scrollActive = false;
-            i = 0;
-            clearInterval(loopScroll);
-        }
-
     }
 
 
