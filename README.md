@@ -1,6 +1,6 @@
 # MovieIdea
 
-![alt text](https://raw.githubusercontent.com/matis-dk/movieidea/master/public/assets/img/showcase/movieidea-home.png)
+![alt text](https://github.com/matis-dk/movieidea/blob/master/public/assets/img/showcase/MovieIdea-home.PNG)
 
 
 ## A simple manageable website with a great amount of movie suggestions
