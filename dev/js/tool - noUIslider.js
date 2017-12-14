@@ -5,7 +5,7 @@
 
 
   noUiSlider.create(sliderRating, {
-      start: [6, 10],
+      start: [6.3, 10],
       connect: true,
       tooltips: [ wNumb({ decimals: 1 }), wNumb({ decimals: 1 }) ],
       range: {
@@ -15,7 +15,7 @@
   });
 
   noUiSlider.create(sliderRuntime, {
-      start: [80, 150],
+      start: [80, 220],
       connect: true,
       animationDuration: 300,
       tooltips: [ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ],
@@ -26,7 +26,7 @@
   });
 
   noUiSlider.create(sliderYear, {
-      start: [1990, 2017],
+      start: [2013, 2017],
       connect: true,
       orientation: 'vertical',
       tooltips: [ wNumb({ decimals: 0 }), wNumb({ decimals: 0 }) ],

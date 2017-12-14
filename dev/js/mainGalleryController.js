@@ -49,7 +49,7 @@ function controllerMovies (con, direction) {
                 // PRE-FETCHING SECOND PAGE
                 calcWindowPosition();
 
-                // SELECTING FIRST MOVIE IN GALLERY
+                //SELECTING FIRST MOVIE IN GALLERY
                 // let firstMovieItem = mgMovieContainer.children[0];
                 // updateMovieSeletion(firstMovieItem);
                 // mgMovieContainer.focus();

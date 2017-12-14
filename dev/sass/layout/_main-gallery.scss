@@ -404,8 +404,8 @@
         #mg-toggle {
             color: white;
             font-size: 1.2rem;
-            height: 3rem !important;
-            width: 3rem !important;
+            height: 3rem;
+            width: 3rem;
 
             border-radius: 50%;
 
@@ -418,10 +418,11 @@
             bottom: -1.38rem;
             z-index: 3;
             background-color: $c-theme6;
-            box-shadow: 0 0.315rem 0.625rem rgba(63, 184, 175,0.3);
+            //box-shadow: 0 0.315rem 0.625rem rgba(63, 184, 175,0.3);
             transition: 1.2s;
 
             transform: rotateZ(0deg);
+            transform-origin: 50% 50%;
 
             cursor: pointer;
         }

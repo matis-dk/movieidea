@@ -26,12 +26,13 @@
         align-items: center;
         align-self: center;
 
-        padding-top: 1.25rem;
+        padding-top: 10vh;
 
         > li {
             justify-self: center;
 
-            background-color: rgba($c-theme0, 0.95);
+            background-color: rgba($c-g-2, 0.2);
+            border: 1px solid rgba($c-g-3, 0.8);
             border-radius: .38rem;
 
             width: 15rem;
@@ -44,22 +45,25 @@
             align-items: center;
 
             cursor: pointer;
-            box-shadow: rgba(73, 89, 106, 1) 0px 0px 1rem 0px;
 
             transition: 0.5s;
 
             > div {
                 margin: 0px auto;
-                color: $c-w-5;
+                color: $c-theme1;
                 font-size: 2.5rem;
             }
 
             > span {
                 @include mainGenre;
 
-                color: $c-w-5;
+                color: $c-theme1;
                 transform: translateY(-1.25rem);
                 text-align: center;
             }
+        }
+
+        > li:hover {
+            background-color: rgba($c-g-2, 0.6) !important;
         }
     }

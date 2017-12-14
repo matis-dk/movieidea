@@ -29,7 +29,7 @@
         background-color: $c-w-5;
         height: 100%;
         width: 100vw;
-        transform: scaleX(1);
+        // transform: scaleY(1);
         opacity: 1;
         transition: 0.5s;
         position: absolute;
@@ -37,8 +37,7 @@
 
     #overlay-color[data-home-active=true] {
         opacity: 0;
-        transform: scaleX(0);
+        // transform: scaleY(0);
         position: absolute;
         height: 100%;
-        filter: blur(20px);
     }

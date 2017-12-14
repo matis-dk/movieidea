@@ -13,7 +13,7 @@
 
 	position: fixed;
 	bottom: 0px;
-
+	z-index: 1;
 }
 
 
@@ -25,6 +25,12 @@
 
     #footer-personel-footprint {
         grid-area: personel;
+
+		> a {
+			position: relative;
+			z-index: 2;
+			cursor: pointer;
+		}
     }
 
     	#footer-github, #footer-tmdb {
@@ -32,7 +38,8 @@
             margin: 0px .63rem;
 			width: 3.5rem;
 			height: 3.5rem;
-    	}
+
+		}
 
 
 	// ==================== FOOTER KEYBOARD  ==================== \\
@@ -47,6 +54,11 @@
         grid-template-areas:
             ". key38 ."
             "key37 key40 key39";
+
+		transform: translateY(10rem);
+		transition: 0.3s;
+		transition-timing-function: ease-out;
+		opacity: 1;
     }
 
         #footer-key-38 { grid-area: key38}
@@ -66,3 +78,9 @@
     		background-color: $c-theme1;
     		transition: all 0.3s;
     	}
+
+
+	.show-keys {
+		transform: translateY(0) !important;
+		opacity: 0;
+	}

@@ -7,6 +7,7 @@ let mainGenres      =   document.getElementById('main-genre');
 let mainGallery     =   document.getElementById('main-gallery');
 
 let overlayColor    =   document.getElementById('overlay-color');
+let footerKeyboard =   document.getElementById('footer-keyboard');
 
 function mainSectionController (mainSection, payload) {
         for(let i in main) {
@@ -33,8 +34,10 @@ function mainSectionController (mainSection, payload) {
             }
             controllerMovies(payload, "reset-movies")
             header.classList.add("scrollbar");
+            footerKeyboard.classList.add("show-keys")
         } else {
             header.classList.remove("scrollbar");
+            footerKeyboard.classList.remove("show-keys")
         }
 
         if (mainSection == mainWall) {

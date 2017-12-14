@@ -140,6 +140,9 @@ function closeTrailer () {
 
 // ============= HELPERS ========================
 function addCastPictures (actors) {
+    console.log("ACTORS ====================")
+    console.log(actors)
+    console.log("ACTORS ====================")
     for (let i in omActorsIconChildren) {
         omActorsIconChildren[i].setAttribute("style", `background-image: url('http://image.tmdb.org/t/p/w45${actors[i].profile_path}')`)
         omActorsIconChildren[i].setAttribute('data-actor-id', `${actors[i].id}`)
