@@ -158,39 +158,23 @@
 
     let movieHeight     = 18.75 + 0.625 + 3.75;                     // Height and margin for movie item
     let movieHeightRel  = 1 / window.devicePixelRatio * 16 * movieHeight;
-    let inc             = Math.trunc(movieHeightRel * 100 / 10) / 100;
-
+    let inc;
 
     function pageScroll (direction) {
         if (scrollActive == true) { return }
         scrollActive = true;
 
-        if (direction == "up") { inc = (-Math.abs(inc)) }
-        else                   { inc = (Math.abs(inc)) }
+        if (direction == "up") { inc = -Math.abs(movieHeightRel) }
+        else                   { inc = Math.abs(movieHeightRel) }
 
-        let stopId;
-        let start;
-        let i = 0;
 
         (function startScroll () {
-            window.requestAnimationFrame(step);
+
+            window.scrollBy({top: inc, behavior: "smooth"})
+            setTimeout(function(){scrollActive = false}, 300)
         })();
 
-        function step (timestamp) {
-            if (!start) start = timestamp;
-            if (i == 10) {
-                cancelAnimationFrame(stopId)
-                start = 0;
-                scrollActive = false;
-                return;
-            }
-            //document.scrollingElement.scrollTop += inc;
-            window.scrollBy(0, inc)
-            i++;
-            stopId = window.requestAnimationFrame(step)
-        }
     }
-
 
     // =============== HELPERS ===============
 
