@@ -1,5 +1,8 @@
 # MovieIdea
 
+![alt text](https://github.com/matis-dk/movieidea/blob/master/public/assets/img/showcase/MovieIdea-home.PNG)
+
+
 ## A simple manageable website with a great amount of movie suggestions
 MovieIdea can be used everytime you wanna watch a movie,
 but are unsure about which one. The site consists of a simple and lightweight user interface,
