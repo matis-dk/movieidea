@@ -9,6 +9,9 @@ let mainGallery     =   document.getElementById('main-gallery');
 let overlayColor    =   document.getElementById('overlay-color');
 let footerKeyboard =   document.getElementById('footer-keyboard');
 
+// TEST
+let siteContainer   =   document.getElementById("site-container");
+
 function mainSectionController (mainSection, payload) {
         for(let i in main) {
             if (main[i].getAttribute("data-active") == "true") {
@@ -33,10 +36,8 @@ function mainSectionController (mainSection, payload) {
                 }
             }
             controllerMovies(payload, "reset-movies")
-            header.classList.add("scrollbar");
             footerKeyboard.classList.add("show-keys")
         } else {
-            header.classList.remove("scrollbar");
             footerKeyboard.classList.remove("show-keys")
         }
 

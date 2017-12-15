@@ -11,19 +11,26 @@
 
     #mg-arranger-container {
         display: grid;
+
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
             "filtering sorting"
             "navigation navigation";
 
-        //border-bottom: .25rem double rgba($c-g-5, 0.5);
         padding: 1.56rem 2.19rem 0px;
         position: absolute;
+
+        left: 0;
+        right: 0;
+        margin: auto;
+
         width: 100%;
         max-width: 87.5rem;
+
+
+
         z-index: 2;
-        margin: 0px auto;
         transform: translateY(-87%);
         background-color: rgba($c-g-1, 0.0);
         transition: 0.45s;
@@ -431,17 +438,15 @@
 
     // ======================= MAIN MOVIE =======================
     #mg-movie-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(11.25rem, 1fr));
-        grid-template-rows: auto auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
         position: relative;
         z-index: 1;
 
         width: 100%;
         max-width: 75rem;
-
-        margin: 0px auto;
 
         padding: 8.125rem 1.2rem 0px;
     }

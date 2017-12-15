@@ -4,6 +4,7 @@
    ||                                                   ||
    \\--------------------------------------------------//
 */
+/* ==================== MEDIA ==================== */
 /* ==================== COLORS ==================== */
 /* ==================== TYPEGRAPHY FONTLOAD ==================== */
 @font-face {
@@ -151,6 +152,34 @@ h1, h2, h3, h4, h5, h6 {
             transform: rotate(359deg); } }
 
 /* ==================== MEDIA ==================== */
+/*
+
+$breakpoints: (
+  'phone': 600px,
+  'tablet-portrait': 900px,
+  'tablet-landscape': 1200px,
+  'desktop': 1799px,
+  'big-desktop': 1800px
+) !default;
+
+*/
+@media (max-width: 2000px) and (min-width: 1200px) {
+  #overlay-movies-container {
+    display: grid;
+    grid-template-columns: 30vh 70vh; }
+  .om-header-xl > #om-title {
+    font-size: 1.2rem !important; }
+  .om-header-l {
+    font-size: 1.1rem !important; }
+  .om-header-m-upper {
+    font-size: 0.8rem !important; }
+  .om-header-m-lower {
+    font-size: .65rem !important; }
+  .om-header-s-upper {
+    font-size: .8rem !important; }
+  .om-header-s-lower {
+    font-size: 0.8rem !important; } }
+
 /*! nouislider - 10.0.0 - 2017-05-28 14:52:48 */
 /* Functional styling;
  * These styles are required for noUiSlider to function.
@@ -456,29 +485,23 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 /* ==================== HEADER ==================== */
 #header {
-  z-index: 3;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  z-index: 3; }
 
 #header-container {
   max-width: 87.5rem;
   width: 100%;
   height: 9.38rem;
   padding: 0px 3.13rem;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   grid-template-areas: "headerLogo . headerNav headerSearch";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-
-.scrollbar {
-  margin-left: calc(100vw - 100%); }
 
 #header-logo {
   grid-area: headerLogo;
@@ -642,11 +665,18 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   opacity: 0; }
 
 /* ==================== MAIN ==================== */
+#html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0; }
+
+body {
+  overflow-y: scroll !important; }
+
 #main {
   z-index: 1;
-  width: 100vw; }
+  height: calc(100vh - 9.38rem); }
 
-.main-settings {
+.main-settings[data-active="false"] {
   display: none !important; }
 
 .main-settings[data-active="true"] {
@@ -694,15 +724,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 #main-gallery {
   width: 100%;
-  max-width: 87.5rem;
-  margin: 0px auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
+  margin: 0px;
+  padding: 0px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden; }
+          justify-content: center; }
 
 #main-discover {
   width: 100%;
@@ -1174,10 +1200,12 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   grid-template-areas: "filtering sorting" "navigation navigation";
   padding: 1.56rem 2.19rem 0px;
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 100%;
   max-width: 87.5rem;
   z-index: 2;
-  margin: 0px auto;
   -webkit-transform: translateY(-87%);
           transform: translateY(-87%);
   background-color: rgba(236, 236, 236, 0);
@@ -1515,14 +1543,18 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   cursor: pointer; }
 
 #mg-movie-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(11.25rem, 1fr));
-  grid-template-rows: auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 75rem;
-  margin: 0px auto;
   padding: 8.125rem 1.2rem 0px; }
 
 .mg-movie-item {
@@ -1627,8 +1659,11 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
 
 #overlay-movies-container {
   display: grid;
-  grid-template-columns: 30vh 55vh;
-  grid-template-rows: 45vh;
+  grid-template-columns: 350px 2fr;
+  grid-template-rows: 525px;
+  margin: 0px 100px;
+  max-width: 1100px;
+  width: 100%;
   background-color: rgba(20, 20, 20, 0.6);
   overflow: hidden; }
 
@@ -1655,8 +1690,6 @@ html, head, body, li, ul, figure, p, h1, h2, h3, h4, h5, h6 {
   transition: 0.3s; }
 
 #om-poster-inner {
-  height: 45vh;
-  width: 30vh;
   background-size: cover;
   -webkit-transform: scale(1.3);
           transform: scale(1.3);

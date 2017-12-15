@@ -1,24 +1,27 @@
 /* ==================== MAIN ==================== */
-//
-// html {
-//     font-size: 100%;
-// }
-//
-// html, body, #site-container, #main {
-//     width: 100% !important;
-// }
 
+
+#html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
+
+
+ body {
+    overflow-y: scroll !important;
+}
 
 
 #main {
     //background-color: $c-w-5;
     z-index: 1;
-    width: 100vw;
+    height: calc(100vh - 9.38rem);
 }
 
-    .main-settings {
+    .main-settings[data-active="false"] {
         display: none !important;
     }
+
 
     .main-settings[data-active="true"] {
         display: grid !important;
@@ -77,16 +80,10 @@
 
     #main-gallery {
         width: 100%;
-        max-width: 87.5rem;
-        margin: 0px auto;
-
-
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        margin: 0px;
+        padding: 0px;
 
         justify-content: center;
-        overflow: hidden;
     }
 
     #main-discover {

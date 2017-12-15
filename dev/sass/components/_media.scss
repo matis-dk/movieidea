@@ -1,28 +1,48 @@
 /* ==================== MEDIA ==================== */
 
+/*
 
-@mixin for-phone-only {
-  @media (max-width: 600px) { @content; }
-}
-@mixin for-tablet-portrait-down {
-  @media (max-width: 900px) { @content; }
-}
-@mixin for-tablet-landscape-down {
-  @media (max-width: 1200px) { @content; }
-}
-@mixin for-desktop-down {
-  @media (max-width: 1799px) { @content; }
-}
-@mixin for-big-desktop-up {
-  @media (min-width: 1800px) { @content; }
-}
+$breakpoints: (
+  'phone': 600px,
+  'tablet-portrait': 900px,
+  'tablet-landscape': 1200px,
+  'desktop': 1799px,
+  'big-desktop': 1800px
+) !default;
+
+*/
 
 
 // =========== MEDIA QUERY ===============
 
-// @include media("retina2x") {
-//
-//     html {
-//         font-size: 50% !important;
-//     }
-// }
+@include media("<=2000px", ">=tablet-landscape") {
+
+    #overlay-movies-container {
+        display: grid;
+        grid-template-columns: 30vh 70vh;
+    }
+
+    .om-header-xl > #om-title {
+        font-size: 1.2rem !important;
+    }
+
+    .om-header-l  {
+        font-size: 1.1rem !important;
+    }
+
+    .om-header-m-upper {
+        font-size: 0.8rem !important;
+    }
+
+    .om-header-m-lower {
+        font-size: .65rem !important;
+    }
+
+    .om-header-s-upper  {
+        font-size: .8rem !important;
+    }
+
+    .om-header-s-lower {
+        font-size: 0.8rem !important;
+    }
+}

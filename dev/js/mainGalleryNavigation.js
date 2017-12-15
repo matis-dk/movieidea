@@ -158,23 +158,43 @@
 
     let movieHeight     = 18.75 + 0.625 + 3.75;                     // Height and margin for movie item
     let movieHeightRel  = 1 / window.devicePixelRatio * 16 * movieHeight;
-    let inc;
+    let inc = 10;
 
     function pageScroll (direction) {
         if (scrollActive == true) { return }
         scrollActive = true;
 
-        if (direction == "up") { inc = -Math.abs(movieHeightRel) }
-        else                   { inc = Math.abs(movieHeightRel) }
+        if (direction == "up") { inc = -Math.abs(inc) }
+        else                   { inc = Math.abs(inc) }
 
+        let x = 0; //y-axis pixel displacement
+        let y = 1; //delay in milliseconds
+        let i = 0;
 
-        (function startScroll () {
+        let interval = setInterval( start , y);
 
-            window.scrollBy({top: inc, behavior: "smooth"})
-            setTimeout(function(){scrollActive = false}, 300)
-        })();
+        function start () {
+                i++;
+                console.log(i)
+                if (i >= 37) {clear() }
+                window.scrollBy(0, inc);
+                x = x + inc; //if you want to increase speed simply increase increment interval
+        }
+
+        function clear () {
+            clearInterval(interval)
+            scrollActive = false;
+        }
+
+        // (function startScroll () {
+        //
+        //     window.scrollBy({top: inc, behavior: "smooth"})
+        //     setTimeout(function(){scrollActive = false}, 300)
+        // })();
 
     }
+
+
 
     // =============== HELPERS ===============
 

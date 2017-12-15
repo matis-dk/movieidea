@@ -25,8 +25,12 @@
 
     #overlay-movies-container {
         display: grid;
-        grid-template-columns: 30vh 55vh;
-        grid-template-rows: 45vh;
+        grid-template-columns: 350px 2fr;
+        grid-template-rows: 525px;
+        margin: 0px 100px;
+
+        max-width: 1100px;
+        width: 100%;
 
         background-color: rgba($c-b-2, 0.6);
         overflow: hidden;
@@ -64,8 +68,7 @@
             }
 
             #om-poster-inner {
-                height: 45vh;
-                width: 30vh;
+
                 background-size: cover;
                 transform: scale(1.3);
                 filter: blur(1.6rem);
