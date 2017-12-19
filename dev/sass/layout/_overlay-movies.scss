@@ -111,7 +111,9 @@
         #om-information {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 1.5fr auto auto auto auto 4fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 90px 1fr;
+
+            max-height: 525px;
 
             > *  {
                 border-bottom: 1px solid rgba($c-b-5, 0.20);
@@ -153,7 +155,12 @@
 
         .om-header-style3 {
             display: grid;
+            padding-bottom: 1rem;
         }
+
+            #om-header-description {
+                overflow: hidden;
+            }
 
         .om-header-style4 {
             display: flex;
