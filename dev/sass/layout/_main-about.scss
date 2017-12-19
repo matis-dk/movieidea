@@ -1,0 +1,15 @@
+.ma-content-container {
+    display: flex;
+    margin: 4rem 0rem;
+}
+
+.ma-content {
+    @include maAbout;
+}
+
+.ma-content-tmdb {
+    color: red;
+    fill: red;
+    width: 15vw;
+    margin-left: 8rem;
+}

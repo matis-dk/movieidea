@@ -5,6 +5,7 @@ let mainWall        =   document.getElementById('main-wall');
 let mainActors      =   document.getElementById('main-actors');
 let mainGenres      =   document.getElementById('main-genre');
 let mainGallery     =   document.getElementById('main-gallery');
+let mainAbout       =   document.getElementById('main-about');
 
 let overlayColor    =   document.getElementById('overlay-color');
 let footerKeyboard =   document.getElementById('footer-keyboard');

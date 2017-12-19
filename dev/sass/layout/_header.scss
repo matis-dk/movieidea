@@ -40,20 +40,21 @@
 
         align-items: center;
 
-        background-color: $c-theme1;
         padding: .63rem 4.38rem .63rem .63rem;
 
-        color: white;
+        margin-bottom: 1rem;
+
         cursor: pointer;
     }
 
         #header-logo-image {
-
+            margin: 0px -0.5rem;
             height: 3rem;
         }
 
         #header-logo-title {
             @include headerLogoTitle;
+            color: $c-theme1;
         }
 
     // ==================== HEADER NAVIGATION  ==================== \\

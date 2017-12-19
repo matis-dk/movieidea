@@ -53,6 +53,11 @@
         }
     }
 
+    #mws-persons-container, #mws-movies-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     .mws-item {
         display: grid;
         grid-template-columns: auto 1fr 2fr;
@@ -77,14 +82,15 @@
     }
 
     .mws-item:hover {
-        border-bottom-color: $c-g-4;
+        border-bottom-color: $c-g-3;
 
         & > .mws-h3-item {
-            padding-left: .63rem;
+            color: $c-theme6;
+            transform: translateX(.63rem);
         }
 
         & > .mws-h5-item {
-            padding-left: .94rem;
+            transform: translateX(.94rem);
         }
     }
 

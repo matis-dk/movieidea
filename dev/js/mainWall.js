@@ -32,18 +32,24 @@ function returnDataId (e) {
 
 function controllerSearch (query) {
 
-        let con = {
-            task: "multisearch",
-            query: query,
-            pageNr: 1
+        Promise.all([
+            startFetch({ task: "multisearch", query: query, pageNr: 1 }),
+            startFetch({ task: "multisearch", query: query, pageNr: 2 }),
+            startFetch({ task: "multisearch", query: query, pageNr: 3 }) ])
+        .then(resp => {
+            let concatResp  = resp[0].results.concat(resp[1].results).concat(resp[2].results)
+
+            movieAPI.setMovieArr(concatResp)
+            return {concatResp: concatResp, total: resp[0].total_results} })
+        .then(resp => {
+            assembelSearch(resp.concatResp, query, resp.total)
+        })
+
+        function startFetch (con) {
+            return fetchTMDb(con)
         }
 
-        fetchTMDb(con)
-            .then(resp => {
-                movieAPI.setMovieArr(resp.results);
-                return resp;
-            })
-            .then(resp => assembelSearch(resp.results, query, resp.total_results))
+
 }
 
 
@@ -63,12 +69,11 @@ function assembelSearch (response, query, totalNumbers) {
     let personN = 0;
 
     for (let i = 0; i < response.length; i++) {
-
         let m   =   response[i];
 
         if (m.media_type == "movie") {
             movieN++;
-            if (!m.poster_path) return;
+            if (!m.poster_path) continue;
             if (!mwsMovies.classList.contains("mws-visible")) mwsMovies.classList.add("mws-visible");
 
             let item =  createMwsItem(m.title, m.release_date, m.overview, "fa fa-calendar", m.poster_path)
@@ -78,7 +83,7 @@ function assembelSearch (response, query, totalNumbers) {
 
         if (m.media_type == "person") {
             personN++;
-            if (!m.profile_path) return;
+            if (!m.profile_path) continue;
             if (!mwsPersons.classList.contains("mws-visible")) mwsPersons.classList.add("mws-visible");
 
             let item =  createMwsItem(m.name, m.popularity, "", "fa fa-fire", m.profile_path)

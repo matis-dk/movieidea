@@ -14,6 +14,7 @@ function changeSite (e) {
     if (page == "mainGallery") { mainSectionController(mainGallery) }
     if (page == "mainGenres") { mainSectionController(mainGenres) }
     if (page == "mainHome") { mainSectionController(mainHome) }
+    if (page == "mainAbout") { mainSectionController(mainAbout) }
 }
 
 function changeToHome (e) {

@@ -28,8 +28,8 @@
 // HEADER
 
 @mixin headerLogoTitle {
-    font-family: "MyriadProRegular";
-    font-size: 1.2rem;
+    font-family: "RobotoBold";
+    font-size: 2rem;
     color: $c-w-5;
 }
 
@@ -155,6 +155,15 @@
         color: $c-theme2;
     }
 
+
+// MAIN - ABOUT
+
+    @mixin maAbout {
+        font-family: "MyriadProRegular";
+        font-size: 1rem;
+        color: $c-theme2;
+        line-height: 1.5rem;
+    }
 
 
 // MAIN - GENRE

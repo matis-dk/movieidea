@@ -26,15 +26,14 @@
             <header id="header">
                 <div id="header-container">
                     <div id="header-logo">
-                        <img id="header-logo-image" src="assets/img/header-logo.svg" alt="MovieIdea image logo">
-                        <p id="header-logo-title">MovieIdea</p>
+                        <p id="header-logo-title">Movie<img id="header-logo-image" src="assets/img/header-logo.svg" alt="MovieIdea image logo">Idea</p>
                     </div>
                     <nav id="header-navigation">
                         <ul id="header-navigation-ul">
                             <li class="header-navigation-elements" data-section="mainGallery">Movies</li>
                             <li class="header-navigation-elements" data-section="mainGenres">Genre</li>
                             <li class="header-navigation-elements" data-section="mainHome">Search</li>
-                            <li class="header-navigation-elements" data-section="">About</li>
+                            <li class="header-navigation-elements" data-section="mainAbout">About</li>
                         </ul>
                     </nav>
                     <div id="header-search" data-active="false">
@@ -336,6 +335,19 @@
                         <ul id="mg-movie-container" tabindex="0"></ul>
                 </section>
                 <section class="main-settings" id="main-about" data-active="false">
+                    <div class="main-genre-description">
+                        <h3 class="mgd-genre"><span class="fa fa-bookmark-o"></span>About MovieIdea</h3>
+                    </div>
+                    <div class="ma-content-container">
+                        <div class="ma-content">
+                            The following project is only conceptual and shouldnt be considered as a fully completed product.
+                            Responsiveness, mobile support, missing or non-finished styling on some subsites / elements comes to mind.
+                            The site is the result of some specific areas I was trying to explore as a part of my learning journey.
+                            I discuss the different consideration concerning the project in detail on my github repository.
+                            <br><br>The final product wouldnt been possible without help from TMDb's API - thank you, The Movie Database.
+                        </div>
+                        <img src="/assets/img/powered-by-rectangle-green.svg" class="ma-content-tmdb" alt="">
+                    </div>
 
                 </section>
             </main>

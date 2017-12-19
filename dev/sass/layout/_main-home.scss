@@ -14,7 +14,7 @@
             display: block;
             border: none;
             background-color: transparent;
-            border-bottom: 1px solid $c-g-5;
+            border-bottom: 1px solid $c-g-4;
             color: $c-theme6;
             //margin-right: 1.88rem;
 
@@ -22,12 +22,12 @@
         }
 
         #mhs-input::placeholder {
-            color: $c-g-3;
+            color: $c-g-4;
         }
 
         #mhs-input::selection {
             background-color: $c-theme6;
-            color: $c-w-5;
+            color: $c-g-5;
         }
 
             .mhs-icons-container {
